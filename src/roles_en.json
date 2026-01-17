@@ -1,153 +1,153 @@
 [
   {
     "id": "washerwoman",
-    "name": "Pradlena",
+    "name": "Washerwoman",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 33,
-    "firstNightReminder": "Ukaž Pradleně token Měšťana, který je ve hře. Ukaž na dva hráče, jeden z nich je ten Měšťan.",
+    "firstNightReminder": "Show the character token of a Townsfolk in play. Point to two players, one of which is that character.",
     "otherNight": 0,
     "otherNightReminder": "",
-    "reminders": ["Měšťan",
-        "Falešný"],
+    "reminders": ["Townsfolk",
+        "Wrong"],
     "setup": false,
-    "ability": "Na začátku hry zjistíš, že jeden ze dvou hráčů je určitý Měšťan."
+    "ability": "You start knowing that 1 of 2 players is a particular Townsfolk."
   },
   {
     "id": "librarian",
-    "name": "Knihovník",
+    "name": "Librarian",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 34,
-    "firstNightReminder": "Ukaž Knihovníkovi token Podivína, který je ve hře. Ukaž na dva hráče, jeden z nich je ten podivín.",
+    "firstNightReminder": "Show the character token of an Outsider in play. Point to two players, one of which is that character.",
     "otherNight": 0,
     "otherNightReminder": "",
-    "reminders": ["Podivín",
-        "Falešný"],
+    "reminders": ["Outsider",
+        "Wrong"],
     "setup": false,
-    "ability": "Na začátku hry zjistíš, že jeden ze dvou hráčů je určitý Podivín (nebo že ve hře žádný není)."
+    "ability": "You start knowing that 1 of 2 players is a particular Outsider. (Or that zero are in play.)"
   },
   {
     "id": "investigator",
-    "name": "Vyšetřovatel",
+    "name": "Investigator",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 35,
-    "firstNightReminder": "Ukaž vyšetřovateli token Poskoka, který je ve hře. Ukaž na dva hráče, jeden z nich je ten Poskok.",
+    "firstNightReminder": "Show the character token of a Minion in play. Point to two players, one of which is that character.",
     "otherNight": 0,
     "otherNightReminder": "",
-    "reminders": ["Poskok",
-        "Falešný"],
+    "reminders": ["Minion",
+        "Wrong"],
     "setup": false,
-    "ability": "Na začátku hry zjistíš, že jeden ze dvou hráčů je určitý Poskok."
+    "ability": "You start knowing that 1 of 2 players is a particular Minion."
   },
   {
     "id": "chef",
-    "name": "Kuchař",
+    "name": "Chef",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 36,
-    "firstNightReminder": "Ukaž na prstech počet dvojic sousedících zlých hráčů (0, 1, 2, \u2026).",
+    "firstNightReminder": "Show the finger signal (0, 1, 2, \u2026) for the number of pairs of neighbouring evil players.",
     "otherNight": 0,
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Na začátku hry zjistíš, kolik párů zlých hráčů je ve hře."
+    "ability": "You start knowing how many pairs of evil players there are."
   },
   {
     "id": "empath",
-    "name": "Empat",
+    "name": "Empath",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 37,
-    "firstNightReminder": "Ukaž na prstech počet zlých živých sousedů Empata (0, 1, 2).",
+    "firstNightReminder": "Show the finger signal (0, 1, 2) for the number of evil alive neighbours of the Empath.",
     "otherNight": 53,
-    "otherNightReminder": "Ukaž na prstech počet zlých živých sousedů Empata (0, 1, 2).",
+    "otherNightReminder": "Show the finger signal (0, 1, 2) for the number of evil neighbours.",
     "reminders": [],
     "setup": false,
-    "ability": "Každou noc zjistíš, kolik z tvých dvou živých sousedů je zlých."
+    "ability": "Each night, you learn how many of your 2 alive neighbours are evil."
   },
   {
     "id": "fortuneteller",
-    "name": "Vědma",
+    "name": "Fortune Teller",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 38,
-    "firstNightReminder": "Vědma ukáže na dva hráče. Zakývej hlavou (ano, ne), pokud je některý z těchto dvou hráčů Démon.",
+    "firstNightReminder": "The Fortune Teller points to two players. Give the head signal (nod yes, shake no) for whether one of those players is the Demon. ",
     "otherNight": 54,
-    "otherNightReminder": "Vědma ukáže na dva hráče. Zakývej hlavou (ano, ne), pokud je některý z těchto dvou hráčů Démon.",
-    "reminders": ["Falešná stopa"],
+    "otherNightReminder": "The Fortune Teller points to two players. Show the head signal (nod 'yes', shake 'no') for whether one of those players is the Demon.",
+    "reminders": ["Red herring"],
     "setup": false,
-    "ability": "Každou noc zvol dva hráče: zjistíš, jestli některý z nich je Démon. Jeden z dobrých hráčů se ti jeví jako Démon."
+    "ability": "Each night, choose 2 players: you learn if either is a Demon. There is a good player that registers as a Demon to you."
   },
   {
     "id": "undertaker",
-    "name": "Hrobník",
+    "name": "Undertaker",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 55,
-    "otherNightReminder": "Pokud byl dnes popravený hráč: Ukaž Hrobníkovi token popraveného hráče.",
-    "reminders": ["Popraven"],
+    "otherNightReminder": "If a player was executed today: Show that player\u2019s character token.",
+    "reminders": ["Executed"],
     "setup": false,
-    "ability": "Každou noc* se dozvíš, která postava ten den zemřela při popravě."
+    "ability": "Each night*, you learn which character died by execution today."
   },
   {
     "id": "monk",
-    "name": "Mnich",
+    "name": "Monk",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 12,
-    "otherNightReminder": "Dříve ochráněný hráč už není chráněn. Mnich ukáže na jiného hráče, než je on. Označ si tohoto hráče jako 'Ochráněný'.",
-    "reminders": ["Ochráněný"],
+    "otherNightReminder": "The previously protected player is no longer protected. The Monk points to a player not themself. Mark that player 'Protected'.",
+    "reminders": ["Protected"],
     "setup": false,
-    "ability": "Každou noc* zvol jednoho hráče (ne sebe): tuto noc je v bezpečí před Démonem."
+    "ability": "Each night*, choose a player (not yourself): they are safe from the Demon tonight."
   },
   {
     "id": "ravenkeeper",
-    "name": "Strážkyně krkavců",
+    "name": "Ravenkeeper",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 52,
-    "otherNightReminder": "Pokud Strážkyně krkavců dnes večer zemřela: Strážkyně krkavců ukáže na hráče. Ukaž jí token tohoto hráče.",
+    "otherNightReminder": "If the Ravenkeeper died tonight: The Ravenkeeper points to a player. Show that player\u2019s character token.",
     "reminders": [],
     "setup": false,
-    "ability": "Pokud v noci zemřeš, budeš probuzen, zvolíš jednoho hráče a zjistíš jeho postavu."
+    "ability": "If you die at night, you are woken to choose a player: you learn their character."
   },
   {
     "id": "virgin",
-    "name": "Nevinná",
+    "name": "Virgin",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 0,
     "otherNightReminder": "",
-    "reminders": ["Bez schopnosti"],
+    "reminders": ["No ability"],
     "setup": false,
-    "ability": "Když tě poprvé někdo nominuje a nominujícím je Měšťan, je ihned popraven."
+    "ability": "The 1st time you are nominated, if the nominator is a Townsfolk, they are executed immediately."
   },
   {
     "id": "slayer",
-    "name": "Lovec",
+    "name": "Slayer",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 0,
     "otherNightReminder": "",
-    "reminders": ["Bez schopnosti"],
+    "reminders": ["No ability"],
     "setup": false,
-    "ability": "Jednou během celé hry ve dne veřejně zvol jednoho hráče: pokud je Démon, zemře."
+    "ability": "Once per game, during the day, publicly choose a player: if they are the Demon, they die."
   },
   {
     "id": "soldier",
-    "name": "Voják",
+    "name": "Soldier",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 0,
@@ -156,11 +156,11 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Jsi v bezpečí před Démonem."
+    "ability": "You are safe from the Demon."
   },
   {
     "id": "mayor",
-    "name": "Starosta",
+    "name": "Mayor",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 0,
@@ -169,24 +169,24 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Jsou-li naživu pouze tři hráči a nedojde k popravě, tvůj tým vítězí. Pokud zemřeš během noci, může místo tebe zemřít jiný hráč."
+    "ability": "If only 3 players live & no execution occurs, your team wins. If you die at night, another player might die instead."
   },
   {
     "id": "butler",
-    "name": "Sluha",
+    "name": "Butler",
     "edition": "tb",
     "team": "outsider",
     "firstNight": 39,
-    "firstNightReminder": "Sluha ukáže na hráče. Označ si tohoto hráče jako 'Pán'.",
+    "firstNightReminder": "The Butler points to a player. Mark that player as 'Master'.",
     "otherNight": 67,
-    "otherNightReminder": "Sluha ukáže na hráče. Označ si tohoto hráče jako 'Pán'.",
-    "reminders": ["Pán"],
+    "otherNightReminder": "The Butler points to a player. Mark that player as 'Master'.",
+    "reminders": ["Master"],
     "setup": false,
-    "ability": "Každou noc zvol jednoho hráče (ne sebe): zítra můžeš hlasovat pouze tehdy, pokud hlasuje i tento hráč."
+    "ability": "Each night, choose a player (not yourself): tomorrow, you may only vote if they are voting too."
   },
   {
     "id": "drunk",
-    "name": "Pijan",
+    "name": "Drunk",
     "edition": "tb",
     "team": "outsider",
     "firstNight": 0,
@@ -194,13 +194,13 @@
     "otherNight": 0,
     "otherNightReminder": "",
     "reminders": [],
-    "remindersGlobal": ["Pijan"],
+    "remindersGlobal": ["Drunk"],
     "setup": true,
-    "ability": "Nevíš o tom, že jsi Pijan. Máš za to, že jsi Vesničan."
+    "ability": "You do not know you are the Drunk. You think you are a Townsfolk character, but you are not."
   },
   {
     "id": "recluse",
-    "name": "Poustevník",
+    "name": "Recluse",
     "edition": "tb",
     "team": "outsider",
     "firstNight": 0,
@@ -209,11 +209,11 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Můžeš se jevit jako zlý (jako Poskok nebo Démon), a to i poté, co zemřeš."
+    "ability": "You might register as evil & as a Minion or Demon, even if dead."
   },
   {
     "id": "saint",
-    "name": "Světec",
+    "name": "Saint",
     "edition": "tb",
     "team": "outsider",
     "firstNight": 0,
@@ -222,46 +222,46 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Pokud zemřeš při popravě, tvůj tým prohrává."
+    "ability": "If you die by execution, your team loses."
   },
   {
     "id": "poisoner",
-    "name": "Travič",
+    "name": "Poisoner",
     "edition": "tb",
     "team": "minion",
     "firstNight": 17,
-    "firstNightReminder": "Travič ukáže na hráče. Tento hráč je otrávený.",
+    "firstNightReminder": "The Poisoner points to a player. That player is poisoned.",
     "otherNight": 7,
-    "otherNightReminder": "Dříve otrávený hráč již není otrávený. Travič ukáže na hráče. Tento hráč je otrávený.",
-    "reminders": ["Otrávený"],
+    "otherNightReminder": "The previously poisoned player is no longer poisoned. The Poisoner points to a player. That player is poisoned.",
+    "reminders": ["Poisoned"],
     "setup": false,
-    "ability": "Každou noc zvol jednoho hráče: dnes v noci a zítra ve dne bude otráven."
+    "ability": "Each night, choose a player: they are poisoned tonight and tomorrow day."
   },
   {
     "id": "spy",
-    "name": "Špeh",
+    "name": "Spy",
     "edition": "tb",
     "team": "minion",
     "firstNight": 49,
-    "firstNightReminder": "Ukaž Grimoár Špehovi na jak dlouho si bude přát.",
+    "firstNightReminder": "Show the Grimoire to the Spy for as long as they need.",
     "otherNight": 68,
-    "otherNightReminder": "Ukaž Grimoár Špehovi na jak dlouho si bude přát.",
+    "otherNightReminder": "Show the Grimoire to the Spy for as long as they need.",
     "reminders": [],
     "setup": false,
-    "ability": "Každou noc si prohlédni grimoár. Můžeš se jevit jako dobrý (jako Vesničan nebo Podivín), a to i poté, co zemřeš."
+    "ability": "Each night, you see the Grimoire. You might register as good & as a Townsfolk or Outsider, even if dead."
   },
   {
     "id": "scarletwoman",
-    "name": "Šarlatová žena",
+    "name": "Scarlet Woman",
     "edition": "tb",
     "team": "minion",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 19,
-    "otherNightReminder": "Pokud se dnes Šarlatová žena stane Démonem: Ukaž jí 'Ty jsi' kartu, poté token Démona.",
-    "reminders": ["Démon"],
+    "otherNightReminder": "If the Scarlet Woman became the Demon today: Show the 'You are' card, then the demon token.",
+    "reminders": ["Demon"],
     "setup": false,
-    "ability": "Pokud je ve hře pět a více živých hráčů a Démon zemře, stáváš se Démonem. (Poutníci se nepočítají)"
+    "ability": "If there are 5 or more players alive & the Demon dies, you become the Demon. (Travellers don\u2019t count)"
   },
   {
     "id": "baron",
@@ -274,20 +274,20 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": true,
-    "ability": "Ve hře jsou Podivíni navíc. [+2 Podivíni]"
+    "ability": "There are extra Outsiders in play. [+2 Outsiders]"
   },
   {
     "id": "imp",
-    "name": "Čert",
+    "name": "Imp",
     "edition": "tb",
     "team": "demon",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 24,
-    "otherNightReminder": "Čert ukáže na hráče. Tento hráč zemře. Pokud Čert vybere sebe: Vyměň postavu 1 živého poskoka za nadbytečný token Čerta. Ukaž mu 'Ty jsi' kartu, poté token Čerta.",
-    "reminders": ["Mrtvý"],
+    "otherNightReminder": "The Imp points to a player. That player dies. If the Imp chose themselves: Replace the character of 1 alive minion with a spare Imp token. Show the 'You are' card, then the Imp token.",
+    "reminders": ["Dead"],
     "setup": false,
-    "ability": "Každou noc* zvol jednoho hráče, ten zemře. Pokud tímto způsobem usmrtíš sebe, Čertem se stane Poskok."
+    "ability": "Each night*, choose a player: they die. If you kill yourself this way, a Minion becomes the Imp."
   },
   {
     "id": "bureaucrat",
@@ -356,16 +356,16 @@
   },
   {
     "id": "grandmother",
-    "name": "Babička",
+    "name": "Grandmother",
     "edition": "bmr",
     "team": "townsfolk",
     "firstNight": 40,
-    "firstNightReminder": "Ukaž jí označený token postavy. Ukaž na označeného hráče.",
+    "firstNightReminder": "Show the marked character token. Point to the marked player.",
     "otherNight": 51,
-    "otherNightReminder": "Pokud bylo vnouče zabito Démonem tuto noc: Babička umírá.",
-    "reminders": ["Vnouče"],
+    "otherNightReminder": "If the Grandmother\u2019s grandchild was killed by the Demon tonight: The Grandmother dies.",
+    "reminders": ["Grandchild"],
     "setup": false,
-    "ability": "Na začátku hry zjistíš jednoho dobrého hráče a jeho postavu. Pokud Démon zabije tuto postavu, umíráš také."
+    "ability": "You start knowing a good player & their character. If the Demon kills them, you die too."
   },
   {
     "id": "sailor",
@@ -408,17 +408,17 @@
   },
   {
     "id": "innkeeper",
-    "name": "Hospodský",
+    "name": "Innkeeper",
     "edition": "bmr",
     "team": "townsfolk",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 9,
-    "otherNightReminder": "Předchozí ochráněný a ožralí hráči ztrácí tyto označení. Hospodský ukáže na dva hráče. Tito hráči jsou ochránění. Jeden je ožralý.",
-    "reminders": ["Ochráněný",
-        "Ožralý"],
+    "otherNightReminder": "The previously protected and drunk players lose those markers. The Innkeeper points to two players. Those players are protected. One is drunk.",
+    "reminders": ["Protected",
+        "Drunk"],
     "setup": false,
-    "ability": "Každou noc* vyber 2 hráče: tento večer nemůžou zemřít, ale jeden je ožralý do soumraku."
+    "ability": "Each night*, choose 2 players: they can't die tonight, but 1 is drunk until dusk."
   },
   {
     "id": "gambler",
@@ -464,17 +464,17 @@
   },
   {
     "id": "professor",
-    "name": "Profesor",
+    "name": "Professor",
     "edition": "bmr",
     "team": "townsfolk",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 43,
-    "otherNightReminder": "Pokud profesor ještě nepoužil svoji schopnost: Profesor buď zakýve svou hlavou 'ne', nebo ukáže na hráče. Pokud je tento hráč měšťan, je od teď zase živý.",
-    "reminders": ["Živý",
-        "Bez schopnosti"],
+    "otherNightReminder": "If the Professor has not used their ability: The Professor either shakes their head no, or points to a player. If that player is a Townsfolk, they are now alive.",
+    "reminders": ["Alive",
+        "No ability"],
     "setup": false,
-    "ability": "Jednou za hru v noci* si zvol mrtvého hráče: pokud je tento hráč měšťan, je zase živý."
+    "ability": "Once per game, at night*, choose a dead player: if they are a Townsfolk, they are resurrected."
   },
   {
     "id": "minstrel",
@@ -569,32 +569,32 @@
   },
   {
     "id": "lunatic",
-    "name": "Blázen",
+    "name": "Lunatic",
     "edition": "bmr",
     "team": "outsider",
     "firstNight": 8,
-    "firstNightReminder": "Při 7 a více hráčích: Ukaž šílenci libovolný počet 'Poskoků', odpovídající počtu Poskoků ve hře. Ukaž 3 tokeny libvolných dobrých postav. Pokud token získaný Šílencem je Démon, který by se večer probudil: Dovol Šílenci udělat akce tohoto Démona. Polož jeho 'útočné' značky. Probuď Démona. Ukaž Démonovi reálný token postavy. Ukaž mu hráče s rolí Šílence. Pokud Šílenec zaútočil na hráče: Ukaž pravému Démonovi každého označeného hráče. Odeber všechny Šílencovi 'útočné' značky.",
+    "firstNightReminder": "If 7 or more players: Show the Lunatic a number of arbitrary 'Minions', players equal to the number of Minions in play. Show 3 character tokens of arbitrary good characters. If the token received by the Lunatic is a Demon that would wake tonight: Allow the Lunatic to do the Demon actions. Place their 'attack' markers. Wake the Demon. Show the Demon\u2019s real character token. Show them the Lunatic player. If the Lunatic attacked players: Show the real demon each marked player. Remove any Lunatic 'attack' markers.",
     "otherNight": 20,
-    "otherNightReminder": "Dovol Šílenci vykonat akce jeho Démona. Polož jeho 'útočné' značky. Pokud šílenec vybral hráče: Probuď Démona. Ukaž mu 'útočné' značky a poté ukaž na označené hráče. Odeber všechyn Šílencovy 'útočné' značky.",
-    "reminders": ["Útok 1",
-        "Útok 2",
-        "Útok 3"],
+    "otherNightReminder": "Allow the Lunatic to do the actions of the Demon. Place their 'attack' markers. If the Lunatic selected players: Wake the Demon. Show the 'attack' marker, then point to each marked player. Remove any Lunatic 'attack' markers.",
+    "reminders": ["Attack 1",
+        "Attack 2",
+        "Attack 3"],
     "setup": false,
-    "ability": "Myslíš si, že jsi Démon, ale nejsi. Démon ví, kdo jsi a koho vybíráš v noci."
+    "ability": "You think you are a Demon, but you are not. The Demon knows who you are & who you choose at night."
   },
   {
     "id": "godfather",
-    "name": "Kmotr",
+    "name": "Godfather",
     "edition": "bmr",
     "team": "minion",
     "firstNight": 21,
-    "firstNightReminder": "Ukaž Kmotrovi token každého Podívína aktuálně ve hře.",
+    "firstNightReminder": "Show each of the Outsider tokens in play.",
     "otherNight": 37,
-    "otherNightReminder": "Pokud dnes zemřel Podivín: Kmotr ukáže na hráče. Tento hráč zemře.",
-    "reminders": ["Dnes zemřel",
-        "Mrtvý"],
+    "otherNightReminder": "If an Outsider died today: The Godfather points to a player. That player dies.",
+    "reminders": ["Died today",
+        "Dead"],
     "setup": true,
-    "ability": "Na začátku hry se dozvíš, kteří Podivíni jsou ve hře. Pokud dnes 1 zemřel, vyber si večer hráče: ten zemře. [\u22121 nebo +1 Podivínů]"
+    "ability": "You start knowing which Outsiders are in play. If 1 died today, choose a player tonight: they die. [\u22121 or +1 Outsider]"
   },
   {
     "id": "devilsadvocate",
@@ -760,16 +760,16 @@
   },
   {
     "id": "clockmaker",
-    "name": "Hodinář",
+    "name": "Clockmaker",
     "edition": "snv",
     "team": "townsfolk",
     "firstNight": 41,
-    "firstNightReminder": "Ukaž na ruce počet kroků Démona od jeho nejbližšího Poskoka (1, 2, 3, \u2026).",
+    "firstNightReminder": "Show the hand signal for the number (1, 2, 3, etc.) of places from Demon to closest Minion.",
     "otherNight": 0,
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Na začátku hry zjistíš, kolik kroků je Démon od jeho nejbližšího Poskoka."
+    "ability": "You start knowing how many steps from the Demon to its nearest Minion."
   },
   {
     "id": "dreamer",
@@ -786,16 +786,16 @@
   },
   {
     "id": "snakecharmer",
-    "name": "Zaříkávač hadů",
+    "name": "Snake Charmer",
     "edition": "snv",
     "team": "townsfolk",
     "firstNight": 20,
-    "firstNightReminder": "Zaříkávač hadů ukáže na hráče. Pokud je tento hráč Démon: prohoď postavy i morální orientace Démona a Zaříkávače hadů. Probuď každého hráče, aby jsi ho informoval ohledně jeho nové role a morální orientace. Nový Zaříkávač hadů je otrávený.",
+    "firstNightReminder": "The Snake Charmer points to a player. If that player is the Demon: swap the Demon and Snake Charmer character and alignments. Wake each player to inform them of their new role and alignment. The new Snake Charmer is poisoned.",
     "otherNight": 11,
-    "otherNightReminder": "Zaříkávač hadů ukáže na hráče. Pokud je tento hráč Démon: prohoď postavy i morální orientace Démona a Zaříkávače hadů. Probuď každého hráče, aby jsi ho informoval ohledně jeho nové role a morální orientace. Nový Zaříkávač hadů je otrávený.",
-    "reminders": ["Otrávený"],
+    "otherNightReminder": "The Snake Charmer points to a player. If that player is the Demon: swap the Demon and Snake Charmer character and alignments. Wake each player to inform them of their new role and alignment. The new Snake Charmer is poisoned.",
+    "reminders": ["Poisoned"],
     "setup": false,
-    "ability": "Každou noc si vyber živého hráče: Pokud zvolíš Démona, prohoď si s ním postavu i morální orientaci. Zároveň ho tím otrávíš."
+    "ability": "Each night, choose an alive player: a chosen Demon swaps characters & alignments with you & is then poisoned."
   },
   {
     "id": "mathematician",

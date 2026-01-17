@@ -1,7 +1,7 @@
 <template>
   <Modal v-if="modals.role && availableRoles.length" @close="close">
     <h3>
-      Choose a new character for
+      Vyber novou postavu pro
       {{
         playerIndex >= 0 && players.length
           ? players[playerIndex].name

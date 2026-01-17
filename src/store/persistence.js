@@ -1,7 +1,7 @@
 module.exports = store => {
   const updatePagetitle = isPublic =>
-    (document.title = `Blood on the Clocktower ${
-      isPublic ? "Town Square" : "Grimoire"
+    (document.title = `Krvavá hodina odbila ${
+      isPublic ? "náměstí" : "Grimoár"
     }`);
 
   // initialize data

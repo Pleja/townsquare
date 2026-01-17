@@ -1,7 +1,7 @@
 <template>
   <Modal class="editions" v-if="modals.edition" @close="toggleModal('edition')">
     <div v-if="!isCustom">
-      <h3>Select an edition:</h3>
+      <h3>Vyber si edici:</h3>
       <ul class="editions">
         <li
           v-for="edition in editions"
@@ -24,29 +24,28 @@
             backgroundImage: `url(${require('../../assets/editions/custom.png')})`
           }"
         >
-          Custom Script / Characters
+          Vlastní Skript / Postavy
         </li>
       </ul>
     </div>
     <div class="custom" v-else>
-      <h3>Load custom script / characters</h3>
-      To play with a custom script, you need to select the characters you want
-      to play with in the official
+      <h3>Načti vlasstní skript / postavy</h3>
+      Pro hru s vlastním skriptem si musíš vybrat postavy se kterými chceš hrát z oficiálního
       <a href="https://script.bloodontheclocktower.com/" target="_blank"
-        >Script Tool</a
+        >Skriptovacího nástroje</a
       >
-      and then upload the generated "custom-list.json" either directly here or
-      provide a URL to such a hosted JSON file.<br />
+      a potom nahrát vygenerovaný "custom-list.json" buď přímo zde,
+      nebo dodat URL na hostovaný JSON soubor.<br />
       <br />
-      To play with custom characters, please read
+      Pro hraní s vlastními postavami si prosím přečti
       <a
         href="https://github.com/bra1n/townsquare#custom-characters"
         target="_blank"
-        >the documentation</a
+        >dokumentaci</a
       >
-      on how to write a custom character definition file.
-      <b>Only load custom JSON files from sources that you trust!</b>
-      <h3>Some popular custom scripts:</h3>
+      jak napsat definici vlastní postavy.
+      <b>Pouze nahrávej vlastní JSON soubory, kterým důvěřuješ!</b>
+      <h3>Některé populární vlastní skripty:</h3>
       <ul class="scripts">
         <li
           v-for="(script, index) in scripts"
@@ -64,16 +63,16 @@
       />
       <div class="button-group">
         <div class="button" @click="openUpload">
-          <font-awesome-icon icon="file-upload" /> Upload JSON
+          <font-awesome-icon icon="file-upload" /> Nahrát JSON
         </div>
         <div class="button" @click="promptURL">
-          <font-awesome-icon icon="link" /> Enter URL
+          <font-awesome-icon icon="link" /> Zadat URL
         </div>
         <div class="button" @click="readFromClipboard">
-          <font-awesome-icon icon="clipboard" /> Use JSON from Clipboard
+          <font-awesome-icon icon="clipboard" /> Použit JSON z Clipboard
         </div>
         <div class="button" @click="isCustom = false">
-          <font-awesome-icon icon="undo" /> Back
+          <font-awesome-icon icon="undo" /> Zpátky
         </div>
       </div>
     </div>
@@ -135,7 +134,7 @@ export default {
             const roles = JSON.parse(reader.result);
             this.parseRoles(roles);
           } catch (e) {
-            alert("Error reading custom script: " + e.message);
+            alert("Chyba čtení vlastního skriptu: " + e.message);
           }
           this.$refs.upload.value = "";
         });
@@ -143,7 +142,7 @@ export default {
       }
     },
     promptURL() {
-      const url = prompt("Enter URL to a custom-script.json file");
+      const url = prompt("Zadej URL k custom-script.json souboru");
       if (url) {
         this.handleURL(url);
       }
@@ -155,7 +154,7 @@ export default {
           const script = await res.json();
           this.parseRoles(script);
         } catch (e) {
-          alert("Error loading custom script: " + e.message);
+          alert("Chyba načítání vlastního skriptu: " + e.message);
         }
       }
     },
@@ -165,7 +164,7 @@ export default {
         const roles = JSON.parse(text);
         this.parseRoles(roles);
       } catch (e) {
-        alert("Error reading custom script: " + e.message);
+        alert("Chyba načítání vlastního skriptu: " + e.message);
       }
     },
     parseRoles(roles) {

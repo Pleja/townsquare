@@ -8,12 +8,12 @@
       @click="toggleModal('nightOrder')"
       icon="cloud-moon"
       class="toggle"
-      title="Show Night Order"
+      title="Zobraz pořadí noci"
     />
     <h3>
-      Character Reference
+      Reference postav
       <font-awesome-icon icon="address-card" />
-      {{ edition.name || "Custom Script" }}
+      {{ edition.name || "Vlastní Skript" }}
     </h3>
     <div
       v-for="(teamRoles, team) in rolesGrouped"
@@ -21,7 +21,7 @@
       :class="['team', team]"
     >
       <aside>
-        <h4>{{ team }}</h4>
+        <h4>{{ team === 'townsfolk' ? 'Měšťané' :''}}{{ team === 'outsider' ? 'Podivíni' :''}}{{ team === 'minion' ? 'Poskoci' :''}}{{ team === 'demon' ? 'Démoni' :''}}</h4>
       </aside>
       <ul>
         <li v-for="role in teamRoles" :class="[team]" :key="role.id">
@@ -53,7 +53,7 @@
 
     <div class="team jinxed" v-if="jinxed.length">
       <aside>
-        <h4>Jinxed</h4>
+        <h4>Prokletý</h4>
       </aside>
       <ul>
         <li v-for="(jinx, index) in jinxed" :key="index">
@@ -235,6 +235,7 @@ h3 {
     align-content: center;
     overflow: hidden;
     text-shadow: 0 0 4px black;
+    min-height: 5.5rem;
   }
 
   h4 {
@@ -243,6 +244,7 @@ h3 {
     transform: rotate(90deg);
     transform-origin: center;
     font-size: 80%;
+    font-family: Segoe Print;
   }
 
   &.jinxed {
