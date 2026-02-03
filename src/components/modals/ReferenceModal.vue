@@ -21,7 +21,7 @@
       :class="['team', team]"
     >
       <aside>
-        <h4>{{ team }}</h4>
+        <h4>{{ team === "townsfolk" ? "Měšťané" : "" || team === "outsider" ? "podivíni" : "" || team === "minion" ? "poskoci" : "" || team === "demon" ? "démoni" : "" }}</h4>
       </aside>
       <ul>
         <li v-for="role in teamRoles" :class="[team]" :key="role.id">
@@ -245,6 +245,7 @@ h3 {
     transform: rotate(90deg);
     transform-origin: center;
     font-size: 80%;
+    font-family: 'Segoe Print';
   }
 
   &.jinxed {

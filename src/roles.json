@@ -414,11 +414,11 @@
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 9,
-    "otherNightReminder": "Předchozí ochráněný a ožralí hráči ztrácí tyto označení. Hospodský ukáže na dva hráče. Tito hráči jsou ochránění. Jeden je ožralý.",
+    "otherNightReminder": "Předchozí ochráněný a opilí hráči ztrácí tyto označení. Hospodský ukáže na dva hráče. Tito hráči jsou ochránění. Jeden je opilý.",
     "reminders": ["Ochráněný",
-        "Ožralý"],
+        "Opilý"],
     "setup": false,
-    "ability": "Každou noc* vyber 2 hráče: tento večer nemůžou zemřít, ale jeden je ožralý do soumraku."
+    "ability": "Každou noc* vyber 2 hráče: tento večer nemůžou zemřít, ale jeden je opilý do soumraku."
   },
   {
     "id": "gambler",
