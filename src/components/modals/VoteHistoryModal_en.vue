@@ -8,11 +8,11 @@
       @click="clearVoteHistory"
       icon="trash-alt"
       class="clear"
-      title="Vymazat historii hlasování"
+      title="Clear vote history"
       v-if="session.isSpectator"
     />
 
-    <h3>Historie hlasování</h3>
+    <h3>Vote history</h3>
 
     <template v-if="!session.isSpectator">
       <div class="options">
@@ -23,26 +23,26 @@
               session.isVoteHistoryAllowed ? 'check-square' : 'square'
             ]"
           />
-          Přístupné hráčům
+          Accessible to players
         </div>
         <div class="option" @click="clearVoteHistory">
           <font-awesome-icon icon="trash-alt" />
-          Vymazat všem
+          Clear for everyone
         </div>
       </div>
     </template>
     <table>
       <thead>
         <tr>
-          <td>Čas</td>
-          <td>Nominující</td>
-          <td>Nominovaný</td>
-          <td>Typ</td>
-          <td>Hlasů</td>
-          <td>Většina</td>
+          <td>Time</td>
+          <td>Nominator</td>
+          <td>Nominee</td>
+          <td>Type</td>
+          <td>Votes</td>
+          <td>Majority</td>
           <td>
             <font-awesome-icon icon="user-friends" />
-            Hlasující
+            Voters
           </td>
         </tr>
       </thead>

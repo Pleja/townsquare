@@ -176,6 +176,10 @@ class LiveSession {
         if (!this._isSpectator) return;
         this._store.commit("toggleNight", params);
         break;
+      case "isCallingPlayers":
+        if (!this._isSpectator) return;
+        this._store.commit("toggleCallPlayers", params);
+        break;
       case "isVoteHistoryAllowed":
         if (!this._isSpectator) return;
         this._store.commit("session/setVoteHistoryAllowed", params);
@@ -277,6 +281,7 @@ class LiveSession {
       this._sendDirect(playerId, "gs", {
         gamestate: this._gamestate,
         isNight: grimoire.isNight,
+        isCallingPlayers: grimoire.isCallingPlayers,
         isVoteHistoryAllowed: session.isVoteHistoryAllowed,
         nomination: session.nomination,
         votingSpeed: session.votingSpeed,
@@ -704,6 +709,14 @@ class LiveSession {
   }
 
   /**
+   * Send the isCallingPlayers status. ST only
+   */
+  setIsCallingPlayers() {
+    if (this._isSpectator) return;
+    this._send("isCallingPlayers", this._store.state.grimoire.isCallingPlayers);
+  }
+
+  /**
    * Send the isVoteHistoryAllowed state. ST only
    */
   setVoteHistoryAllowed() {
@@ -883,6 +896,9 @@ export default store => {
         break;
       case "toggleNight":
         session.setIsNight();
+        break;
+      case "toggleCallPlayers":
+        session.setIsCallingPlayers();
         break;
       case "setEdition":
         session.sendEdition();

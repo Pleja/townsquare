@@ -5,8 +5,8 @@
       v-show="session.voteHistory.length && session.sessionId"
       @click="toggleModal('voteHistory')"
       :title="
-        `${session.voteHistory.length} ${
-          session.voteHistory.length == 1 ? 'nedávná nominace' : 'nedávné nominace'
+        `${session.voteHistory.length} recent ${
+          session.voteHistory.length == 1 ? 'nomination' : 'nominations'
         }`
       "
     >
@@ -22,8 +22,8 @@
       v-if="session.sessionId"
       @click="leaveSession"
       :title="
-        `${session.playerCount} ostatní hráči v této relaci${
-          session.ping ? ' (' + session.ping + 'ms zpoždění)' : ''
+        `${session.playerCount} other players in this session${
+          session.ping ? ' (' + session.ping + 'ms latency)' : ''
         }`
       "
     >
@@ -47,30 +47,19 @@
 
         <template v-if="tab === 'grimoire'">
           <!-- Grimoire -->
-          <li class="headline">Grimoár</li>
-          <li @click="toggleCallPlayers" v-if="!session.isSpectator">
-            Přivolat hráče (WIP)
-            <em>
-              <font-awesome-icon
-                :icon="[
-                  'fas',
-                  grimoire.isCallingPlayers ? 'check-square' : 'square'
-                ]"
-              />
-            </em>
-          </li>
+          <li class="headline">Grimoire</li>
           <li @click="toggleGrimoire" v-if="players.length">
-            <template v-if="!grimoire.isPublic">Skrýt</template>
-            <template v-if="grimoire.isPublic">Zobrazit</template>
+            <template v-if="!grimoire.isPublic">Hide</template>
+            <template v-if="grimoire.isPublic">Show</template>
             <em>[G]</em>
           </li>
           <li @click="toggleNight" v-if="!session.isSpectator">
-            <template v-if="!grimoire.isNight">Přepnout na noc</template>
-            <template v-if="grimoire.isNight">Přepnout na den</template>
+            <template v-if="!grimoire.isNight">Switch to Night</template>
+            <template v-if="grimoire.isNight">Switch to Day</template>
             <em>[S]</em>
           </li>
           <li @click="toggleNightOrder" v-if="players.length">
-            Noční pořadí
+            Night order
             <em>
               <font-awesome-icon
                 :icon="[
@@ -81,7 +70,7 @@
             </em>
           </li>
           <li v-if="players.length">
-            Přiblížení
+            Zoom
             <em>
               <font-awesome-icon
                 @click="setZoom(grimoire.zoom - 1)"
@@ -95,11 +84,11 @@
             </em>
           </li>
           <li @click="setBackground">
-            Obrázek pozadí
+            Background image
             <em><font-awesome-icon icon="image"/></em>
           </li>
           <li v-if="!edition.isOfficial" @click="imageOptIn">
-            <small>Zobrazit vlastní obrázky</small>
+            <small>Show Custom Images</small>
             <em
               ><font-awesome-icon
                 :icon="[
@@ -109,14 +98,14 @@
             /></em>
           </li>
           <li @click="toggleStatic">
-            Vypnout animace
+            Disable Animations
             <em
               ><font-awesome-icon
                 :icon="['fas', grimoire.isStatic ? 'check-square' : 'square']"
             /></em>
           </li>
           <li @click="toggleMuted">
-            Ztlumit zvuky
+            Mute Sounds
             <em
               ><font-awesome-icon
                 :icon="['fas', grimoire.isMuted ? 'volume-mute' : 'volume-up']"
@@ -130,33 +119,33 @@
             {{ session.isSpectator ? "Playing" : "Hosting" }}
           </li>
           <li class="headline" v-else>
-            Online relace
+            Live Session
           </li>
           <template v-if="!session.sessionId">
-            <li @click="hostSession">Host (Vypravěč)<em>[H]</em></li>
-            <li @click="joinSession">Připojit (Hráč)<em>[J]</em></li>
+            <li @click="hostSession">Host (Storyteller)<em>[H]</em></li>
+            <li @click="joinSession">Join (Player)<em>[J]</em></li>
           </template>
           <template v-else>
             <li v-if="session.ping">
-              Ping vůči {{ session.isSpectator ? "vypravěči" : "hráčů" }}
+              Delay to {{ session.isSpectator ? "host" : "players" }}
               <em>{{ session.ping }}ms</em>
             </li>
             <li @click="copySessionUrl">
-              Zkopírovat kód připojení
+              Copy player link
               <em><font-awesome-icon icon="copy"/></em>
             </li>
             <li v-if="!session.isSpectator" @click="distributeRoles">
-              Poslat postavy
+              Send Characters
               <em><font-awesome-icon icon="theater-masks"/></em>
             </li>
             <li
               v-if="session.voteHistory.length || !session.isSpectator"
               @click="toggleModal('voteHistory')"
             >
-              Historie hlasování<em>[V]</em>
+              Vote history<em>[V]</em>
             </li>
             <li @click="leaveSession">
-              Opustit relaci
+              Leave Session
               <em>{{ session.sessionId }}</em>
             </li>
           </template>
@@ -164,60 +153,70 @@
 
         <template v-if="tab === 'players' && !session.isSpectator">
           <!-- Users -->
-          <li class="headline">Hráči</li>
-          <li @click="addPlayer" v-if="players.length < 20">Přidat<em>[A]</em></li>
+          <li class="headline">Players</li>
+          <li @click="addPlayer" v-if="players.length < 20">Add<em>[A]</em></li>
           <li @click="randomizeSeatings" v-if="players.length > 2">
-            Náhodně
+            Randomize
             <em><font-awesome-icon icon="dice"/></em>
           </li>
           <li @click="clearPlayers" v-if="players.length">
-            Odebrat všechny
+            Remove all
             <em><font-awesome-icon icon="trash-alt"/></em>
           </li>
         </template>
 
         <template v-if="tab === 'characters'">
           <!-- Characters -->
-          <li class="headline">Postavy</li>
+          <li class="headline">Characters</li>
           <li v-if="!session.isSpectator" @click="toggleModal('edition')">
-            Vybrat edici
+            Select Edition
             <em>[E]</em>
           </li>
           <li
             @click="toggleModal('roles')"
             v-if="!session.isSpectator && players.length > 4"
           >
-            Vybrat a Přiřadit
+            Choose & Assign
             <em>[C]</em>
           </li>
           <li v-if="!session.isSpectator" @click="toggleModal('fabled')">
-            Přidat Proslulého
+            Add Fabled
             <em><font-awesome-icon icon="dragon"/></em>
           </li>
           <li @click="clearRoles" v-if="players.length">
-            Odebrat všem
+            Remove all
             <em><font-awesome-icon icon="trash-alt"/></em>
           </li>
         </template>
 
         <template v-if="tab === 'help'">
           <!-- Help -->
-          <li class="headline">Nápověda</li>
+          <li class="headline">Help</li>
           <li @click="toggleModal('reference')">
-            Tabulka referencí
+            Reference Sheet
             <em>[R]</em>
           </li>
           <li @click="toggleModal('nightOrder')">
-            Tabulka nocí
+            Night Order Sheet
             <em>[N]</em>
           </li>
           <li @click="toggleModal('gameState')">
-            Stav hry v JSON
+            Game State JSON
             <em><font-awesome-icon icon="file-code"/></em>
           </li>
           <li>
+            <a href="https://discord.gg/Gd7ybwWbFk" target="_blank">
+              Join Discord
+            </a>
+            <em>
+              <a href="https://discord.gg/Gd7ybwWbFk" target="_blank">
+                <font-awesome-icon :icon="['fab', 'discord']" />
+              </a>
+            </em>
+          </li>
+          <li>
             <a href="https://github.com/bra1n/townsquare" target="_blank">
-              Originální kód
+              Source code
             </a>
             <em>
               <a href="https://github.com/bra1n/townsquare" target="_blank">
@@ -246,7 +245,7 @@ export default {
   },
   methods: {
     setBackground() {
-      const background = prompt("Zadej URL vlastního obrázku");
+      const background = prompt("Enter custom background URL");
       if (background || background === "") {
         this.$store.commit("setBackground", background);
       }
@@ -254,7 +253,7 @@ export default {
     hostSession() {
       if (this.session.sessionId) return;
       const sessionId = prompt(
-        "Zadej číslo kanálu / jméno pro tvoji relaci",
+        "Enter a channel number / name for your session",
         Math.round(Math.random() * 10000)
       );
       if (sessionId) {
@@ -272,7 +271,7 @@ export default {
     distributeRoles() {
       if (this.session.isSpectator) return;
       const popup =
-        "Chceš poslat přiřazené postavy všem SEDÍCÍM hráčům?";
+        "Do you want to distribute assigned characters to all SEATED players?";
       if (confirm(popup)) {
         this.$store.commit("session/distributeRoles", true);
         setTimeout(
@@ -285,7 +284,7 @@ export default {
     },
     imageOptIn() {
       const popup =
-        "Jsi si jistý, že chcete povolit vlastní obrázky? Zákeřný autor skriptu tímto způsobem může zjistit tvoji IP adresu.";
+        "Are you sure you want to allow custom images? A malicious script file author might track your IP address this way.";
       if (this.grimoire.isImageOptIn || confirm(popup)) {
         this.toggleImageOptIn();
       }
@@ -293,7 +292,7 @@ export default {
     joinSession() {
       if (this.session.sessionId) return this.leaveSession();
       let sessionId = prompt(
-        "Zadej číslo kanálu / jméno relace, ke které se chcete připojit"
+        "Enter the channel number / name of the session you want to join"
       );
       if (sessionId.match(/^https?:\/\//i)) {
         sessionId = sessionId.split("#").pop();
@@ -306,7 +305,7 @@ export default {
       }
     },
     leaveSession() {
-      if (confirm("Jsi si jistý, že chceš opustit aktivní hru?")) {
+      if (confirm("Are you sure you want to leave the active live game?")) {
         this.$store.commit("session/setSpectator", false);
         this.$store.commit("session/setSessionId", "");
       }
@@ -314,20 +313,20 @@ export default {
     addPlayer() {
       if (this.session.isSpectator) return;
       if (this.players.length >= 20) return;
-      const name = prompt("Jméno hráče");
+      const name = prompt("Player name");
       if (name) {
         this.$store.commit("players/add", name);
       }
     },
     randomizeSeatings() {
       if (this.session.isSpectator) return;
-      if (confirm("Jsi si jistý že chceš náhodné rozsazení?")) {
+      if (confirm("Are you sure you want to randomize seatings?")) {
         this.$store.dispatch("players/randomize");
       }
     },
     clearPlayers() {
       if (this.session.isSpectator) return;
-      if (confirm("Jsi si jistý, že chceš odebrat všechny hráče?")) {
+      if (confirm("Are you sure you want to remove all players?")) {
         // abort vote if in progress
         if (this.session.nomination) {
           this.$store.commit("session/nomination");
@@ -336,7 +335,7 @@ export default {
       }
     },
     clearRoles() {
-      if (confirm("Jsi si jistý, že chceš odebrat všechny role hráčů?")) {
+      if (confirm("Are you sure you want to remove all player roles?")) {
         this.$store.dispatch("players/clearRoles");
       }
     },
@@ -346,16 +345,12 @@ export default {
         this.$store.commit("session/setMarkedPlayer", -1);
       }
     },
-    toggleCallPlayers() {
-      this.$store.commit("toggleCallPlayers");
-    },
     ...mapMutations([
       "toggleGrimoire",
       "toggleMenu",
       "toggleImageOptIn",
       "toggleMuted",
       "toggleNightOrder",
-      "toggleCallPlayers",
       "toggleStatic",
       "setZoom",
       "toggleModal"

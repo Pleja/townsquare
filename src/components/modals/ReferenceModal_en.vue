@@ -8,10 +8,10 @@
       @click="toggleModal('nightOrder')"
       icon="cloud-moon"
       class="toggle"
-      title="Zobraz pořadí noci"
+      title="Show Night Order"
     />
     <h3>
-      Reference postav
+      Character Reference
       <font-awesome-icon icon="address-card" />
       {{ edition.name || "Custom Script" }}
     </h3>
@@ -53,7 +53,7 @@
 
     <div class="team jinxed" v-if="jinxed.length">
       <aside>
-        <h4>Prokletý</h4>
+        <h4>Jinxed</h4>
       </aside>
       <ul>
         <li v-for="(jinx, index) in jinxed" :key="index">
@@ -227,7 +227,6 @@ h3 {
   }
   aside {
     width: 30px;
-    min-height: 100px;
     display: flex;
     flex-grow: 0;
     flex-shrink: 0;
@@ -236,7 +235,6 @@ h3 {
     align-content: center;
     overflow: hidden;
     text-shadow: 0 0 4px black;
-    min-height: 5.5rem;
   }
 
   h4 {

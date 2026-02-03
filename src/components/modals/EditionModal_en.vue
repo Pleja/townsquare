@@ -24,7 +24,7 @@
             backgroundImage: `url(${require('../../assets/editions/custom.png')})`
           }"
         >
-          Vlastní Skript / Postavy
+          Custom Script / Characters
         </li>
       </ul>
     </div>
@@ -33,7 +33,7 @@
       To play with a custom script, you need to select the characters you want
       to play with in the official
       <a href="https://script.bloodontheclocktower.com/" target="_blank"
-        >Skriptovacího nástroje</a
+        >Script Tool</a
       >
       and then upload the generated "custom-list.json" either directly here or
       provide a URL to such a hosted JSON file.<br />
@@ -64,10 +64,10 @@
       />
       <div class="button-group">
         <div class="button" @click="openUpload">
-          <font-awesome-icon icon="file-upload" /> Nahrát JSON
+          <font-awesome-icon icon="file-upload" /> Upload JSON
         </div>
         <div class="button" @click="promptURL">
-          <font-awesome-icon icon="link" /> Zadat URL
+          <font-awesome-icon icon="link" /> Enter URL
         </div>
         <div class="button" @click="readFromClipboard">
           <font-awesome-icon icon="clipboard" /> Use JSON from Clipboard
@@ -143,7 +143,7 @@ export default {
       }
     },
     promptURL() {
-      const url = prompt("Zadej URL k custom-script.json souboru");
+      const url = prompt("Enter URL to a custom-script.json file");
       if (url) {
         this.handleURL(url);
       }

@@ -30,8 +30,8 @@
       :class="{ closed: !isBluffsOpen }"
     >
       <h3>
-        <span v-if="session.isSpectator">Další postavy</span>
-        <span v-else>Blafy Démona</span>
+        <span v-if="session.isSpectator">Other characters</span>
+        <span v-else>Demon bluffs</span>
         <font-awesome-icon icon="times-circle" @click.stop="toggleBluffs" />
         <font-awesome-icon icon="plus-circle" @click.stop="toggleBluffs" />
       </h3>
@@ -46,20 +46,9 @@
       </ul>
     </div>
 
-    <transition name="fade">
-      <div
-        class="CallPlayers"
-        v-if="grimoire.isCallingPlayers"
-      >
-        <h3>
-          <span>Prosím, vraťte se</span>
-        </h3>
-      </div>
-    </transition>
-
     <div class="fabled" :class="{ closed: !isFabledOpen }" v-if="fabled.length">
       <h3>
-        <span>Proslulí</span>
+        <span>Fabled</span>
         <font-awesome-icon icon="times-circle" @click.stop="toggleFabled" />
         <font-awesome-icon icon="plus-circle" @click.stop="toggleFabled" />
       </h3>
@@ -124,21 +113,8 @@ export default {
       move: -1,
       nominate: -1,
       isBluffsOpen: true,
-      isFabledOpen: true,
-      callPlayersAudio: null
+      isFabledOpen: true
     };
-  },
-  watch: {
-    "grimoire.isCallingPlayers"(newValue) {
-      if (newValue && !this.grimoire.isMuted) {
-        const audio = new Audio(require("@/assets/sounds/churchBell.mp3"));
-        audio.play().catch(err => console.warn("Audio play failed:", err));
-      }
-    }
-  },
-  mounted() {
-    // Initialize audio when component mounts
-    this.callPlayersAudio = new Audio(require("@/assets/sounds/churchBell.mp3"));
   },
   methods: {
     toggleBluffs() {
@@ -179,7 +155,7 @@ export default {
       if (this.session.isSpectator || this.session.lockedVote) return;
       if (
         confirm(
-          `Opravdu chceš odebrat ${this.players[playerIndex].name}?`
+          `Do you really want to remove ${this.players[playerIndex].name}?`
         )
       ) {
         const { nomination } = this.session;
@@ -510,39 +486,6 @@ export default {
   }
 }
 
-/**** Text for calling players ****/
-.CallPlayers {
-  position: absolute;
-  text-align: center;
-  top: 30%;
-  z-index: 75;
-
-  background: rgba(0, 0, 0, 0.5);
-  width: 100vw;
-  height: 15vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 7vh;
-}
-
-/**** Changes font of the text ****/
-.CallPlayers h3 {
-  font-family: 'Segoe Print';
-}
-
-/**** Call players animation ****/
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-/**** Call players animation ****/
-.fade-leave-to {
-  opacity: 0;
-}
-
 #townsquare.public > .bluffs {
   opacity: 0;
   transform: scale(0.1);
@@ -628,7 +571,7 @@ export default {
       rgba(0, 0, 0, 0.5) 20%
     );
     &:before {
-      content: "První noc";
+      content: "First Night";
     }
     &:after {
       border-left-color: $townsfolk;
@@ -641,7 +584,7 @@ export default {
     left: 120%;
     background: linear-gradient(to right, $demon 0%, rgba(0, 0, 0, 0.5) 20%);
     &:before {
-      content: "Další noci";
+      content: "Other Nights";
     }
     &:after {
       right: 100%;

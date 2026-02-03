@@ -47,38 +47,38 @@
         <font-awesome-icon
           icon="hand-paper"
           class="vote"
-          title="Ruka NAHORU"
+          title="Hand UP"
           @click="vote()"
         />
         <font-awesome-icon
           icon="times"
           class="vote"
-          title="Ruka DOLŮ"
+          title="Hand DOWN"
           @click="vote()"
         />
         <font-awesome-icon
           icon="times-circle"
           class="cancel"
-          title="Zrušit"
+          title="Cancel"
           @click="cancel()"
         />
         <font-awesome-icon
           icon="exchange-alt"
           class="swap"
           @click="swapPlayer(player)"
-          title="Prohodit místo s tímto hráčem"
+          title="Swap seats with this player"
         />
         <font-awesome-icon
           icon="redo-alt"
           class="move"
           @click="movePlayer(player)"
-          title="Přesunout hráče na toto místo"
+          title="Move player to this seat"
         />
         <font-awesome-icon
           icon="hand-point-right"
           class="nominate"
           @click="nominatePlayer(player)"
-          title="Nominovat tohoto hráče"
+          title="Nominate this player"
         />
       </div>
 
@@ -96,7 +96,7 @@
         class="has-vote"
         v-if="player.isDead && !player.isVoteless"
         @click="updatePlayer('isVoteless', true)"
-        title="Duchův hlas"
+        title="Ghost vote"
       />
 
       <!-- On block icon -->
@@ -124,35 +124,35 @@
                 (session.isSpectator && player.id === session.playerId)
             "
           >
-            <font-awesome-icon icon="venus-mars" />Změnit zájmeno
+            <font-awesome-icon icon="venus-mars" />Change Pronouns
           </li>
           <template v-if="!session.isSpectator">
             <li @click="changeName">
-              <font-awesome-icon icon="user-edit" />Přejmenovat
+              <font-awesome-icon icon="user-edit" />Rename
             </li>
             <li @click="movePlayer()" :class="{ disabled: session.lockedVote }">
               <font-awesome-icon icon="redo-alt" />
-              Přesunout hráče
+              Move player
             </li>
             <li @click="swapPlayer()" :class="{ disabled: session.lockedVote }">
               <font-awesome-icon icon="exchange-alt" />
-              Prohodit místa
+              Swap seats
             </li>
             <li @click="removePlayer" :class="{ disabled: session.lockedVote }">
               <font-awesome-icon icon="times-circle" />
-              Odebrat
+              Remove
             </li>
             <li
               @click="updatePlayer('id', '', true)"
               v-if="player.id && session.sessionId"
             >
               <font-awesome-icon icon="chair" />
-              Volné místo
+              Empty seat
             </li>
             <template v-if="!session.nomination">
               <li @click="nominatePlayer()">
                 <font-awesome-icon icon="hand-point-right" />
-                Nominovat
+                Nomination
               </li>
             </template>
           </template>
@@ -163,12 +163,12 @@
           >
             <font-awesome-icon icon="chair" />
             <template v-if="!player.id">
-              Zabrat místo
+              Claim seat
             </template>
             <template v-else-if="player.id === session.playerId">
-              Uvolnit místo
+              Vacate seat
             </template>
-            <template v-else> Místo je zabrané</template>
+            <template v-else> Seat occupied</template>
           </li>
         </ul>
       </transition>
@@ -256,7 +256,7 @@ export default {
     changePronouns() {
       if (this.session.isSpectator && this.player.id !== this.session.playerId)
         return;
-      const pronouns = prompt("Zájmeno hráče", this.player.pronouns);
+      const pronouns = prompt("Player pronouns", this.player.pronouns);
       //Only update pronouns if not null (prompt was not cancelled)
       if (pronouns !== null) {
         this.updatePlayer("pronouns", pronouns, true);
@@ -287,7 +287,7 @@ export default {
     },
     changeName() {
       if (this.session.isSpectator) return;
-      const name = prompt("Jméno hráče", this.player.name) || this.player.name;
+      const name = prompt("Player name", this.player.name) || this.player.name;
       this.updatePlayer("name", name, true);
     },
     removeReminder(reminder) {
@@ -677,9 +677,8 @@ li.move:not(.from) .player .overlay svg.move {
 /****** Seat icon ********/
 .player .seat {
   position: absolute;
-  transform: scale(2);
-  left: -5px;
-  margin-top: 9%;
+  left: 2px;
+  margin-top: -15%;
   color: #fff;
   filter: drop-shadow(0 0 3px black);
   cursor: default;

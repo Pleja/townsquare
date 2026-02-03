@@ -15,9 +15,9 @@
       </em>
       in favor
       <em v-if="nominee.role.team !== 'traveler'">
-        (většina je {{ Math.ceil(alive / 2) }})
+        (majority is {{ Math.ceil(alive / 2) }})
       </em>
-      <em v-else>(většina je {{ Math.ceil(players.length / 2) }})</em>
+      <em v-else>(majority is {{ Math.ceil(players.length / 2) }})</em>
 
       <template v-if="!session.isSpectator">
         <div v-if="!session.isVoteInProgress && session.lockedVote < 1">
@@ -38,7 +38,7 @@
             v-if="!session.isVoteInProgress"
             @click="countdown"
           >
-            Odpočet
+            Countdown
           </div>
           <div class="button" v-if="!session.isVoteInProgress" @click="start">
             {{ session.lockedVote ? "Restart" : "Start" }}
@@ -49,11 +49,11 @@
               :class="{ disabled: !session.lockedVote }"
               @click="pause"
             >
-              {{ voteTimer ? "Pozastavit" : "Obnovit" }}
+              {{ voteTimer ? "Pause" : "Resume" }}
             </div>
-            <div class="button" @click="stop">Restartovat</div>
+            <div class="button" @click="stop">Reset</div>
           </template>
-          <div class="button demon" @click="finish">Zavřít</div>
+          <div class="button demon" @click="finish">Close</div>
         </div>
         <div class="button-group mark" v-if="nominee.role.team !== 'traveler'">
           <div
@@ -72,7 +72,7 @@
       </template>
       <template v-else-if="canVote">
         <div v-if="!session.isVoteInProgress">
-          {{ session.votingSpeed / 1000 }} sekund mezi hlasy
+          {{ session.votingSpeed / 1000 }} seconds between votes
         </div>
         <div class="button-group">
           <div
@@ -80,19 +80,19 @@
             @click="vote(false)"
             :class="{ disabled: !currentVote }"
           >
-            Ruka DOLŮ
+            Hand DOWN
           </div>
           <div
             class="button demon"
             @click="vote(true)"
             :class="{ disabled: currentVote }"
           >
-            Ruka NAHORU
+            Hand UP
           </div>
         </div>
       </template>
       <div v-else-if="!player">
-        Prosím zaber si místo pro hlasování.
+        Please claim a seat to vote.
       </div>
     </div>
     <transition name="blur">

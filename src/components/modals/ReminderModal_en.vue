@@ -3,7 +3,7 @@
     v-if="modals.reminder && availableReminders.length && players[playerIndex]"
     @close="toggleModal('reminder')"
   >
-    <h3>Vyber si token připomenutí:</h3>
+    <h3>Choose a reminder token:</h3>
     <ul class="reminders">
       <li
         v-for="reminder in availableReminders"
@@ -82,9 +82,9 @@ export default {
         }
       });
 
-      reminders.push({ role: "good", name: "Dobrý" });
-      reminders.push({ role: "evil", name: "Zlý" });
-      reminders.push({ role: "custom", name: "Vlastní poznámka" });
+      reminders.push({ role: "good", name: "Good" });
+      reminders.push({ role: "evil", name: "Evil" });
+      reminders.push({ role: "custom", name: "Custom note" });
       return reminders;
     },
     ...mapState(["modals", "grimoire"]),

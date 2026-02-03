@@ -1,11 +1,11 @@
 <template>
   <Modal v-if="modals.role && availableRoles.length" @close="close">
     <h3>
-      Vyber novou postavu pro
+      Choose a new character for
       {{
         playerIndex >= 0 && players.length
           ? players[playerIndex].name
-          : "blafování"
+          : "bluffing"
       }}
     </h3>
     <ul class="tokens" v-if="tab === 'editionRoles' || !otherTravelers.size">
@@ -36,13 +36,13 @@
         class="button"
         :class="{ townsfolk: tab === 'editionRoles' }"
         @click="tab = 'editionRoles'"
-        >Postavy z edice</span
+        >Edition Roles</span
       >
       <span
         class="button"
         :class="{ townsfolk: tab === 'otherTravelers' }"
         @click="tab = 'otherTravelers'"
-        >Ostatní pocestní</span
+        >Other Travelers</span
       >
     </div>
   </Modal>

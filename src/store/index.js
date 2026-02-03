@@ -100,6 +100,7 @@ export default new Vuex.Store({
     grimoire: {
       isNight: false,
       isNightOrder: true,
+      isCallingPlayers: false,
       isPublic: true,
       isMenuOpen: false,
       isStatic: false,
@@ -167,6 +168,7 @@ export default new Vuex.Store({
     toggleMuted: toggle("isMuted"),
     toggleMenu: toggle("isMenuOpen"),
     toggleNightOrder: toggle("isNightOrder"),
+    toggleCallPlayers: toggle("isCallingPlayers"),
     toggleStatic: toggle("isStatic"),
     toggleNight: toggle("isNight"),
     toggleGrimoire: toggle("isPublic"),

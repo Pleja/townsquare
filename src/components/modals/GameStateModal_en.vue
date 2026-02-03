@@ -4,7 +4,7 @@
     v-if="modals.gameState"
     @close="toggleModal('gameState')"
   >
-    <h3>Aktuální stav hry</h3>
+    <h3>Current Game State</h3>
     <textarea
       :value="gamestate"
       @input.stop="input = $event.target.value"
@@ -13,10 +13,10 @@
     ></textarea>
     <div class="button-group">
       <div class="button townsfolk" @click="copy">
-        <font-awesome-icon icon="copy" /> Zkopírovat JSON
+        <font-awesome-icon icon="copy" /> Copy JSON
       </div>
       <div class="button demon" @click="load" v-if="!session.isSpectator">
-        <font-awesome-icon icon="cog" /> Načíst stav
+        <font-awesome-icon icon="cog" /> Load State
       </div>
     </div>
   </Modal>

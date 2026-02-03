@@ -4,7 +4,7 @@
     v-if="modals.roles && nonTravelers >= 5"
     @close="toggleModal('roles')"
   >
-    <h3>Vyberte postavy pro {{ nonTravelers }} hráče:</h3>
+    <h3>Select the characters for {{ nonTravelers }} players:</h3>
     <ul class="tokens" v-for="(teamRoles, team) in roleSelection" :key="team">
       <li class="count" :class="[team]">
         {{ teamRoles.reduce((a, { selected }) => a + selected, 0) }} /
@@ -31,14 +31,14 @@
     <div class="warning" v-if="hasSelectedSetupRoles">
       <font-awesome-icon icon="exclamation-triangle" />
       <span>
-        Varování: jsou zde vybrané postavy, které upravují přípravu hry!
-        Náhodné zamíchání postav s tímto nepočítá.
+        Warning: there are characters selected that modify the game setup! The
+        randomizer does not account for these characters.
       </span>
     </div>
     <label class="multiple" :class="{ checked: allowMultiple }">
       <font-awesome-icon :icon="allowMultiple ? 'check-square' : 'square'" />
-      <input type="checkbox" name="Povolit-více" v-model="allowMultiple" />
-      Povolit stéjné postavy
+      <input type="checkbox" name="allow-multiple" v-model="allowMultiple" />
+      Allow duplicate characters
     </label>
     <div class="button-group">
       <div
@@ -49,11 +49,11 @@
         }"
       >
         <font-awesome-icon icon="people-arrows" />
-        Přiřadit {{ selectedRoles }} postav náhodně
+        Assign {{ selectedRoles }} characters randomly
       </div>
       <div class="button" @click="selectRandomRoles">
         <font-awesome-icon icon="random" />
-        Zamíchat postavy
+        Shuffle characters
       </div>
     </div>
   </Modal>

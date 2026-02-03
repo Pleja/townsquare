@@ -8,16 +8,16 @@
       @click="toggleModal('reference')"
       icon="address-card"
       class="toggle"
-      title="Zobrazit referenci postavy"
+      title="Show Character Reference"
     />
     <h3>
-      Pořadí nocí
+      Night Order
       <font-awesome-icon icon="cloud-moon" />
       {{ edition.name || "Custom Script" }}
     </h3>
     <div class="night">
       <ul class="first">
-        <li class="headline">První noc</li>
+        <li class="headline">First Night</li>
         <li
           v-for="role in rolesFirstNight"
           :key="role.name"
@@ -56,7 +56,7 @@
         </li>
       </ul>
       <ul class="other">
-        <li class="headline">Další noci</li>
+        <li class="headline">Other Nights</li>
         <li
           v-for="role in rolesOtherNight"
           :key="role.name"
@@ -114,24 +114,24 @@ export default {
         rolesFirstNight.push(
           {
             id: "evil",
-            name: "Info Poskoků",
+            name: "Minion info",
             firstNight: 5,
             team: "minion",
             players: this.players.filter(p => p.role.team === "minion"),
             firstNightReminder:
-              "• Pokud je více než jeden poskok, tak všichni navážou oční kontakt. " +
-              "• Ukaž kartu “Tohle je Démon”. Ukaž na Démona."
+              "• If more than one Minion, they all make eye contact with each other. " +
+              "• Show the “This is the Demon” card. Point to the Demon."
           },
           {
             id: "evil",
-            name: "Info Démona a blafy",
+            name: "Demon info & bluffs",
             firstNight: 8,
             team: "demon",
             players: this.players.filter(p => p.role.team === "demon"),
             firstNightReminder:
-              "• Ukaž kartu “Tohle jsou tví poskoci”. Ukaž na každého Poskoka. " +
-              "• Ukaž kartu “Tyto postavy nejsou ve hře”. Ukaž tokeny tří dobrých" +
-              "postav, co nejsou ve hře."
+              "• Show the “These are your minions” card. Point to each Minion. " +
+              "• Show the “These characters are not in play” card. Show 3 character tokens of good " +
+              "characters not in play."
           }
         );
       }
