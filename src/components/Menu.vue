@@ -49,7 +49,7 @@
           <!-- Grimoire -->
           <li class="headline">Grimoár</li>
           <li @click="toggleCallPlayers" v-if="!session.isSpectator">
-            Přivolat hráče (WIP)
+            Přivolat hráče
             <em>
               <font-awesome-icon
                 :icon="[
