@@ -5,9 +5,9 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "name": "Doomsayer",
+    "name": "Předpovídač katastrof",
     "team": "fabled",
-    "ability": "If 4 or more players live, each living player may publicly choose (once per game) that a player of their own alignment dies."
+    "ability": "Pokud žije 4 nebo více hráčů, tak každý živý hráč může veřejně vybrat (jednou za hru), že hráč jejich morální orientace zemře."
   },
   {
     "id": "angel",
