@@ -6,14 +6,14 @@
     </div>
     <div class="overlay">
       <audio src="../assets/sounds/countdown.mp3" preload="auto"></audio>
-      <em class="blue">{{ nominator.name }}</em> nominated
+      <em class="blue">{{ nominator.name }}</em> nominoval
       <em>{{ nominee.name }}</em
       >!
       <br />
       <em class="blue">
-        {{ voters.length }} vote{{ voters.length !== 1 ? "s" : "" }}
+        {{ voters.length }} hlasů{{ voters.length !== 1 ? "s" : "" }}
       </em>
-      in favor
+      je pro
       <em v-if="nominee.role.team !== 'traveler'">
         (většina je {{ Math.ceil(alive / 2) }})
       </em>
@@ -21,7 +21,7 @@
 
       <template v-if="!session.isSpectator">
         <div v-if="!session.isVoteInProgress && session.lockedVote < 1">
-          Time per player:
+          Čas na hráče:
           <font-awesome-icon
             @mousedown.prevent="setVotingSpeed(-500)"
             icon="minus-circle"
@@ -63,10 +63,10 @@
             }"
             @click="setMarked"
           >
-            Mark for execution
+            Označit pro popravu
           </div>
           <div class="button" @click="removeMarked">
-            Clear mark
+            Odebrat značku
           </div>
         </div>
       </template>

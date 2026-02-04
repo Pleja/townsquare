@@ -1,7 +1,7 @@
 <template>
   <Modal class="editions" v-if="modals.edition" @close="toggleModal('edition')">
     <div v-if="!isCustom">
-      <h3>Select an edition:</h3>
+      <h3>Vyber si edici:</h3>
       <ul class="editions">
         <li
           v-for="edition in editions"
@@ -29,24 +29,24 @@
       </ul>
     </div>
     <div class="custom" v-else>
-      <h3>Load custom script / characters</h3>
-      To play with a custom script, you need to select the characters you want
-      to play with in the official
+      <h3>Načíst vlastní skript / postavy</h3>
+      Pro hraní s vlastním skriptem si nejdříve musíš vybrat postavy,
+      se kterými chceš hrát z oficiálního
       <a href="https://script.bloodontheclocktower.com/" target="_blank"
         >Skriptovacího nástroje</a
       >
-      and then upload the generated "custom-list.json" either directly here or
-      provide a URL to such a hosted JSON file.<br />
+      a poté nahrát vygenerovaný "custom-list.json" buď přímo zde, nebo
+      dodej URL na takový hostovaný JSON soubor.<br />
       <br />
-      To play with custom characters, please read
+      Pro hraní s vlastními postavami si prosím přečti
       <a
         href="https://github.com/bra1n/townsquare#custom-characters"
         target="_blank"
-        >the documentation</a
+        >dokumentaci</a
       >
-      on how to write a custom character definition file.
-      <b>Only load custom JSON files from sources that you trust!</b>
-      <h3>Some popular custom scripts:</h3>
+      o tom, jak napsat vlastní definiční soubor postavy.
+      <b>Načítej pouze vlastní JSON soubory ze zdrojů, kterým věříš!</b>
+      <h3>Nějaké populární vlastní skripty:</h3>
       <ul class="scripts">
         <li
           v-for="(script, index) in scripts"
@@ -70,10 +70,10 @@
           <font-awesome-icon icon="link" /> Zadat URL
         </div>
         <div class="button" @click="readFromClipboard">
-          <font-awesome-icon icon="clipboard" /> Use JSON from Clipboard
+          <font-awesome-icon icon="clipboard" /> Použít JSON ze schránky
         </div>
         <div class="button" @click="isCustom = false">
-          <font-awesome-icon icon="undo" /> Back
+          <font-awesome-icon icon="undo" /> Zpět
         </div>
       </div>
     </div>
