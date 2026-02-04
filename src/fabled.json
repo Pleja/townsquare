@@ -13,11 +13,11 @@
     "id": "angel",
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "reminders": ["Protect", "Something Bad"],
+    "reminders": ["Ochraňovat", "Něco zlého"],
     "setup": false,
-    "name": "Angel",
+    "name": "Anděl",
     "team": "fabled",
-    "ability": "Something bad might happen to whoever is most responsible for the death of a new player."
+    "ability": "Něco zlého se může stát tomu, kdo může nejvíce za smrt nového hráče."
   },
   {
     "id": "buddhist",
@@ -25,19 +25,19 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "name": "Buddhist",
+    "name": "Buddhista",
     "team": "fabled",
-    "ability": "For the first 2 minutes of each day, veteran players may not talk."
+    "ability": "První 2 minuty každého dne nesmí zkušení hráči mluvit."
   },
   {
     "id": "hellslibrarian",
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "reminders": ["Something Bad"],
+    "reminders": ["Něco zlého"],
     "setup": false,
-    "name": "Hell's Librarian",
+    "name": "Pekelný knihovník",
     "team": "fabled",
-    "ability": "Something bad might happen to whoever talks when the Storyteller has asked for silence."
+    "ability": "Něco zlého se může stát tomu, kdo mluví, když vypravěč požádal o ticho."
   },
   {
     "id": "revolutionary",
@@ -45,9 +45,9 @@
     "otherNightReminder": "",
     "reminders": ["Used"],
     "setup": false,
-    "name": "Revolutionary",
+    "name": "Revolucionář",
     "team": "fabled",
-    "ability": "2 neighboring players are known to be the same alignment. Once per game, one of them registers falsely."
+    "ability": "O 2 sousedících hráčích se ví, že jsou stejné morální orientace. Jednou za hru se jeden z nich registruje špatně."
   },
   {
     "id": "fiddler",
@@ -55,41 +55,41 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "name": "Fiddler",
+    "name": "Houslista",
     "team": "fabled",
-    "ability": "Once per game, the Demon secretly chooses an opposing player: all players choose which of these 2 players win."
+    "ability": "Jednou za hru Démon tajně zvolí hráče opačné morální orientace: všichni hráči hlasují, který z těchto 2 hráčů vyhraje."
   },
   {
     "id": "toymaker",
     "firstNightReminder": "",
     "otherNight": 1,
     "otherNightReminder": "If it is a night when a Demon attack could end the game, and the Demon is marked “Final night: No Attack,” then the Demon does not act tonight. (Do not wake them.)",
-    "reminders": ["Final Night: No Attack"],
+    "reminders": ["Poslední noc: Žádný útok"],
     "setup": false,
-    "name": "Toymaker",
+    "name": "Hračkář",
     "team": "fabled",
-    "ability": "The Demon may choose not to attack & must do this at least once per game. Evil players get normal starting info."
+    "ability": "Démon se může rozhodnout neútočit a musí tak učinit alespoň jednou za hru. Zlí hráči dostávají normální startovní informace."
   },
   {
     "id": "fibbin",
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "reminders": ["Used"],
+    "reminders": ["Použitá"],
     "setup": false,
-    "name": "Fibbin",
+    "name": "Lhář",
     "team": "fabled",
-    "ability": "Once per game, 1 good player might get false information."
+    "ability": "Jednou za hru, 1 dobrý hráč může dostat špatnou informaci."
   },
   {
     "id": "duchess",
     "firstNightReminder": "",
     "otherNight": 1,
-    "otherNightReminder": "Wake each player marked “Visitor” or “False Info” one at a time. Show them the Duchess token, then fingers (1, 2, 3) equaling the number of evil players marked “Visitor” or, if you are waking the player marked “False Info,” show them any number of fingers except the number of evil players marked “Visitor.”",
-    "reminders": ["Visitor", "False Info"],
+    "otherNightReminder": "Vzbuď každého hráče označeného buď “Návštěvník”, nebo “Špatná informace” po jednom. Ukaž jim token Vévodkyně, poté ukaž na prstech (1, 2, 3), kolik zlých hráčů je označeno tokenem “Návštěvník”, nebo pokud probouzíš hráče označeného “Špatná informace”, ukaž mu libovolné číslo na prstech kromě počtu zlých hráčů označených Návštěvník”.",
+    "reminders": ["Návštěvník", "Špatná informace"],
     "setup": false,
-    "name": "Duchess",
+    "name": "Vévodkyně",
     "team": "fabled",
-    "ability": "Each day, 3 players may choose to visit you. At night*, each visitor learns how many visitors are evil, but 1 gets false info."
+    "ability": "Každý den tě můžou navštívit 3 hráči. V noci* se návštěvníci dozví, kolik návštěvníků je zlých, ale jeden dostane špatnou informaci."
   },
   {
     "id": "sentinel",
@@ -97,19 +97,19 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": true,
-    "name": "Sentinel",
+    "name": "Strážce",
     "team": "fabled",
-    "ability": "There might be 1 extra or 1 fewer Outsider in play."
+    "ability": "Ve hře může být o 1 Podivína více, nebo méně."
   },
   {
     "id": "spiritofivory",
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "reminders": ["No extra evil"],
+    "reminders": ["Žádné zlo navíc"],
     "setup": false,
-    "name": "Spirit of Ivory",
+    "name": "Duše slonoviny",
     "team": "fabled",
-    "ability": "There can't be more than 1 extra evil player."
+    "ability": "Ve hře nemůže být více jak 1 extra zlý hráč."
   },
   {
     "id": "djinn",
@@ -118,19 +118,19 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "name": "Djinn",
+    "name": "Džin",
     "team": "fabled",
-    "ability": "Use the Djinn's special rule. All players know what it is."
+    "ability": "Používej speciální Džinovo pravidlo. Všichni hráči ví, jaké je."
   },
   {
     "id": "stormcatcher",
     "firstNight": 1,
-    "firstNightReminder": "Mark a good player as \"Safe\". Wake each evil player and show them the marked player.",
+    "firstNightReminder": "Označ dobrého hráče jako \"V bezpečí\". Vzbuď všechny zlé hráče a ukaž jim označeného hráče.",
     "otherNightReminder": "",
-    "reminders": ["Safe"],
+    "reminders": ["V bezpečí"],
     "setup": false,
-    "name": "Storm Catcher",
+    "name": "Lapač bouřek",
     "team": "fabled",
-    "ability": "Name a good character. If in play, they can only die by execution, but evil players learn which player it is."
+    "ability": "Řekni dobrou postavu. Pokud je ve hře, tak může zemřít pouze popravou, ale zlí hráči ví, který hráč to je."
   }
 ]
