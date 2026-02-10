@@ -127,13 +127,13 @@
         <template v-if="tab === 'session'">
           <!-- Session -->
           <li class="headline" v-if="session.sessionId">
-            {{ session.isSpectator ? "Playing" : "Hosting" }}
+            {{ session.isSpectator ? "Hraje" : "Hostuje" }}
           </li>
           <li class="headline" v-else>
             Online relace
           </li>
           <template v-if="!session.sessionId">
-            <li @click="hostSession">Host (Vypravěč)<em>[H]</em></li>
+            <li @click="hostSession">Hostovat (Vypravěč)<em>[H]</em></li>
             <li @click="joinSession">Připojit (Hráč)<em>[J]</em></li>
           </template>
           <template v-else>

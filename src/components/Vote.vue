@@ -11,7 +11,7 @@
       >!
       <br />
       <em class="blue">
-        {{ voters.length }} hlasů{{ voters.length !== 1 ? "s" : "" }}
+        {{ voters.length }} hlas{{ voters.length > 1 && voters.length < 5 ? "y" : "" }}{{ voters.length > 4 || voters.length === 0 ? "ů" : "" }}
       </em>
       je pro
       <em v-if="nominee.role.team !== 'traveler'">
@@ -72,7 +72,7 @@
       </template>
       <template v-else-if="canVote">
         <div v-if="!session.isVoteInProgress">
-          {{ session.votingSpeed / 1000 }} sekund mezi hlasy
+          {{ session.votingSpeed / 1000 }} sekund{{ session.votingSpeed / 1000 > 1 && session.votingSpeed / 1000 < 5 ? "y" : "" }}{{ session.votingSpeed / 1000 === 1 ? "a" : "" }} mezi hlasy
         </div>
         <div class="button-group">
           <div

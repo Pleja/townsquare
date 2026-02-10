@@ -78,7 +78,7 @@
     "otherNightReminder": "Vědma ukáže na dva hráče. Zakývej hlavou (ano, ne), pokud je některý z těchto dvou hráčů Démon.",
     "reminders": ["Falešná stopa"],
     "setup": false,
-    "ability": "Každou noc zvol dva hráče: zjistíš, jestli některý z nich je Démon. Jeden z dobrých hráčů se ti jeví jako Démon."
+    "ability": "Každou noc zvol dva hráče: zjistíš, jestli je některý z nich Démon. Jeden z dobrých hráčů se ti jeví jako Démon."
   },
   {
     "id": "undertaker",
@@ -285,7 +285,8 @@
     "firstNightReminder": "",
     "otherNight": 24,
     "otherNightReminder": "Čert ukáže na hráče. Tento hráč zemře. Pokud Čert vybere sebe: Vyměň postavu 1 živého poskoka za nadbytečný token Čerta. Ukaž mu 'Ty jsi' kartu, poté token Čerta.",
-    "reminders": ["Mrtvý"],
+    "reminders": ["Mrtvý",
+        "Čert"],
     "setup": false,
     "ability": "Každou noc* zvol jednoho hráče, ten zemře. Pokud tímto způsobem usmrtíš sebe, Čertem se stane Poskok."
   },
@@ -487,7 +488,7 @@
     "otherNightReminder": "",
     "reminders": ["Každý je opilý"],
     "setup": false,
-    "ability": "Pokud Poskok zemře popravou, tak jsou všichni hráči (kromě Poutníků) jsou opilý až do zítřejšího soumraku."
+    "ability": "Pokud Poskok zemře popravou, tak jsou všichni hráči (kromě Poutníků) opilí až do zítřejšího soumraku."
   },
   {
     "id": "tealady",
@@ -902,7 +903,7 @@
     "otherNightReminder": "",
     "reminders": ["Bez schopnosti"],
     "setup": false,
-    "ability": "Jednou za hru, přes den, soukromě se zeptej Vypravěče libovolnou ano/ne otázku."
+    "ability": "Jednou za hru, přes den, se soukromě zeptej Vypravěče libovolnou ano/ne otázku."
   },
   {
     "id": "juggler",
@@ -1056,12 +1057,12 @@
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 32,
-    "otherNightReminder": "The Vigormortis points to a player. That player dies. If a Minion, they keep their ability and one of their Townsfolk neighbours is poisoned.",
-    "reminders": ["Dead",
-        "Has ability",
-        "Poisoned"],
+    "otherNightReminder": "Vigormortis ukáže na hráče. Tento hráč zemře. Pokud to byl Poskok, tak si ponechá svoji schopnost a jeden z jejich sousedů je otrávený.",
+    "reminders": ["Mrtvý",
+        "Má schopnost",
+        "Otrávený"],
     "setup": true,
-    "ability": "Each night*, choose a player: they die. Minions you kill keep their ability & poison 1 Townsfolk neighbour. [\u22121 Outsider]"
+    "ability": "Každou noc* si vyber hráče: zemře. Poskoci, které zabiješ, si nechávají svojí schopnost a zároveň otrávíš 1 sousedícího Měšťana. [\u22121 Podivín]"
   },
   {
     "id": "nodashii",
