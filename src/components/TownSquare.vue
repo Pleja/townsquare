@@ -59,7 +59,11 @@
 
     <div
       class="timerText"
-      :class="{running:session.isTimerRunning}"
+      :class="[
+        {running:session.isTimerRunning},
+        {lessThan15: session.isTimerRunning && timerTimeLeft <= 15},
+        {moreThan15: session.isTimerRunning && timerTimeLeft > 15}
+      ]"
       v-if="players.length"
     >
       <em v-if="timerTimeLeft > 60">
@@ -808,8 +812,11 @@ export default {
   border: 3px solid black;
   font-size: 6vh;
 }
-.running {
-  color: #4444ff;
+.running.moreThan15 {
+    color: #4444ff;
+}
+.running.lessThan15 {
+    color: #ff4444;
 }
 .timerChangeTime {
   position: absolute;
