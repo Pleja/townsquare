@@ -340,7 +340,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Pokud je hráč stejné morální orientace jako ty popraven, můžeš být popraven místo něho."
+    "ability": "Pokud je hráč stejné příslušnosti jako ty popraven, můžeš být popraven místo něho."
   },
   {
     "id": "beggar",
@@ -353,7 +353,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Musíš použít svůj hlasovací žeton pro hlasování. Mrtvý hráči ti můžou dát jejich hlas. Pokud tak učiní, dozvíš se jejich morální orientaci. Jsi střízlivý a zdravý."
+    "ability": "Musíš použít svůj hlasovací žeton pro hlasování. Mrtví hráči ti můžou dát jejich hlas. Pokud tak učiní, dozvíš se jejich příslušnost. Jsi střízlivý a zdravý."
   },
   {
     "id": "grandmother",
@@ -566,7 +566,7 @@
     "otherNightReminder": "",
     "reminders": ["Opilý"],
     "setup": false,
-    "ability": "Každou noc, 1. hráč, který tě zvolí svojí schopností, je opilý do soumraku. Budeš mít jeho morální orientaci."
+    "ability": "Každou noc, 1. hráč, který tě zvolí svojí schopností, je opilý do soumraku. Budeš mít jeho příslušnost."
   },
   {
     "id": "lunatic",
@@ -744,7 +744,7 @@
     "reminders": ["Nominuj dobrého",
         "Nominuj zlého"],
     "setup": false,
-    "ability": "Pouze Vypravěč může nominovat. Alespoň 1 hráč opačné morální orientace (než Biskup) musí být nominován každý den."
+    "ability": "Pouze Vypravěč může nominovat. Alespoň 1 hráč s opačnou příslušností (než Biskup) musí být nominován každý den."
   },
   {
     "id": "voudon",
@@ -791,12 +791,12 @@
     "edition": "snv",
     "team": "townsfolk",
     "firstNight": 20,
-    "firstNightReminder": "Zaříkávač hadů ukáže na hráče. Pokud je tento hráč Démon: prohoď postavy i morální orientace Démona a Zaříkávače hadů. Probuď každého hráče, aby jsi ho informoval ohledně jeho nové role a morální orientace. Nový Zaříkávač hadů je otrávený.",
+    "firstNightReminder": "Zaříkávač hadů ukáže na hráče. Pokud je tento hráč Démon: prohoď postavy i příslušnosti Démona a Zaříkávače hadů. Probuď oba hráče postupně, aby jsi je informoval ohledně jeho nové role a příslušnosti. Nový Zaříkávač hadů je otrávený.",
     "otherNight": 11,
-    "otherNightReminder": "Zaříkávač hadů ukáže na hráče. Pokud je tento hráč Démon: prohoď postavy i morální orientace Démona a Zaříkávače hadů. Probuď každého hráče, aby jsi ho informoval ohledně jeho nové role a morální orientace. Nový Zaříkávač hadů je otrávený.",
+    "otherNightReminder": "Zaříkávač hadů ukáže na hráče. Pokud je tento hráč Démon: prohoď postavy i příslušnosti Démona a Zaříkávače hadů. Probuď oba hráče postupně, aby jsi je informoval ohledně jeho nové role a příslušnosti. Nový Zaříkávač hadů je otrávený.",
     "reminders": ["Otrávený"],
     "setup": false,
-    "ability": "Každou noc si vyber živého hráče: Pokud zvolíš Démona, prohoď si s ním postavu i morální orientaci. Zároveň ho tím otrávíš."
+    "ability": "Každou noc si vyber živého hráče: Pokud zvolíš Démona, prohoď si s ním postavu i příslušnost. Zároveň ho tím otrávíš."
   },
   {
     "id": "mathematician",

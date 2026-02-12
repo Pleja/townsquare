@@ -7,7 +7,7 @@
     "setup": false,
     "name": "Věštec zkázy",
     "team": "fabled",
-    "ability": "Pokud žije 4 nebo více hráčů, tak každý živý hráč může veřejně vybrat (jednou za hru), že hráč jejich morální orientace zemře."
+    "ability": "Pokud žije 4 nebo více hráčů, tak každý živý hráč může veřejně vybrat (jednou za hru), že hráč jejich příslušnosti zemře."
   },
   {
     "id": "angel",
@@ -47,7 +47,7 @@
     "setup": false,
     "name": "Revolucionář",
     "team": "fabled",
-    "ability": "O 2 sousedících hráčích se ví, že jsou stejné morální orientace. Jednou za hru se jeden z nich registruje špatně."
+    "ability": "O 2 sousedících hráčích se ví, že mají stejnou příslušnost. Jednou za hru se jeden z nich registruje špatně."
   },
   {
     "id": "fiddler",
@@ -57,7 +57,7 @@
     "setup": false,
     "name": "Houslista",
     "team": "fabled",
-    "ability": "Jednou za hru Démon tajně zvolí hráče opačné morální orientace: všichni hráči hlasují, který z těchto 2 hráčů vyhraje."
+    "ability": "Jednou za hru Démon tajně zvolí hráče s opačnou příslušností: všichni hráči hlasují, který z těchto 2 hráčů vyhraje."
   },
   {
     "id": "toymaker",

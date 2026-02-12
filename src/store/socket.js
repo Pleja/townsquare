@@ -11,6 +11,7 @@ class LiveSession {
     this._reconnectTimer = null;
     this._players = {}; // map of players connected to a session
     this._pings = {}; // map of player IDs to ping
+    this._timerInterval = null;
     // reconnect to previous session
     if (this._store.state.session.sessionId) {
       this.connect(this._store.state.session.sessionId);
@@ -208,6 +209,18 @@ class LiveSession {
         break;
       case "pronouns":
         this._updatePlayerPronouns(params);
+        break;
+      case "timerTime":
+        if (!this._isSpectator) return;
+        this._store.commit("session/setTimerTime", params);
+        break;
+      case "timerStartedAt":
+        if (!this._isSpectator) return;
+        this._store.commit("session/setTimerStartedAt", params);
+        break;
+      case "isTimerRunning":
+        if (!this._isSpectator) return;
+        this._store.commit("session/setTimerRunning", params);
         break;
     }
   }
@@ -748,6 +761,32 @@ class LiveSession {
   }
 
   /**
+   * Sent the timerTime. ST only
+   * @param timerTime current time in seconds, minimum 60
+   */
+  setTimerTime(timerTime) {
+    if (this._isSpectator) return;
+    this._send("timerTime", timerTime);
+  }
+
+ /**
+   * Sent the timerStartedAt. ST only
+   * @param timerStartedAt current time in seconds, minimum 60
+   */
+  setTimerStartedAt(timerStartedAt) {
+    if (this._isSpectator) return;
+    this._send("timerStartedAt", timerStartedAt);
+  }
+
+  /**
+   * Set the isTimerRunning status. ST only
+   */
+  setTimerRunning() {
+    if (this._isSpectator) return;
+    this._send("isTimerRunning", this._store.state.session.isTimerRunning);
+  }
+
+  /**
    * Clear the vote history for everyone. ST only
    */
   clearVoteHistory() {
@@ -893,6 +932,21 @@ export default store => {
         break;
       case "session/setVoteHistoryAllowed":
         session.setVoteHistoryAllowed();
+        break;
+      case "session/setTimerTime":
+        if (!state.session.isSpectator) {
+          session.setTimerTime(payload);
+        }
+        break;
+      case "session/setTimerStartedAt":
+        if (!state.session.isSpectator) {
+          session.setTimerStartedAt(payload);
+        }
+        break;
+      case "session/setTimerRunning":
+        if (!state.session.isSpectator) {
+          session.setTimerRunning(payload);
+        }
         break;
       case "toggleNight":
         session.setIsNight();

@@ -48,7 +48,7 @@
 
     <transition name="fade">
       <div
-        class="CallPlayers"
+        class="callPlayers"
         v-if="grimoire.isCallingPlayers"
       >
         <h3>
@@ -56,6 +56,35 @@
         </h3>
       </div>
     </transition>
+
+    <div
+      class="timerText"
+      :class="{running:session.isTimerRunning}"
+      v-if="players.length"
+    >
+      <em v-if="timerTimeLeft > 60">
+        {{ Math.round(timerTimeLeft / 60)}} min
+      </em>
+      <em v-else> {{ Math.ceil(timerTimeLeft)}} sek</em>
+      <div
+        class="timerChangeTime"
+        v-if="!session.isSpectator && !session.isTimerRunning"
+      >
+      <font-awesome-icon
+        @mousedown.prevent="setTimerTime(-60)"
+        icon="minus-circle"
+      />
+      Upravit čas
+      <font-awesome-icon
+        @mousedown.prevent="setTimerTime(60)"
+        icon="plus-circle"
+      />
+      </div>
+      <div class="timerButtonsGroup" v-if ="!session.isSpectator">
+        <div class="button townsfolk" v-if="!session.isTimerRunning" @click="startTimer">Start</div>
+        <div class="button demon" v-else @click="stopTimer">Stop</div>
+      </div>
+    </div>
 
     <div class="fabled" :class="{ closed: !isFabledOpen }" v-if="fabled.length">
       <h3>
@@ -112,9 +141,28 @@ export default {
     ReminderModal
   },
   computed: {
-    ...mapGetters({ nightOrder: "players/nightOrder" }),
+    ...mapGetters({nightOrder: "players/nightOrder"}),
     ...mapState(["grimoire", "roles", "session"]),
-    ...mapState("players", ["players", "bluffs", "fabled"])
+    ...mapState("players", ["players", "bluffs", "fabled"]),
+    timerTimeLeft() {
+      const { isTimerRunning, timerStartedAt, timerTime } = this.session;
+
+      // Hard stop if not running
+      if (!isTimerRunning) return timerTime;
+
+      // Hard stop if start time invalid
+      if (typeof timerStartedAt !== "number") return timerTime;
+      if (timerStartedAt <= 0) return timerTime;
+
+      const now = this.now;
+
+      if (timerStartedAt > now) return timerTime;
+
+      const elapsed = Math.floor((now - timerStartedAt) / 1000);
+
+      return Math.max(0, timerTime - elapsed);
+    }
+
   },
   data() {
     return {
@@ -125,7 +173,9 @@ export default {
       nominate: -1,
       isBluffsOpen: true,
       isFabledOpen: true,
-      callPlayersAudio: null
+      callPlayersAudio: null,
+      timer: null,
+      now: Date.now()
     };
   },
   watch: {
@@ -134,11 +184,26 @@ export default {
         const audio = new Audio(require("@/assets/sounds/churchBell.mp3"));
         audio.play().catch(err => console.warn("Audio play failed:", err));
       }
+    },
+    "session.isTimerRunning"(running) {
+      if (running) {
+        this.startLocalTick();
+      } else {
+        this.stopLocalTick();
+      }
+    },
+    timerTimeLeft(newValue) {
+      if (newValue <= 0 && this.session.isTimerRunning) {
+        this.stopTimer();
+      }
     }
   },
   mounted() {
     // Initialize audio when component mounts
     this.callPlayersAudio = new Audio(require("@/assets/sounds/churchBell.mp3"));
+  },
+  beforeUnmount() {
+    clearInterval(this.timer);
   },
   methods: {
     toggleBluffs() {
@@ -275,6 +340,36 @@ export default {
       this.move = -1;
       this.swap = -1;
       this.nominate = -1;
+    },
+    setTimerTime(diff) {
+      const time = Math.round(this.session.timerTime + diff);
+      if (time > 0) {
+        this.$store.commit("session/setTimerTime", time);
+      }
+    },
+    startTimer() {
+      this.$store.commit("session/setTimerTime", this.session.timerTime);
+      this.$store.commit("session/setTimerRunning", true);
+      this.$store.commit("session/setTimerStartedAt", Date.now());
+    },
+    stopTimer() {
+      this.$store.commit("session/setTimerTime", this.session.timerTime);
+      this.$store.commit("session/setTimerRunning", false);
+      this.$store.commit("session/setTimerStartedAt", null);
+    },
+    startLocalTick() {
+      if (this.timer) return;
+
+      this.now = Date.now();
+
+      this.timer = setInterval(() => {
+        this.now = Date.now();
+      }, 1000);
+    },
+
+    stopLocalTick() {
+      clearInterval(this.timer);
+      this.timer = null;
     }
   }
 };
@@ -511,13 +606,14 @@ export default {
 }
 
 /**** Text for calling players ****/
-.CallPlayers {
+.callPlayers {
   position: absolute;
   text-align: center;
   top: 30%;
   z-index: 75;
 
   background: rgba(0, 0, 0, 0.5);
+  border: 3px solid black;
   width: 100vw;
   height: 15vh;
 
@@ -529,7 +625,7 @@ export default {
 }
 
 /**** Changes font of the text ****/
-.CallPlayers h3 {
+.callPlayers h3 {
   font-family: 'Segoe Print';
 }
 
@@ -697,6 +793,51 @@ export default {
       }
     }
   }
+}
+
+.timerText {
+  position: absolute;
+  left: 10px;
+  top: 45%;
+  width: 22vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border: 3px solid black;
+  font-size: 6vh;
+}
+.running {
+  color: #4444ff;
+}
+.timerChangeTime {
+  position: absolute;
+  top: -45%;
+  display: flex;
+  justify-content: center;
+  align-items: bottom;
+  font-size: 3vh;
+  cursor: pointer;
+
+  svg {
+    cursor: pointer;
+    &:hover path {
+      fill: url(#demon);
+      stroke-width: 30px;
+      stroke: white;
+    }
+  }
+}
+
+.timerButtonsGroup {
+  position: absolute;
+  top: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  cursor: pointer;
 }
 
 #townsquare:not(.spectator) .fabled ul li:hover .token:before {
