@@ -19,7 +19,7 @@
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 34,
-    "firstNightReminder": "Ukaž Knihovníkovi token Podivína, který je ve hře. Ukaž na dva hráče, jeden z nich je ten podivín.",
+    "firstNightReminder": "Ukaž Knihovníkovi token Podivína, který je ve hře. Ukaž na dva hráče, jeden z nich je ten Podivín.",
     "otherNight": 0,
     "otherNightReminder": "",
     "reminders": ["Podivín",
@@ -284,7 +284,7 @@
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 24,
-    "otherNightReminder": "Čert ukáže na hráče. Tento hráč zemře. Pokud Čert vybere sebe: Vyměň postavu 1 živého poskoka za nadbytečný token Čerta. Ukaž mu 'Ty jsi' kartu, poté token Čerta.",
+    "otherNightReminder": "Čert ukáže na hráče. Tento hráč zemře. Pokud Čert vybere sebe: Vyměň postavu 1 živého Poskoka za nadbytečný token Čerta. Ukaž mu 'Ty jsi' kartu, poté token Čerta.",
     "reminders": ["Mrtvý",
         "Čert"],
     "setup": false,
@@ -471,11 +471,11 @@
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 43,
-    "otherNightReminder": "Pokud profesor ještě nepoužil svoji schopnost: Profesor buď zakýve svou hlavou 'ne', nebo ukáže na hráče. Pokud je tento hráč měšťan, je od teď zase živý.",
+    "otherNightReminder": "Pokud profesor ještě nepoužil svoji schopnost: Profesor buď zakýve svou hlavou 'ne', nebo ukáže na hráče. Pokud je tento hráč Měšťan, je od teď zase živý.",
     "reminders": ["Živý",
         "Bez schopnosti"],
     "setup": false,
-    "ability": "Jednou za hru, v noci*, si vyber mrtvého hráče: pokud je tento hráč měšťan, je zase živý."
+    "ability": "Jednou za hru, v noci*, si vyber mrtvého hráče: pokud je tento hráč Měšťan, je zase živý."
   },
   {
     "id": "minstrel",
@@ -553,7 +553,7 @@
     "otherNightReminder": "Pokud Měsíční dítě použilo dnes svoji schopnost na hráče: Pokud byl tento hráč dobrý, zemře.",
     "reminders": ["Mrtvý"],
     "setup": false,
-    "ability": "Když jsi zjistil, že jsi zemřel, tak si veřejně zvol 1 živého hráče.Pokud to byl dobrý hráč, tak večer zemře."
+    "ability": "Když jsi zjistil, že jsi zemřel, tak si veřejně zvol 1 živého hráče. Pokud to byl dobrý hráč, tak večer zemře."
   },
   {
     "id": "goon",
@@ -863,7 +863,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Každý den můžeš navštívit vypravěče, aby jsi v soukromí zjistil 2 věci: 1 je pravdivá a 1 je lež."
+    "ability": "Každý den můžeš navštívit Vypravěče, aby jsi v soukromí zjistil 2 věci: 1 je pravdivá a 1 je lež."
   },
   {
     "id": "seamstress",
@@ -1033,7 +1033,7 @@
     "otherNightReminder": "Pit-Hag ukáže na hráče a na postavu v její referenční tabulce. Pokud tato postava není ve hře, tak probuď zvoleného hráče a ukaž mu kartu 'Ty jsi' a relevantní token postavy. Pokud je postava ve hře, nic se nestane.",
     "reminders": [],
     "setup": false,
-    "ability": "Každou noc* si vyber hráče a postavu, kterou dostanou (pokud není ve hře). Pokud je takto vytvořen démon, tak jsou smrti tuto noc svévolné."
+    "ability": "Každou noc* si vyber hráče a postavu, kterou dostanou (pokud není ve hře). Pokud je takto vytvořen Démon, tak jsou smrti tuto noc svévolné."
   },
   {
     "id": "fanggu",
@@ -1177,7 +1177,7 @@
     "edition": "",
     "team": "townsfolk",
     "firstNight": 46,
-    "firstNightReminder": "Ukaž na 1 zlého hráče. Probuď měšťana, který je zlý, a ukaž mu kartu 'Ty jsi'a palec dolů.",
+    "firstNightReminder": "Ukaž na 1 zlého hráče. Probuď Měšťana, který je zlý, a ukaž mu kartu 'Ty jsi'a palec dolů.",
     "otherNight": 64,
     "otherNightReminder": "Pokud zjištěný zlý hráč zemřel, ukaž na dalšího zlého hráče.",
     "reminders": ["Zjistil"],
@@ -1239,13 +1239,13 @@
   },
   {
     "id": "balloonist",
-    "name": "Balonář",
+    "name": "Vzduchoplavec",
     "edition": "",
     "team": "townsfolk",
     "firstNight": 45,
-    "firstNightReminder": "Vyber si typ postavy. Ukaž na hráče, který je tohoto typu. Polož si Balonářův připomínkový žeton k tomuto hráči.",
+    "firstNightReminder": "Vyber si typ postavy. Ukaž na hráče, který je tohoto typu. Polož si Vzduchoplavcův připomínkový žeton k tomuto hráči.",
     "otherNight": 62,
-    "otherNightReminder": "Vyber si typ postavy, který je jiný, než typ postavy hráče, u kterého je připomínkový žeton. Ukaž na hráče, který je tohoto typu. Polož si Balonářův připomínkový žeton k tomuto hráči.",
+    "otherNightReminder": "Vyber si typ postavy, který je jiný, než typ postavy hráče, u kterého je připomínkový žeton. Ukaž na hráče, který je tohoto typu. Polož si Vzduchoplavcův připomínkový žeton k tomuto hráči.",
     "reminders": ["Viděl"],
     "setup": true,
     "ability": "Každou noc se dozvíš 1 hráče jiného typu postavy, než minulou noc. [+0 nebo +1 Podivín]"
@@ -1275,7 +1275,7 @@
     "reminders": ["Mrtvý",
         "Falešná tlapka"],
     "setup": false,
-    "ability": "Každou noc* si vyber živého hráče: pokud je dobrý, zemře a Démon tuto noc nemůže zabíjet. Jeden dobrý hráč se registruje jako zlý"
+    "ability": "Každou noc* si vyber živého hráče: pokud je dobrý, zemře a Démon tuto noc nemůže zabíjet. Jeden dobrý hráč se registruje jako zlý."
   },
   {
     "id": "amnesiac",
@@ -1283,7 +1283,7 @@
     "edition": "",
     "team": "townsfolk",
     "firstNight": 32,
-    "firstNightReminder": "Rozhodni se, co je Amnesiakova celá schopnost. Pokud se má amnesiak tuto noc probudit: Vzbuď Amnesiaka a proveď jeho schopnost.",
+    "firstNightReminder": "Rozhodni se, co je Amnesiakova celá schopnost. Pokud se má Amnesiak tuto noc probudit: Vzbuď Amnesiaka a proveď jeho schopnost.",
     "otherNight": 47,
     "otherNightReminder": "Pokud se má amnesiak tuto noc probudit: Vzbuď Amnesiaka a proveď jeho schopnost.",
     "reminders": ["?"],
@@ -1331,13 +1331,13 @@
   },
   {
     "id": "huntsman",
-    "name": "Lovec",
+    "name": "Myslivec",
     "edition": "",
     "team": "townsfolk",
     "firstNight": 30,
-    "firstNightReminder": "Lovec buď zakýve hlavou 'ne', nebo ukáže na hráče. Pokud ukáže na slečnu, vzbuď tohoto hráče a ukaž mu kartu 'Ty jsi' a token postavy Měšťana, co není ve hře.",
+    "firstNightReminder": "Myslivec buď zakýve hlavou 'ne', nebo ukáže na hráče. Pokud ukáže na Slečnu, vzbuď tohoto hráče a ukaž mu kartu 'Ty jsi' a token postavy Měšťana, co není ve hře.",
     "otherNight": 45,
-    "otherNightReminder": "Lovec buď zakýve hlavou 'ne', nebo ukáže na hráče. Pokud ukáže na slečnu, vzbuď tohoto hráče a ukaž mu kartu 'Ty jsi' a token postavy Měšťana, co není ve hře.",
+    "otherNightReminder": "Myslivec buď zakýve hlavou 'ne', nebo ukáže na hráče. Pokud ukáže na Slečnu, vzbuď tohoto hráče a ukaž mu kartu 'Ty jsi' a token postavy Měšťana, co není ve hře.",
     "reminders": ["Bez schopnosti"],
     "setup": true,
     "ability": "Jednou za hru, v noci, si vyber živého hráče: Slečna, pokud byla vybrána, se stane Měšťanem, co není ve hře. [+Slečna]"
@@ -1354,7 +1354,7 @@
     "reminders": [],
     "remindersGlobal": ["Je Alchymista"],
     "setup": false,
-    "ability": "Máš schopnost Poskoka. Když ji použiješ, tak ti vypravěč může říct, ať se rozhodneš jinak."
+    "ability": "Máš schopnost Poskoka. Když ji použiješ, tak ti Vypravěč může říct, ať se rozhodneš jinak."
   },
   {
     "id": "farmer",
@@ -1393,7 +1393,7 @@
     "otherNightReminder": "Pokud byl Král zabit Démonem, tak vzbuď Sbormistra a ukaž na Démona.",
     "reminders": [],
     "setup": true,
-    "ability": "Pokud Démon zabil krále, tak zjistíš, který hráč je Démon. [+Král]"
+    "ability": "Pokud Démon zabil Krále, tak zjistíš, který hráč je Démon. [+Král]"
   },
   {
     "id": "poppygrower",
@@ -1499,7 +1499,7 @@
     "otherNightReminder": "Pokud byla Slečna vybrána Lovcem, tak Slečnu probuď a ukaž jí kartu 'ty jsi' a token Měšťana, co není ve hře.",
     "reminders": ["Již hádali"],
     "setup": false,
-    "ability": "Všichni zlí poskoci ví, že jsi ve hře. Pokud tě Poskok veřejně uhádne (jednou), tvůj tým prohrává."
+    "ability": "Všichni zlí Poskoci ví, že jsi ve hře. Pokud tě Poskok veřejně uhádne (jednou), tvůj tým prohrává."
   },
   {
     "id": "golem",
