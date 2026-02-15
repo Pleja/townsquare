@@ -85,11 +85,8 @@ class LiveSession {
    */
   _onOpen() {
     if (this._isSpectator) {
-      this._sendDirect(
-        "host",
-        "getGamestate",
-        this._store.state.session.playerId
-      );
+      this._sendDirect("host", "timeSyncRequest", this._store.state.session.playerId);
+      this._sendDirect("host", "getGamestate");
     } else {
       this.sendGamestate();
     }
@@ -221,6 +218,21 @@ class LiveSession {
       case "isTimerRunning":
         if (!this._isSpectator) return;
         this._store.commit("session/setTimerRunning", params);
+        break;
+      case "timeSyncRequest":
+        if (!this._isSpectator) {
+          this._sendDirect(params, "timeSyncResponse", Date.now());
+        }
+        break;
+      case "timeSyncResponse":
+        if (this._isSpectator) {
+          const hostNow = params;
+          const clientNow = Date.now();
+
+          const offset = hostNow - clientNow;
+
+          this._store.commit("session/setTimerHostOffset",offset);
+        }
         break;
     }
   }

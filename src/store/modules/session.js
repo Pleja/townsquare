@@ -30,7 +30,8 @@ const state = () => ({
   isRolesDistributed: false,
   timerTime: 300,
   timerStartedAt: null,
-  isTimerRunning: false
+  isTimerRunning: false,
+  timerHostOffset: 0
 });
 
 const getters = {};
@@ -56,6 +57,7 @@ const mutations = {
   setTimerTime: set("timerTime"),
   setTimerStartedAt: set("timerStartedAt"),
   setTimerRunning: set("isTimerRunning"),
+  setTimerHostOffset: set("timerHostOffset"),
   claimSeat: set("claimedSeat"),
   distributeRoles: set("isRolesDistributed"),
   setSessionId(state, sessionId) {

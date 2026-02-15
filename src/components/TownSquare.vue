@@ -149,7 +149,7 @@ export default {
     ...mapState(["grimoire", "roles", "session"]),
     ...mapState("players", ["players", "bluffs", "fabled"]),
     timerTimeLeft() {
-      const { isTimerRunning, timerStartedAt, timerTime } = this.session;
+      const { isTimerRunning, timerStartedAt, timerTime, timerHostOffset } = this.session;
 
       // Hard stop if not running
       if (!isTimerRunning) return timerTime;
@@ -158,11 +158,9 @@ export default {
       if (typeof timerStartedAt !== "number") return timerTime;
       if (timerStartedAt <= 0) return timerTime;
 
-      const now = this.now;
+      const hostNow = this.now + (timerHostOffset || 0);
 
-      if (timerStartedAt > now) return timerTime;
-
-      const elapsed = Math.floor((now - timerStartedAt) / 1000);
+      const elapsed = Math.floor(((hostNow - timerStartedAt)) / 1000);
 
       return Math.max(0, timerTime - elapsed);
     }

@@ -216,6 +216,16 @@
             <em><font-awesome-icon icon="file-code"/></em>
           </li>
           <li>
+            <a href="https://github.com/Pleja/townsquare" target="_blank">
+              Tento kód
+            </a>
+            <em>
+              <a href="https://github.com/Pleja/townsquare" target="_blank">
+                <font-awesome-icon :icon="['fab', 'github']" />
+              </a>
+            </em>
+          </li>
+          <li>
             <a href="https://github.com/bra1n/townsquare" target="_blank">
               Originální kód
             </a>
