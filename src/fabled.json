@@ -123,6 +123,33 @@
     "ability": "Používej speciální Džinovo pravidlo. Všichni hráči ví, jaké je."
   },
   {
+    "id": "deusexfiasco",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNightReminder": "",
+    "reminders": [],
+    "setup": false,
+    "name": "Deus ex fiasko",
+    "team": "fabled",
+    "ability": "Super duper schopnost."
+  },
+  {
+    "id": "ferryman",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNightReminder": "",
+    "reminders": [],
+    "setup": false,
+    "name": "Převozník",
+    "team": "fabled",
+    "ability": "Super duper schopnost."
+  },
+
+
+
+
+
+  {
     "id": "stormcatcher",
     "firstNight": 1,
     "firstNightReminder": "Označ dobrého hráče jako \"V bezpečí\". Vzbuď všechny zlé hráče a ukaž jim označeného hráče.",
@@ -132,5 +159,93 @@
     "name": "Lapač bouřek",
     "team": "fabled",
     "ability": "Řekni dobrou postavu. Pokud je ve hře, tak může zemřít pouze popravou, ale zlí hráči ví, který hráč to je."
+  },
+  {
+    "id": "bigwig",
+    "firstNight": 1,
+    "firstNightReminder": "",
+    "otherNightReminder": "",
+    "reminders": [""],
+    "setup": false,
+    "name": "Big wig",
+    "team": "fabled",
+    "ability": "Super duper schopnost."
+  },
+  {
+    "id": "bootlegger",
+    "firstNight": 1,
+    "firstNightReminder": "",
+    "otherNightReminder": "",
+    "reminders": [""],
+    "setup": false,
+    "name": "Bootlegger",
+    "team": "fabled",
+    "ability": "Super duper schopnost."
+  },
+  {
+    "id": "gardener",
+    "firstNight": 1,
+    "firstNightReminder": "",
+    "otherNightReminder": "",
+    "reminders": [""],
+    "setup": false,
+    "name": "Gardener",
+    "team": "fabled",
+    "ability": "Super duper schopnost."
+  },
+  {
+    "id": "hindu",
+    "firstNight": 1,
+    "firstNightReminder": "",
+    "otherNightReminder": "",
+    "reminders": [""],
+    "setup": false,
+    "name": "Hindu",
+    "team": "fabled",
+    "ability": "Super duper schopnost."
+  },
+  {
+    "id": "pope",
+    "firstNight": 1,
+    "firstNightReminder": "",
+    "otherNightReminder": "",
+    "reminders": [""],
+    "setup": false,
+    "name": "Papež",
+    "team": "fabled",
+    "ability": "Super duper schopnost."
+  },
+  {
+    "id": "tor",
+    "firstNight": 1,
+    "firstNightReminder": "",
+    "otherNightReminder": "",
+    "reminders": [""],
+    "setup": false,
+    "name": "Tor",
+    "team": "fabled",
+    "ability": "Super duper schopnost."
+  },
+  {
+    "id": "ventriloquist",
+    "firstNight": 1,
+    "firstNightReminder": "",
+    "otherNightReminder": "",
+    "reminders": [""],
+    "setup": false,
+    "name": "Ventriloquist",
+    "team": "fabled",
+    "ability": "Super duper schopnost."
+  },
+  {
+    "id": "zenomancer",
+    "firstNight": 1,
+    "firstNightReminder": "",
+    "otherNightReminder": "",
+    "reminders": [""],
+    "setup": false,
+    "name": "Zenomancer",
+    "team": "fabled",
+    "ability": "Super duper schopnost."
   }
 ]
