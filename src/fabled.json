@@ -11,7 +11,8 @@
   },
   {
     "id": "angel",
-    "firstNightReminder": "",
+    "firstNight": 2,
+    "firstNightReminder": "Oznam, kteří hráči jsou ochraňováni Andělem.",
     "otherNightReminder": "",
     "reminders": ["Ochraňovat", "Něco zlého"],
     "setup": false,
@@ -21,7 +22,8 @@
   },
   {
     "id": "buddhist",
-    "firstNightReminder": "",
+    "firstNight": 3,
+    "firstNightReminder": "Oznam, kteří hráči jsou ovlivněni Budhistou.",
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
@@ -61,8 +63,9 @@
   },
   {
     "id": "toymaker",
-    "firstNightReminder": "",
-    "otherNight": 1,
+    "firstNight": 4,
+    "firstNightReminder": "Vyřeš info Poskoků a Démonů i přes to, že je ve hře méně jak 7 hráčů.",
+    "otherNight": 3,
     "otherNightReminder": "Pokud je noc, kterou by Démon mohl ukončit hru a Démon je označen žetonem “Poslední noc: Žádný útok”, tak Démon tuto noc neprovádí žádnou akci. (Neprobouzej ho.)",
     "reminders": ["Poslední noc: Žádný útok"],
     "setup": false,
@@ -83,7 +86,7 @@
   {
     "id": "duchess",
     "firstNightReminder": "",
-    "otherNight": 1,
+    "otherNight": 2,
     "otherNightReminder": "Vzbuď každého hráče označeného buď “Návštěvník”, nebo “Špatná informace” po jednom. Ukaž jim token Vévodkyně, poté ukaž na prstech (1, 2, 3), kolik zlých hráčů je označeno tokenem “Návštěvník”, nebo pokud probouzíš hráče označeného “Špatná informace”, ukaž mu libovolné číslo na prstech kromě počtu zlých hráčů označených Návštěvník”.",
     "reminders": ["Návštěvník", "Špatná informace"],
     "setup": false,
@@ -113,7 +116,6 @@
   },
   {
     "id": "djinn",
-    "firstNight": 0,
     "firstNightReminder": "",
     "otherNightReminder": "",
     "reminders": [],
@@ -124,26 +126,29 @@
   },
   {
     "id": "deusexfiasco",
-    "firstNight": 0,
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "reminders": [],
+    "reminders": ["Jejda"],
     "setup": false,
     "name": "Deus ex fiasko",
     "team": "fabled",
-    "ability": "Super duper schopnost."
+    "ability": "Alespoň jednou za hru udělá Vypravěč chybu. Opraví ji a veřejně se k ní přizná."
   },
   {
     "id": "ferryman",
-    "firstNight": 0,
     "firstNightReminder": "",
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
     "name": "Převozník",
     "team": "fabled",
-    "ability": "Super duper schopnost."
+    "ability": "Poslední den se všem mrtvým hráčům obnoví hlasovací token."
   },
+
+
+
+
+
 
 
 
@@ -151,101 +156,94 @@
 
   {
     "id": "stormcatcher",
-    "firstNight": 1,
-    "firstNightReminder": "Označ dobrého hráče jako \"V bezpečí\". Vzbuď všechny zlé hráče a ukaž jim označeného hráče.",
+    "firstNight": 5,
+    "firstNightReminder": "Oznam která postava je v bouřce. Pokud je tato postava ve hře, tak jejího hráče označ připomínkovým žetonem 'V bouřce'. Vzbuď postupně každého zlého hráče a ukaž mu token Lapače Bouřek a poté ukaž na tohoto hráče. Pokud není ve hře, tak vzbuď postupně každého zlé hráče a ukaž mu kartu 'Tyto postavy nejsou ve hře' a relevantní token postavy.",
     "otherNightReminder": "",
-    "reminders": ["V bezpečí"],
+    "reminders": ["V bouřce"],
     "setup": false,
     "name": "Lapač bouřek",
-    "team": "fabled",
+    "team": "loric",
     "ability": "Řekni dobrou postavu. Pokud je ve hře, tak může zemřít pouze popravou, ale zlí hráči ví, který hráč to je."
   },
   {
     "id": "bigwig",
-    "firstNight": 1,
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "reminders": [""],
+    "reminders": [],
     "setup": false,
-    "name": "Big wig",
-    "team": "fabled",
-    "ability": "Super duper schopnost."
+    "name": "Hlavoun",
+    "team": "loric",
+    "ability": "Každý nominovaný si vybere hráče: do hlasování může mluvit pouze tento hráč a zároveň ”šílí”, že nominovaný je dobrý, jinak může zemřít."
   },
   {
     "id": "bootlegger",
-    "firstNight": 1,
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "reminders": [""],
+    "reminders": [],
     "setup": false,
-    "name": "Bootlegger",
-    "team": "fabled",
-    "ability": "Super duper schopnost."
+    "name": "Pašerák",
+    "team": "loric",
+    "ability": "Skript používá domácí postavy nebo pravidla."
   },
   {
     "id": "gardener",
-    "firstNight": 1,
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "reminders": [""],
+    "reminders": [],
     "setup": false,
-    "name": "Gardener",
-    "team": "fabled",
-    "ability": "Super duper schopnost."
+    "name": "Zahradník",
+    "team": "loric",
+    "ability": "Vypravěč přiřadil 1 a více postav hráčům."
   },
   {
     "id": "hindu",
-    "firstNight": 1,
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "reminders": [""],
+    "reminders": [],
     "setup": false,
-    "name": "Hindu",
-    "team": "fabled",
-    "ability": "Super duper schopnost."
+    "name": "Hinduista",
+    "team": "loric",
+    "ability": "První 4 hráči, kteří zemřou, jsou ihned oživeni jako Poutníci stejné příslušnosti."
   },
   {
     "id": "pope",
-    "firstNight": 1,
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "reminders": [""],
+    "reminders": [],
     "setup": false,
     "name": "Papež",
-    "team": "fabled",
-    "ability": "Super duper schopnost."
+    "team": "loric",
+    "ability": "Ve hře můžou být duplicitní dobré postavy. Démon může takové postavy dostat jako blafy."
   },
   {
     "id": "tor",
-    "firstNight": 1,
     "firstNightReminder": "",
-    "otherNightReminder": "",
-    "reminders": [""],
+    "otherNight": 68,
+    "otherNightReminder": "Pokud dnes zemřel hráč, tak mu ukaž kartu 'Ty jsi', jeho token postavy a palec nahoru, nebo dolů.",
+    "reminders": [],
     "setup": false,
     "name": "Tor",
-    "team": "fabled",
-    "ability": "Super duper schopnost."
+    "team": "loric",
+    "ability": "Hráči neví jejich postavu a příslušnost. Tyto informace zjistí, až když zemřou."
   },
   {
     "id": "ventriloquist",
-    "firstNight": 1,
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "reminders": [""],
+    "reminders": ["Šílí"],
     "setup": false,
     "name": "Ventriloquist",
-    "team": "fabled",
-    "ability": "Super duper schopnost."
+    "team": "loric",
+    "ability": "Pokud hráč šílí jako nová postava při své nominaci, tak dnes nemusí zemřít při popravě."
   },
   {
     "id": "zenomancer",
-    "firstNight": 1,
     "firstNightReminder": "",
     "otherNightReminder": "",
-    "reminders": [""],
+    "reminders": ["Úkol"],
     "setup": false,
     "name": "Zenomancer",
-    "team": "fabled",
-    "ability": "Super duper schopnost."
+    "team": "loric",
+    "ability": "Jeden nebo více hráčů má svůj úkol. Když ho hráč splní, tak se dozví pravdivou informaci."
   }
 ]

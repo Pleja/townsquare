@@ -53,7 +53,7 @@
 
     <div class="team jinxed" v-if="jinxed.length">
       <aside>
-        <h4>Prokletý</h4>
+        <h4>Prokletí</h4>
       </aside>
       <ul>
         <li v-for="(jinx, index) in jinxed" :key="index">

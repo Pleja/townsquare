@@ -109,29 +109,47 @@ export default {
   computed: {
     rolesFirstNight: function() {
       const rolesFirstNight = [];
+      // add dawn / dusk info to niight order sheet
+      rolesFirstNight.push(
+        {
+          id: "dusk",
+          name: "Soumrak",
+          firstNight: 1,
+          team: "fabled",
+          players: "",
+          firstNightReminder:
+            "Začni noční fázi."
+        },
+        {
+          id: "dawn",
+          name: "Úsvit",
+          firstNight: 73,
+          team: "fabled",
+          players: "",
+          firstNightReminder:
+            "Počkej pár sekund. Ukonči noční fázi."
+        }
+      )
       // add minion / demon infos to night order sheet
       if (this.players.length > 6) {
         rolesFirstNight.push(
           {
             id: "evil",
             name: "Info Poskoků",
-            firstNight: 5,
+            firstNight: 15,
             team: "minion",
             players: this.players.filter(p => p.role.team === "minion"),
             firstNightReminder:
-              "• Pokud je více než jeden poskok, tak všichni navážou oční kontakt. " +
-              "• Ukaž kartu “Tohle je Démon”. Ukaž na Démona."
+              "Pokud je více než jeden poskok, tak všichni navážou oční kontakt. Ukaž kartu 'Tohle je Démon'. Ukaž na Démona."
           },
           {
             id: "evil",
             name: "Info Démona a blafy",
-            firstNight: 8,
+            firstNight: 19,
             team: "demon",
             players: this.players.filter(p => p.role.team === "demon"),
             firstNightReminder:
-              "• Ukaž kartu “Tohle jsou tví poskoci”. Ukaž na každého Poskoka. " +
-              "• Ukaž kartu “Tyto postavy nejsou ve hře”. Ukaž tokeny tří dobrých" +
-              "postav, co nejsou ve hře."
+              "Ukaž kartu 'Tohle jsou tví poskoci'. Ukaž na každého Poskoka. Ukaž kartu 'Tyto postavy nejsou ve hře'. Ukaž tokeny tří dobrých postav, co nejsou ve hře."
           }
         );
       }
@@ -151,6 +169,27 @@ export default {
     },
     rolesOtherNight: function() {
       const rolesOtherNight = [];
+      // add dawn / dusk info to niight order sheet
+      rolesOtherNight.push(
+        {
+          id: "dusk",
+          name: "Soumrak",
+          otherNight: 1,
+          team: "fabled",
+          players: "",
+          otherNightReminder:
+            "Začni noční fázi."
+        },
+        {
+          id: "dawn",
+          name: "Úsvit",
+          otherNight: 92,
+          team: "fabled",
+          players: "",
+          otherNightReminder:
+            "Počkej pár sekund. Ukonči noční fázi."
+        }
+      )
       this.roles.forEach(role => {
         const players = this.players.filter(p => p.role.id === role.id);
         if (role.otherNight && (role.team !== "traveler" || players.length)) {
@@ -222,6 +261,14 @@ h4 {
     }
   }
 }
+.loric {
+  .name {
+    background: linear-gradient(90deg, $loric, transparent 35%);
+    .night .other & {
+      background: linear-gradient(-90deg, $loric, transparent 35%);
+    }
+  }
+}
 .townsfolk {
   .name {
     background: linear-gradient(90deg, $townsfolk, transparent 35%);
@@ -251,6 +298,14 @@ h4 {
     background: linear-gradient(90deg, $demon, transparent 35%);
     .night .other & {
       background: linear-gradient(-90deg, $demon, transparent 35%);
+    }
+  }
+}
+.traveler {
+  .name {
+    background: linear-gradient(90deg, $traveler, transparent 35%);
+    .night .other & {
+      background: linear-gradient(-90deg, $traveler, transparent 35%);
     }
   }
 }
