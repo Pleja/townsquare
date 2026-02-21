@@ -1,45 +1,267 @@
 [
   {
-    "id": "Chambermaid",
+    "id": "Alchemist",
     "hatred": [
       {
-        "id": "Mathematician",
-        "reason": "The Chambermaid learns if the Mathematician wakes tonight or not, even though the Chambermaid wakes first."
+        "id": "Boffin",
+        "reason": "Pokud má Alchymista Vědátorovu schopnost, tak se Alchymista nedozví, jakou schopnost má Démon."
+      },
+      {
+        "id": "Marionette",
+        "reason": "Alchymista-Loutka nemá schopnost Loutky a Loutka je ve hře."
+      },
+      {
+        "id": "Mastermind",
+        "reason": "Alchymista-Strůjce nemá schopnost Strůjce a Strůjce není ve hře."
+      },
+      {
+        "id": "Organ Grinder",
+        "reason": "Pokud má Alchymista schopnost Flašinetáře, tak je Flašinetář ve hře. Pokud jsou oba střízliví, tak jsou oba opilí."
+      },
+      {
+        "id": "Spy",
+        "reason": "Alchymista-Špeh nemá schopnost Špeha a Špeh je ve hře. Po každé popravě může živý Alchymista-Špeh veřejně hádat, kdo je z živých hráčů Špeh. Pokud uhodne, tak Démon musí tento večer vybrat Špeha."
+      },
+      {
+        "id": "Summoner",
+        "reason": "Alchymista-Vyvolávač nedostane blafy a vybírá si, jaká postava bude Démon, ale ne jaký hráč bude Démon. Pokud zemře před tím, než se tohle stane, zlý tým vyhrává. [Žádný Démon]"
+      },
+      {
+        "id": "Wraith",
+        "reason": "Alchymista-Přízrak nemá schopnost Přízraku a Přízrak je ve hře. Po každé popravě může živý Alchymista-Přízrak veřejně hádat, kdo je z živých hráčů Přízrak. Pokud uhodne, tak Démon musí tento večer vybrat Přízrak."
+      },
+      {
+        "id": "Widow",
+        "reason": "Alchymista-Vdova nemá schopnost Vdovy a Vdova je ve hře. Po každé popravě může živý Alchymista-Vdova veřejně hádat, kdo je z živých hráčů Vdova. Pokud uhodne, tak Démon musí tento večer vybrat Vdovu."
       }
     ]
   },
+  {
+    "id": "Bounty Hunter",
+    "hatred": [
+      {
+        "id": "Kazali",
+        "reason": "Pokud Kazali promění Lovce odměn na Poskoka, tak není vytvořen zlý Měšťan."
+      },
+      {
+        "id": "Philosopher",
+        "reason": "Pokud Filozof získá schopnost Lovce odměn, tak se Měšťan může stát zlým."
+      }
+    ]
+  },
+  {
+    "id": "Cannibal",
+    "hatred": [
+      {
+        "id": "Butler",
+        "reason": "Pokud Kanibal získá schopnost Sluhy, tak se to Kanibal dozví."
+      },
+      {
+        "id": "Juggler",
+        "reason": "Pokud Žonglér hádal svůj 1. den a zemřel popravou, tak se v noci žijící Kanibal dozví, kolik hráčů Žonglér uhodl."
+      },
+      {
+        "id": "Princess",
+        "reason": "Pokud Kanibal nominoval, popravil a zabil Princeznu, tak Démon další noc nebude zabíjet. "
+      },
+      {
+        "id": "Zealot",
+        "reason": "Pokud Kanibal získá schopnost Zealota, tak se to Kanibal dozví."
+      }
+    ]
+  },
+  {
+    "id": "Mathematician",
+    "hatred": [
+      {
+        "id": "Chambermaid",
+        "reason": "Uklízečka může detekovat, zda se Matematik tuto noc probudí."
+      },
+      {
+        "id": "Drunk",
+        "reason": "Matematik může zjistit, že Pijanova schopnost dala špatnou informaci, nebo že nefungovala správně."
+      },
+      {
+        "id": "Lunatic",
+        "reason": "Matematik může zjistit, že Blázen zaútočil na jiného hráče než útočil reálný Démon."
+      },
+      {
+        "id": "Marionette",
+        "reason": "Matematik může zjistit, že schopnost Loutky dala špatnou informaci, nebo že nefungovala správně."
+      }
+    ]
+  },
+  {
+    "id": "Magician",
+    "hatred": [
+      {
+        "id": "Legion",
+        "reason": "Kouzelník se probouzí s Legií a může se registrovat jako zlý. Legie ví, že je ve hře Kouzelník, ale neví, který hráč to je."
+      },
+      {
+        "id": "Marionette",
+        "reason": "Pokud je Kouzelník živý, tak Démon neví, který z jeho sousedů je Loutka."
+      },
+      {
+        "id": "Spy",
+        "reason": "Když se Špeh dívá do Grimoáru, tak jsou tokeny Démona a Kouzelníka odebrány."
+      },
+      {
+        "id": "Vizier",
+        "reason": "Pokud je Vezír ve hře, tak Kouzelník nemá schopnost, ale je imunní vůči Vezírově schopnosti."
+      },
+      {
+        "id": "Widow",
+        "reason": "Když se Vdova dívá do Grimoáru, tak jsou tokeny Démona a Kouzelníka odebrány."
+      },
+      {
+        "id": "Wraith",
+        "reason": "Po každé popravě může živý Kouzelník veřejně hádat, kdo je z živých hráčů Přízrak. Pokud uhodne, tak Démon musí tento večer vybrat Přízrak."
+      }
+    ]
+  },
+
+
+
+
+
+
+
+
+
+
   {
     "id": "Butler",
     "hatred": [
       {
-        "id": "Cannibal",
-        "reason": "If the Cannibal gains the Butler ability, the Cannibal learns this."
+        "id": "Organ Grinder",
+        "reason": "Pokud Flašinetář způsobuje zavřené oči při hlasování, tak Sluha může hlasovat, ale jeho hlas se bude počítat pouze tehdy, pokud hlasoval i jeho pán."
       }
     ]
   },
   {
-    "id": "Lunatic",
+    "id": "Heretic",
     "hatred": [
       {
-        "id": "Mathematician",
-        "reason": "The Mathematician learns if the Lunatic attacks a different player(s) than the real Demon attacked."
-      }
-    ]
-  },
-  {
-    "id": "Pit-Hag",
-    "hatred": [
-      {
-        "id": "Heretic",
-        "reason": "A Pit-Hag can not create a Heretic. "
+        "id": "Baron",
+        "reason": "Pouze 1 Prokletá postava může být ve hře."
       },
       {
-        "id": "Damsel",
-        "reason": "If a Pit-Hag creates a Damsel, the Storyteller chooses which player it is."
+        "id": "Godfather",
+        "reason": "Pouze 1 Prokletá postava může být ve hře."
+      },
+      {
+        "id": "Lleech",
+        "reason": "Pouze 1 Prokletá postava může být ve hře."
+      },
+      {
+        "id": "Pit-Hag",
+        "reason": "Pouze 1 Prokletá postava může být ve hře."
+      },
+      {
+        "id": "Spy",
+        "reason": "Pouze 1 Prokletá postava může být ve hře."
+      },
+      {
+        "id": "Widow",
+        "reason": "Pouze 1 Prokletá postava může být ve hře."
+      }
+    ]
+  },
+  {
+    "id": "Plague Doctor",
+    "hatred": [
+      {
+        "id": "Baron",
+        "reason": "Pokud by měl Vypravěč získat schopnost Barona, tak se až dva hráči stanou novými Podivíny."
+      },
+      {
+        "id": "Boombandy",
+        "reason": "Pokud by měl Vypravěč získat schopnost Boombandy, tak se hráč stane Boombandy."
+      },
+      {
+        "id": "Evil Twin",
+        "reason": "Pokud by měl Vypravěč získat schopnost Zlého dvojčete, tak se hráč stane Zlým dvojčetem."
+      },
+      {
+        "id": "Fearmonger",
+        "reason": "Pokud by měl Vypravěč získat schopnost Strašáka, tak ji dostane Poskok a zároveň to i zjistí."
+      },
+      {
+        "id": "Goblin",
+        "reason": "Pokud by měl Vypravěč získat schopnost Skřeta, tak ji dostane Poskok a zároveň to i zjistí."
+      },
+      {
+        "id": "Marionette",
+        "reason": "Pokud by měl Vypravěč získat schopnost Loutky, tak se jeden z dobrých sousedících hráčů Démona stane Loutkou."
+      },
+      {
+        "id": "Scarlet Woman",
+        "reason": "Pokud by měl Vypravěč získat schopnost Šarlatové ženy, tak ji dostane Poskok a zároveň to i zjistí."
+      },
+      {
+        "id": "Spy",
+        "reason": "Pokud by měl Vypravěč získat schopnost Špeha, tak ji dostane Poskok a zároveň to i zjistí."
+      },
+      {
+        "id": "Wraith",
+        "reason": "Pokud by měl Vypravěč získat schopnost Přízraku, tak ji dostane Poskok a zároveň to i zjistí."
+      }
+    ]
+  },
+  {
+    "id": "Recluse",
+    "hatred": [
+      {
+        "id": "Ogre",
+        "reason": "Pokud se Samotář detekoval Zlobrovi jako zlý, tak se Zlobr dozví, že je zlý."
+      },
+      {
+        "id": "Sage",
+        "reason": "Samotář se může Mudrcovi registrovat jako Démon."
+      }
+    ]
+  },
+
+
+
+
+
+
+
+
+
+
+  {
+    "id": "Boffin",
+    "hatred": [
+      {
+        "id": "Cult Leader",
+        "reason": "Pokud má Démon schopnost Vedoucího kultu, tak se kvůli své schopnosti nemůže stát dobrým."
+      },
+      {
+        "id": "Drunk",
+        "reason": "Démon nemůže mít Pijanovu schopnost."
+      },
+      {
+        "id": "Goon",
+        "reason": "Pokud má Démon schopnost Hňupa, tak se kvůli své schopnosti nemůže stát dobrým."
+      },
+      {
+        "id": "Heretic",
+        "reason": "Démon nemůže mít Kacířovu schopnost."
+      },
+      {
+        "id": "Ogre",
+        "reason": "Démon nemůže mít Zlobrovu schopnost."
       },
       {
         "id": "Politician",
-        "reason": "A Pit-hag can not create an evil Politician."
+        "reason": "Démon nemůže mít Politikovu schopnost."
+      },
+      {
+        "id": "Village Idiot",
+        "reason": "Pokud je zde extra token, tak Vědátor může dát Démonovi schopnost Vesnického hlupáka."
       }
     ]
   },
@@ -48,79 +270,218 @@
     "hatred": [
       {
         "id": "Goblin",
-        "reason": "The Cerenovus may choose to make a player mad that they are the Goblin."
+        "reason": "Cerenovus může vybrat hráče, aby šílel, že je Skřet."
       }
     ]
   },
   {
-    "id": "Leviathan",
+    "id": "Marionette",
     "hatred": [
       {
-        "id": "Soldier",
-        "reason": "If Leviathan nominates and executes the Soldier, the Soldier does not die."
+        "id": "Balloonist",
+        "reason": "Pokus si Loutka myslí, že je Vzduchoplavec, tak Podivín mohl být přidán při přípravě hry."
       },
       {
-        "id": "Monk",
-        "reason": "If Leviathan nominates and executes the player the Monk chose, that player does not die."
+        "id": "Huntsman",
+        "reason": "Pokus si Loutka myslí, že je Myslivec, tak při přípravě hry byla přidána Slečna."
       },
       {
-        "id": "Innkeeper",
-        "reason": "If Leviathan nominates and executes a player the Innkeeper chose, that player does not die."
+        "id": "Kazali",
+        "reason": "Pokud by ve hře byla Loutka, tak přichází do hry až po Démonovi a musí začínat jako jeho soused."
       },
       {
-        "id": "Ravenkeeper",
-        "reason": "If Leviathan is in play & the Ravenkeeper dies by execution, they wake that night to use their ability."
+        "id": "Lil' Monsta",
+        "reason": "Pokud by ve hře byla Loutka, tak přichází do hry až po Démonovi a musí začínat jako jeho soused."
       },
       {
-        "id": "Sage",
-        "reason": "If Leviathan is in play & the Sage dies by execution, they wake that night to use their ability."
-      },
-      {
-        "id": "Farmer",
-        "reason": "If Leviathan is in play & a Farmer dies by execution, a good player becomes a Farmer that night."
-      },
-      {
-        "id": "Mayor",
-        "reason": "If Leviathan is in play & no execution occurs on day 5, good wins."
+        "id": "Summoner",
+        "reason": "Pokud by ve hře byla Loutka, tak přichází do hry až po Démonovi a musí začínat jako jeho soused."
       }
     ]
   },
+  {
+    "id": "Mastermind",
+    "hatred": [
+      {
+        "id": "Vigormortis",
+        "reason": "Strůjce si svoji schopnost nechává i když Vigormortis zemře."
+      }
+    ]
+  },
+  {
+    "id": "Pit-Hag",
+    "hatred": [
+      {
+        "id": "Cult Leader",
+        "reason": "Pokud Pit-Hag promění zlého hráče ve Vedoucího kultu, tak se kvůli své schopnosti nemůže stát dobrým."
+      },
+      {
+        "id": "Damsel",
+        "reason": "Pokud Pit-Hag vytvoří Slečnu, tak Vypravěč vybere, který hráč se stane Slečnou."
+      },
+      {
+        "id": "Goon",
+        "reason": "Pokud Pit-Hag promění zlého hráče na Hňupa, tak se kvůli své schopnosti nemůže stát dobrým."
+      },
+      {
+        "id": "Ogre",
+        "reason": "Pokud Pit-Hag promění zlého hráče na Zlobra, tak se kvůli své schopnosti nemůže stát dobrým."
+      },
+      {
+        "id": "Politician",
+        "reason": "Pokud Pit-Hag promění zlého hráče na Politika, tak se kvůli své schopnosti nemůže stát dobrým."
+      },
+      {
+        "id": "Village Idiot",
+        "reason": "Pokud je zde extra token, tak Pit-Hag může vytvořit dalšího Vesnického hlupáka. Pokud tak učiní, tak se může změnit opilý Vesnický hlupák."
+      }
+    ]
+  },
+  {
+    "id": "Scarlet Woman",
+    "hatred": [
+      {
+        "id": "Al-Hadikhia",
+        "reason": "Pokud by ve hře byli dva Démoni a jeden z nich by byla Šarlatová žena, tak se Šarlatová žena stane znovu Šarlatovou ženou."
+      },
+      {
+        "id": "Fang Gu",
+        "reason": "Pokud by ve hře byli dva Démoni a jeden z nich by byla Šarlatová žena, tak Šarlatová žena zůstane Šarlatovou ženou."
+      }
+    ]
+  },
+  {
+    "id": "Spy",
+    "hatred": [
+      {
+        "id": "Damsel",
+        "reason": "Pokud je Špeh ve hře (nebo byl), tak je Slečna otrávená."
+      },
+      {
+        "id": "Ogre",
+        "reason": "Špeh se Zlobrovi jeví jako zlý."
+      },
+      {
+        "id": "Poppy Grower",
+        "reason": "Pokud má Maková panenka svoji schopnost, tak Špeh nevidí Grimoár."
+      }
+    ]
+  },
+  {
+    "id": "Summoner",
+    "hatred": [
+      {
+        "id": "Clockmaker",
+        "reason": "Vyvolávač se Hodináři jeví jako Démon."
+      },
+      {
+        "id": "Courtier",
+        "reason": "Pokud žijící Vyvolávač nemá schopnost, tak má Vypravěč Vyvolávačovu schopnost."
+      },
+      {
+        "id": "Engineer",
+        "reason": "Pokud je žijící Vyvolávač odebrán ze hry, tak má Vypravěč Vyvolávačovu schopnost."
+      },
+      {
+        "id": "Hatter",
+        "reason": "Pokud Vyvolávač vytvoří druhého živého Démona, tak jsou smrti tuto noc svévolné."
+      },
+      {
+        "id": "Kazali",
+        "reason": "Pokud Vyvolávač vytvoří druhého živého Démona, tak jsou smrti tuto noc svévolné."
+      },
+      {
+        "id": "Lord of Typhon",
+        "reason": "Pokud je vyvolán Pán Typhonu, tak musí sousedit s Poskokem a jeho druhý soused se stane zlým Poskokem."
+      },
+      {
+        "id": "Pit-Hag",
+        "reason": "Pokud Vyvolávač vytvoří druhého živého Démona, tak jsou smrti tuto noc svévolné."
+      },
+      {
+        "id": "Poppy Grower",
+        "reason": "Pokud Maková panenka 3. noc žije, tak si Vyvolávač vybere Démona, ale ne hráče, který se stane Démonem."
+      },
+      {
+        "id": "Preacher",
+        "reason": "Pokud žijící Vyvolávač nemá schopnost, tak má Vypravěč Vyvolávačovu schopnost."
+      },
+      {
+        "id": "Pukka",
+        "reason": "Vyvolávač může vyvolat Pukku 2. noc místo 3. noci."
+      },
+      {
+        "id": "Zombuul",
+        "reason": "Pokud Vyvolávač vyvolá mrtvého hráče jako Zombuula, tak Zombuul již 'jednou zemřel'."
+      }
+    ]
+  },
+  {
+    "id": "Vizier",
+    "hatred": [
+      {
+        "id": "Alsaahir",
+        "reason": "Vypravěč neoznámí, že je Vezír ve hře."
+      },
+      {
+        "id": "Courtier",
+        "reason": "Pokud Vezír ztratí svoji schopnost, tak se o tom dozví, a přes den nemůže zemřít."
+      },
+      {
+        "id": "Fearmonger",
+        "reason": "Vezír se probouzí se Strašákem, zjistí, koho vybral a nemůže se rozhodnout, že ihned popraví tohoto hráče."
+      },
+      {
+        "id": "Investigator",
+        "reason": "Vypravěč neoznámí, že je Vezír ve hře."
+      },
+      {
+        "id": "Politician",
+        "reason": "Politik se může Vezírovi jevit jako zlý."
+      },
+      {
+        "id": "Preacher",
+        "reason": "Pokud Vezír ztratí svoji schopnost, tak se o tom dozví, a přes den nemůže zemřít."
+      },
+      {
+        "id": "Zealot",
+        "reason": "Zealot se může Vezírovi jevit jako zlý."
+      }
+    ]
+  },
+  {
+    "id": "Widow",
+    "hatred": [
+      {
+        "id": "Damsel",
+        "reason": "Pokud je Vdova ve hře (nebo byla), tak je Slečna otrávená."
+      },
+      {
+        "id": "Poppy Grower",
+        "reason": "Pokud má Maková panenka svoji schopnost, tak Vdova nevidí Grimoár."
+      }
+    ]
+  },
+
+
+
+
+
+
+
+
+
+
   {
     "id": "Al-Hadikhia",
     "hatred": [
       {
-        "id": "Scarlet Woman",
-        "reason": "If there are two living Al-Hadikhias, the Scarlet Woman Al-Hadikhia becomes the Scarlet Woman again."
+        "id": "Princess",
+        "reason": "Pokud Princezna nominovala a popravila hráče svůj 1. den, tak nikdo tuto noc nezemře na schopnost Al-Hadikhia."
       },
       {
         "id": "Mastermind",
-        "reason": "Only 1 jinxed character can be in play. Evil players start knowing which player and character it is."
-      }
-    ]
-  },
-  {
-    "id": "Lil' Monsta",
-    "hatred": [
-      {
-        "id": "Poppy Grower",
-        "reason": "If the Poppy Grower is in play, Minions don't wake together. They are woken one by one, until one of them chooses to take the Lil' Monsta token."
-      },
-      {
-        "id": "Magician",
-        "reason": "Only 1 jinxed character can be in play. "
-      },
-      {
-        "id": "Scarlet Woman",
-        "reason": "If there are 5 or more players alive and the player holding the Lil' Monsta token dies, the Scarlet Woman is given the Lil' Monsta token tonight."
-      }
-    ]
-  },
-  {
-    "id": "Lycanthrope",
-    "hatred": [
-      {
-        "id": "Gambler",
-        "reason": "If the Lycanthrope is alive and the Gambler kills themself at night, no other players can die tonight."
+        "reason": "Pokud Al-Hadikhia zemře popravou a Strůjce je živý, tak si Al-Hadikhia tuto noc vybere tři hráče: pokud se všichni rohodnou žít, vyhrává zlo, jinak vyhrává dobro."
       }
     ]
   },
@@ -129,230 +490,117 @@
     "hatred": [
       {
         "id": "Engineer",
-        "reason": "Legion and the Engineer can not both be in play at the start of the game. If the Engineer creates Legion, most players (including all evil players) become evil Legion."
+        "reason": "Pokud je vytvořená Legie, tak se všichni zlí hráči stávají Legií. Pokud je Legie ve hře, tak to na začátku hry Inženýr zjistí, ale nemá schopnost."
       },
       {
-        "id": "Preacher",
-        "reason": "Only 1 jinxed character can be in play."
-      }
-    ]
-  },
-  {
-    "id": "Fang Gu",
-    "hatred": [
-      {
-        "id": "Scarlet Woman",
-        "reason": "If the Fang Gu chooses an Outsider and dies, the Scarlet Woman does not become the Fang Gu."
-      }
-    ]
-  },
-  {
-    "id": "Spy",
-    "hatred": [
-      {
-        "id": "Magician",
-        "reason": "When the Spy sees the Grimoire, the Demon and Magician's character tokens are removed."
-      },
-      {
-        "id": "Alchemist",
-        "reason": "The Alchemist can not have the Spy ability."
-      },
-      {
-        "id": "Poppy Grower",
-        "reason": "If the Poppy Grower is in play, the Spy does not see the Grimoire until the Poppy Grower dies."
-      },
-      {
-        "id": "Damsel",
-        "reason": "Only 1 jinxed character can be in play. "
-      },
-      {
-        "id": "Heretic",
-        "reason": "Only 1 jinxed character can be in play."
-      }
-    ]
-  },
-  {
-    "id": "Widow",
-    "hatred": [
-      {
-        "id": "Magician",
-        "reason": "When the Widow sees the Grimoire, the Demon and Magician's character tokens are removed."
-      },
-      {
-        "id": "Poppy Grower",
-        "reason": "If the Poppy Grower is in play, the Widow does not see the Grimoire until the Poppy Grower dies."
-      },
-      {
-        "id": "Alchemist",
-        "reason": "The Alchemist can not have the Widow ability."
-      },
-      {
-        "id": "Damsel",
-        "reason": "Only 1 jinxed character can be in play."
-      },
-      {
-        "id": "Heretic",
-        "reason": "Only 1 jinxed character can be in play."
-      }
-    ]
-  },
-  {
-    "id": "Godfather",
-    "hatred": [
-      {
-        "id": "Heretic",
-        "reason": "Only 1 jinxed character can be in play."
-      }
-    ]
-  },
-  {
-    "id": "Baron",
-    "hatred": [
-      {
-        "id": "Heretic",
-        "reason": "The Baron might only add 1 Outsider, not 2."
-      }
-    ]
-  },
-  {
-    "id": "Marionette",
-    "hatred": [
-      {
-        "id": "Lil' Monsta",
-        "reason": "The Marionette neighbors a Minion, not the Demon. The Marionette is not woken to choose who takes the Lil' Monsta token."
-      },
-      {
-        "id": "Poppy Grower",
-        "reason": "When the Poppy Grower dies, the Demon learns the Marionette but the Marionette learns nothing."
-      },
-      {
-        "id": "Snitch",
-        "reason": "The Marionette does not learn 3 not in-play characters. The Demon learns an extra 3 instead."
-      },
-      {
-        "id": "Balloonist",
-        "reason": "If the Marionette thinks that they are the Balloonist, +1 Outsider was added."
-      },
-      {
-        "id": "Damsel",
-        "reason": "The Marionette does not learn that a Damsel is in play."
-      },
-      {
-        "id": "Huntsman",
-        "reason": "If the Marionette thinks that they are the Huntsman, the Damsel was added."
-      }
-    ]
-  },
-  {
-    "id": "Riot",
-    "hatred": [
-      {
-        "id": "Engineer",
-        "reason": "Riot and the Engineer can not both be in play at the start of the game. \nIf the Engineer creates Riot, the evil players become Riot."
-      },
-      {
-        "id": "Golem",
-        "reason": "If The Golem nominates Riot, the Riot player does not die."
-      },
-      {
-        "id": "Snitch",
-        "reason": "If the Snitch is in play, each Riot player gets an extra 3 bluffs."
-      },
-      {
-        "id": "Saint",
-        "reason": "If a good player nominates and kills the Saint, the Saint's team loses."
-      },
-      {
-        "id": "Butler",
-        "reason": "The Butler can not nominate their master."
-      },
-      {
-        "id": "Pit-Hag",
-        "reason": "If the Pit-Hag creates Riot, all evil players become Riot. \nIf the Pit-Hag creates Riot after day 3, the game continues for one more day."
-      },
-      {
-        "id": "Mayor",
-        "reason": "If the 3rd day begins with just three players alive, the players may choose (as a group) not to nominate at all. If so (and a Mayor is alive) then the Mayor's team wins."
-      },
-      {
-        "id": "Monk",
-        "reason": "If a Riot player nominates and kills the Monk-protected-player, the Monk-protected-player does not die."
-      },
-      {
-        "id": "Farmer",
-        "reason": "If a Riot player nominates and kills a Farmer, the Farmer uses their ability tonight."
-      },
-      {
-        "id": "Innkeeper",
-        "reason": "If a Riot player nominates an Innkeeper-protected-player, the Innkeeper-protected-player does not die."
-      },
-      {
-        "id": "Sage",
-        "reason": "If a Riot player nominates and kills a Sage, the Sage uses their ability tonight."
-      },
-      {
-        "id": "Ravenkeeper",
-        "reason": "If a Riot player nominates and kills the Ravenkeeper, the Ravenkeeper uses their ability tonight."
-      },
-      {
-        "id": "Soldier",
-        "reason": "If a Riot player nominates the Soldier, the Soldier does not die."
-      },
-      {
-        "id": "Grandmother",
-        "reason": "If a Riot player nominates and kills the Grandchild, the Grandmother dies too."
-      },
-      {
-        "id": "King",
-        "reason": "If a Riot player nominates and kills the King and the Choirboy is alive, the Choirboy uses their ability tonight."
-      },
-      {
-        "id": "Exorcist",
-        "reason": "Only 1 jinxed character can be in play."
+        "id": "Hatter",
+        "reason": "Pokud je vytvořená Legie, tak se všichni zlí hráči stávají Legií. Pokud je Legie ve hře, tak to na začátku hry Kloboučník zjistí, ale nemá schopnost."
       },
       {
         "id": "Minstrel",
-        "reason": "Only 1 jinxed character can be in play."
+        "reason": "Pokud dneska popravou zemřela Legie, tak Legii zůstane její schopnost. Básník ale může zjistit, že popravený hráč byl Legie."
       },
       {
-        "id": "Flowergirl",
-        "reason": "Only 1 jinxed character can be in play."
-      },
-      {
-        "id": "Undertaker",
-        "reason": "Players that die by nomination register as being executed to the Undertaker."
-      },
-      {
-        "id": "Cannibal",
-        "reason": "Players that die by nomination register as being executed to the Cannibal."
-      },
-      {
-        "id": "Pacifist",
-        "reason": "Players that die by nomination register as being executed to the Pacifist."
-      },
-      {
-        "id": "Devil's Advocate",
-        "reason": "Players that die by nomination register as being executed to the Devil's Advocate."
-      },
-      {
-        "id": "Investigator",
-        "reason": "Riot registers as a Minion to the Investigator."
-      },
-      {
-        "id": "Clockmaker",
-        "reason": "Riot registers as a Minion to the Clockmaker."
-      },
-      {
-        "id": "Town Crier",
-        "reason": "Riot registers as a Minion to the Town Crier."
-      },
-      {
-        "id": "Damsel",
-        "reason": "Riot registers as a Minion to the Damsel."
+        "id": "Politician",
+        "reason": "Politik se může Legii jevit jako zlý."
       },
       {
         "id": "Preacher",
-        "reason": "Riot registers as a Minion to the Preacher."
+        "reason": "Pokud si Kazatel vybral Legii, tak Legii zůstane její schopnost. Kazatel ale může zjistit, že vybraný hráč byl Legie."
+      },
+      {
+        "id": "Summoner",
+        "reason": "Pokud je vyvolána Legie, tak se všichni zlí hráči stávají Legií."
+      },
+      {
+        "id": "Zalot",
+        "reason": "Zealot se může Legii jevit jako zlý."
+      }
+    ]
+  },
+  {
+    "id": "Leviathan",
+    "hatred": [
+      {
+        "id": "Banshee",
+        "reason": "Každou noc* si Leviatan vybere živého dobrého hráče (jiného než minulé noci): vybraná Banshee umírá a získává svoji schopnost."
+      },
+      {
+        "id": "Exorcist",
+        "reason": "Pokud Leviatan nominuje a popraví hráče zvoleného Vymítačem Ďábla, tak dobří vyhrávají."
+      },
+      {
+        "id": "Farmer",
+        "reason": "Každou noc* si Leviatan vybere živého dobrého hráče (jiného než minulé noci): vybraný Farmář použije svoji schopnost, ale neumírá."
+      },
+      {
+        "id": "Grandmother",
+        "reason": "Pokud je Leviatan ve hře a Vnouče zemře popravou, tak zlý tým vyhrává."
+      },
+      {
+        "id": "Hatter",
+        "reason": "Leviatan nemůže přijít do hry po 5. dni."
+      },
+      {
+        "id": "Innkeeper",
+        "reason": "Pokud Leviatan nominuje a popraví hráče ochráněného Hospodským, tak dobří vyhrávají."
+      },
+      {
+        "id": "King",
+        "reason": "Pokud je Leviatan ve hře a je mrtvý alespoň jeden hráč, tak se Král každou noc dozví živou postavu."
+      },
+      {
+        "id": "Mayor",
+        "reason": "Pokud Leviatan a Starosta jsou živí 5. den a neproběhne žádná poprava, tak dobří vyhrávají."
+      },
+      {
+        "id": "Monk",
+        "reason": "Pokud Leviatan nominuje a popraví hráče ochráněného Mnichem, tak dobří vyhrávají."
+      },
+      {
+        "id": "Pit-Hag",
+        "reason": "Leviatan nemůže přijít do hry po 5. dni."
+      },
+      {
+        "id": "Ravenkeeper",
+        "reason": "Každou noc* si Leviatan vybere živého dobrého hráče (jiného než minulé noci): vybraná Strážkyně krkavců použije svoji schopnost, ale neumírá."
+      },
+      {
+        "id": "Sage",
+        "reason": "Každou noc* si Leviatan vybere živého dobrého hráče (jiného než minulé noci): vybraný Mudrc použije svoji schopnost, ale neumírá."
+      },
+      {
+        "id": "Soldier",
+        "reason": "Pokud Leviatan nominuje a popraví hráče Vojáka, tak dobří vyhrávají."
+      }
+    ]
+  },
+  {
+    "id": "Lil' Monsta",
+    "hatred": [
+      {
+        "id": "Hatter",
+        "reason": "Pokud Kloboučník zemřel a Démon si vybral Malou příšerku, tak si vybere i Poskoka, kterým se stane."
+      },
+      {
+        "id": "Poppy Grower",
+        "reason": "Pokud je Malá příšerka a Maková panenka naživu, tak se Poskoci probouzí postupně, dokud si jeden hráč nevezme token Malé příšerky."
+      },
+      {
+        "id": "Psychopath",
+        "reason": "Pokud Psychopat hlídá Malou příšerku, tak při popravě zemře."
+      },
+      {
+        "id": "Magician",
+        "reason": "Pokud je Kouzelník naživu, tak Vypravěč vybírá, který Poskok bude hlídat Malou příšerku."
+      },
+      {
+        "id": "Scarlet Woman",
+        "reason": "Pokud Malá příšerka zemře když je 5 a více hráčů naživu, tak Šarlatová žena hlídá Malou příšerku až do konce hry."
+      },
+      {
+        "id": "Vizier",
+        "reason": "Pokud Vezír hlídá Malou příšerku, tak při popravě zemře."
       }
     ]
   },
@@ -361,15 +609,82 @@
     "hatred": [
       {
         "id": "Mastermind",
-        "reason": "If the Mastermind is alive and the Lleech's host dies by execution, the Lleech lives but loses their ability. "
+        "reason": "Pokud je Strůjce naživu a hostitel Ppijavice zemřel popravou, tak Ppijavice žije, ale přišla o svoji schopnost."
       },
       {
         "id": "Slayer",
-        "reason": "If the Slayer slays the Lleech's host, the host dies. "
+        "reason": "Pokud Lovec zabije hostitele Ppijavice, tak hostitel umírá."
+      }
+    ]
+  },
+  {
+    "id": "Riot",
+    "hatred": [
+      {
+        "id": "Atheist",
+        "reason": "Pokud při povstání je nominován Vypravěč, tak hráči hlasují. Pokud je vypravěč 'na špalku', tak hra končí. Jinak tento hráč nominuje znovu."
       },
       {
-        "id": "Heretic",
-        "reason": "If the Lleech has poisoned the Heretic then the Lleech dies, the Heretic remains poisoned."
+        "id": "Banshee",
+        "reason": "Každou noc* si Povstalec vybere živého dobrého hráče (jiného než minulé noci): vybraná Banshee umírá a získává svoji schopnost."
+      },
+      {
+        "id": "Exorcist",
+        "reason": "Pokud Povstalec nominuje a popraví hráče zvoleného Vymítačem Ďábla, tak dobří vyhrávají."
+      },
+      {
+        "id": "Farmer",
+        "reason": "Každou noc* si Povstalec vybere živého dobrého hráče (jiného než minulé noci): vybraný Farmář použije svoji schopnost, ale neumírá."
+      },
+      {
+        "id": "Grandmother",
+        "reason": "Pokud je Povstalec ve hře a Vnouče zemře popravou, tak zlý tým vyhrává."
+      },
+      {
+        "id": "Innkeeper",
+        "reason": "Pokud Povstalec nominuje a popraví hráče ochráněného Hospodským, tak dobří vyhrávají."
+      },
+      {
+        "id": "King",
+        "reason": "Pokud je Povstalec ve hře a je mrtvý alespoň jeden hráč, tak se Král každou noc dozví živou postavu."
+      },
+      {
+        "id": "Mayor",
+        "reason": "Starosta se může rozhodnout, že zastaví povstání. Pokud tak učiní, když je pouze 1 Povstalec naživu, tak vyhrává dobro, jinak vyhrává zlo."
+      },
+      {
+        "id": "Monk",
+        "reason": "Pokud Povstalec nominuje a popraví hráče ochráněného Mnichem, tak dobří vyhrávají."
+      },
+      {
+        "id": "Ravenkeeper",
+        "reason": "Každou noc* si Povstalec vybere živého dobrého hráče (jiného než minulé noci): vybraná Strážkyně krkavců použije svoji schopnost, ale neumírá."
+      },
+      {
+        "id": "Sage",
+        "reason": "Každou noc* si Povstalec vybere živého dobrého hráče (jiného než minulé noci): vybraný Mudrc použije svoji schopnost, ale neumírá."
+      },
+      {
+        "id": "Soldier",
+        "reason": "Pokud Povstalec nominuje a popraví hráče Vojáka, tak dobří vyhrávají."
+      }
+    ]
+  },
+  {
+    "id": "Vortox",
+    "hatred": [
+      {
+        "id": "Banshee",
+        "reason": "Pokud Vortox zabije Banshee, tak se všichni hráči dozví, že Banshee zemřela."
+      }
+    ]
+  },
+  {
+    "id": "Yaggababble",
+    "hatred": [
+      {
+        "id": "Exorcist",
+        "reason": "Pokud Vymítač ďábla vybral Yaggababble, tak Yaggababble tuto noc nebude zabíjet."
       }
     ]
   }

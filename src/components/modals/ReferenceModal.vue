@@ -75,7 +75,7 @@
           ></span>
           <div class="role">
             <span class="name"
-              >{{ jinx.first.name }} & {{ jinx.second.name }}</span
+              >{{ jinx.first.name }} a {{ jinx.second.name }}</span
             >
             <span class="ability">{{ jinx.reason }}</span>
           </div>
@@ -245,7 +245,7 @@ h3 {
     transform: rotate(90deg);
     transform-origin: center;
     font-size: 80%;
-    font-family: 'Segoe Print';
+    font-family: PiratesBay, sans-serif;
   }
 
   &.jinxed {

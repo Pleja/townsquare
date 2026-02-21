@@ -628,7 +628,7 @@ export default {
 
 /**** Changes font of the text ****/
 .callPlayers h3 {
-  font-family: 'Segoe Print';
+  font-family: PiratesBay, sans-serif;
 }
 
 /**** Call players animation ****/
