@@ -130,7 +130,7 @@
     "otherNightReminder": "",
     "reminders": ["Bez schopnosti"],
     "setup": false,
-    "ability": "Když tě poprvé někdo nominuje a nominujícím je Měšťan, je ihned popraven."
+    "ability": "Když tě poprvé někdo nominuje a nominujícím je Měšťan, je okamžitě popraven."
   },
   {
     "id": "slayer",
@@ -1002,9 +1002,9 @@
     "edition": "snv",
     "team": "minion",
     "firstNight": 37,
-    "firstNightReminder": "Čarodějnice ukáže na hráče. Pokud tento hráč bude zítra nominovat, ihned zemře.",
+    "firstNightReminder": "Čarodějnice ukáže na hráče. Pokud tento hráč bude zítra nominovat, okamžitě umírá.",
     "otherNight": 21,
-    "otherNightReminder": "Pokud je naživu 4 a více hráčů: Čarodějnice ukáže na hráče. Pokud tento hráč bude zítra nominovat, ihned zemře.",
+    "otherNightReminder": "Pokud je naživu 4 a více hráčů: Čarodějnice ukáže na hráče. Pokud tento hráč bude zítra nominovat, okamžitě umírá.",
     "reminders": ["Prokletý"],
     "setup": false,
     "ability": "Každou noc si vyber hráče: pokud bude zítra nominovat, zemře. Pokud žijí pouze 3 hráči, přicházíš o tuto schopnost."
@@ -1857,7 +1857,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Všichni hráči ví, že jsi Vezír. Přes den nemůžeš zemřít. Pokud alespoň 1 dobrý hráč hlasoval při nominaci, můžeš se rozhodnout, že ihned popravíš nominovaného."
+    "ability": "Všichni hráči ví, že jsi Vezír. Přes den nemůžeš zemřít. Pokud alespoň 1 dobrý hráč hlasoval při nominaci, můžeš se rozhodnout, že okamžitě popravíš nominovaného."
   },
   {
     "id": "xaan",
@@ -2002,7 +2002,7 @@
         "2. den",
         "3. den"],
     "setup": false,
-    "ability": "3. den se Poskoci stanou Povstalcem a nominovaný hráč ihned zemře, ale musí ihned nominovat dalšího živého hráče. Tohle se musí stát."
+    "ability": "3. den se Poskoci stanou Povstalcem a nominovaný hráč okamžitě umírá, zároveň ale musí okamžitě nominovat dalšího živého hráče. Tohle se musí stát."
   },
   {
     "id": "yaggababble",

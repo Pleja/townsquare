@@ -3,8 +3,8 @@
     "id": "tb",
     "name": "Potíže přicházejí",
     "author": "The Pandemonium Institute",
-    "description": "Clouds roll in over Ravenswood Bluff, engulfing this sleepy town and its superstitious inhabitants in foreboding shadow. Freshly-washed clothes dance eerily on lines strung between cottages. Chimneys cough plumes of smoke into the air. Exotic scents waft through cracks in windows and under doors, as hidden cauldrons lay bubbling. An unusually warm Autumn breeze wraps around vine-covered walls and whispers ominously to those brave enough to walk the cobbled streets.\n\nAnxious mothers call their children home from play, as thunder begins to clap on the horizon. If you listen more closely, however, noises stranger still can be heard echoing from the neighbouring forest. Under the watchful eye of a looming monastery, silhouetted figures skip from doorway to doorway. Those who can read the signs know there is... Trouble Brewing.",
-    "level": "Beginner",
+    "description": "Mračna přicházejí nad Bludný Krkavčín a pohlcují toto spící městečko a jeho pověrčivé obyvatele v zlověstném stínu. Čerstvě vyprané oblečení se podivně pohupuje na šňůrách zavěšených mezi domy. Komíny vypouštějí oblaka kouře do vzduchu. Zvláštní vůně vanou skrze praskliny v oknech a pod dveřmi, když skryté kotlíky tiše bublají. Nezvykle teplý podzimní vánek proudí kolem révou porostlých stěn a zlověstně šeptá těm, kteří jsou dostatečně odvážní na to, aby chodili po vydlážděných ulicích. \n\nZnepokojené matky volají svoje děti od hrátek zpátky domů, neboť se na horizontu začíná schylovat k bouři. Pokud ale budeš poslouchat pozorněji, tak můžeš slyšet ještě divnější zvuky ozývající se z nedalekého lesa. Bdělým okem z tyčícího se kláštera lze spatřit obrysy postav chodících od domu k domu. Ti, kteří porozuměli těmto znamením tuší, že... Potíže přicházejí.",
+    "level": "Začátečník",
     "roles": [],
     "isOfficial": true
   },
@@ -12,8 +12,8 @@
     "id": "bmr",
     "name": "Čas krvavého měsíce",
     "author": "The Pandemonium Institute",
-    "description": "The sun is swallowed by a jagged horizon as another winter's day surrenders to the night. Flecks of orange and red decay into deeper browns, the forest transforming in silent anticipation of the coming snow.\n\nRavenous wolves howl from the bowels of a rocky crevasse beyond the town borders, sending birds scattering from their cozy rooks. Travelers hurry into the inn, seeking shelter from the gathering chill. They warm themselves with hot tea, sweet strains of music and hearty ale, unaware that strange and nefarious eyes stalk them from the ruins of this once great city.\n\nTonight, even the livestock know there is a... Bad Moon Rising.",
-    "level": "Intermediate",
+    "description": "Slunce je pohlceno členitým horizontem, když další zimní den mizí v noci. Oranžové a červené skvrny postupně tmavnou do hnědých tónů, les se mění v tichém očekávání přicházejícího sněhu. \n\nHladoví vlci vyjí z útrob skalní trhliny za hranicemi města, rozprchávajíce ptáky z jejich útulných hnízd. Poutníci spěchají do hostince, hledaje úkryt před přicházející zimou. Zahřívají se horkým čajem, příjemnými tóny hudby a chutným pivem, netušíce divných a zlověstných očí, které je sledují z ruin tohoto kdysi honosného města. \n\nDnes v noci dokonce i dobytek tuší, že je... Čas krvavého měsíce.",
+    "level": "Pokročilý",
     "roles": [],
     "isOfficial": true
   },
@@ -21,8 +21,8 @@
     "id": "snv",
     "name": "Sekty a fialky",
     "author": "The Pandemonium Institute",
-    "description": "Vibrant spring gives way to a warm and inviting summer. Flowers of every description blossom as far as the eye can see, tenderly nurtured in public gardens and window boxes overlooking the lavish promenade. Birds sing, artists paint and philosophers ponder life's greatest mysteries inside a bustling tavern as a circus pitches its endearingly ragged tent on the edge of town.\n\nAs the townsfolk bask in frivolity and mischief, indulging themselves in fine entertainment and even finer wine, dark and clandestine forces are assembling. Witches and cults lurk in majestic ruins on the fringes of the community, hosting secret meetings in underground caves and malevolently plotting the downfall of Ravenswood Bluff and its revelers.\n\nThe time is ripe for... Sects & Violets.",
-    "level": "Intermediate",
+    "description": "Pestrobarevné jaro ustupuje teplému a vlídnému létu. Kytičky všech druhů kvetou všude, kam jen oko dohlédne, něžně opečovávané ve veřejných zahradách a okenních truhlících, shlížejících na honosnou promenádu. Ptáčci zpívají, umělci malují a filozofové hloubají o největších záhadách života uvnitř rušné hospody, zatímco cirkus staví svůj mile roztrhaný stan na kraji města. \n\nZatímco se měšťané baví lehkomyslnostmi a rošťárnami, oddávajíc se dobré zábavě a leště lepšímu vínu, temné a tajné síly se tiše shromažďují. Čarodějnice a kulty se ukrývají v majestátních ruinách na okraji města, pořádají tajná setkání v podzemních jeskyních a zlověstně kují pád Bludného Krkavčína a jeho rozjařených obyvatel. \n\nČas dozrál pro... Sekty a fialky.",
+    "level": "Pokročilý",
     "roles": [],
     "isOfficial": true
   },
@@ -31,7 +31,7 @@
     "name": "Laissez un Faire",
     "author": "The Pandemonium Institute",
     "description": "",
-    "level": "Veteran",
+    "level": "Zkušený",
     "roles": ["balloonist", "savant", "amnesiac", "fisherman", "artist", "cannibal", "mutant", "lunatic", "widow", "goblin", "leviathan"],
     "isOfficial": true
   }

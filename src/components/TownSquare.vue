@@ -58,6 +58,15 @@
     </transition>
 
     <div
+      class="seatNotTaken"
+      v-if="players.length && !grimoire.isHideSittingWarning && session.claimedSeat === -1"
+    >
+      <h3>
+        <span>Nemáš zabrané místo</span>
+      </h3>
+    </div>
+
+    <div
       class="timerText"
       :class="[
         {running:session.isTimerRunning},
@@ -92,7 +101,7 @@
 
     <div class="fabled" :class="{ closed: !isFabledOpen }" v-if="fabled.length">
       <h3>
-        <span>Proslulí</span>
+        <span>Proslulí a Lorikové</span>
         <font-awesome-icon icon="times-circle" @click.stop="toggleFabled" />
         <font-awesome-icon icon="plus-circle" @click.stop="toggleFabled" />
       </h3>
@@ -639,6 +648,25 @@ export default {
 /**** Call players animation ****/
 .fade-leave-to {
   opacity: 0;
+}
+
+.seatNotTaken {
+  position: absolute;
+  text-align: center;
+  top: 0%;
+  z-index: 75;
+
+  background: rgba(128, 0, 0, 0.5);
+  border: 3px solid red;
+  width: 100vw;
+  height: 15vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 7vh;
+  color:white;
 }
 
 #townsquare.public > .bluffs {

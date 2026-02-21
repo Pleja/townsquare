@@ -48,7 +48,7 @@
         <template v-if="tab === 'grimoire'">
           <!-- Grimoire -->
           <li class="headline">Grimoár</li>
-          <li @click="toggleCallPlayers" v-if="!session.isSpectator">
+          <li @click="toggleCallPlayers" v-if="!session.isSpectator && players.length">
             Přivolat hráče
             <em>
               <font-awesome-icon
@@ -122,6 +122,13 @@
                 :icon="['fas', grimoire.isMuted ? 'volume-mute' : 'volume-up']"
             /></em>
           </li>
+          <li v-if="players.length && session.claimedSeat === -1" @click="toggleHideSittingWarning">
+            Nechci sedět
+            <em
+              ><font-awesome-icon
+                :icon="['fas', grimoire.isHideSittingWarning ? 'check-square' : 'square']"
+            /></em>
+          </li>
         </template>
 
         <template v-if="tab === 'session'">
@@ -191,7 +198,7 @@
             <em>[C]</em>
           </li>
           <li v-if="!session.isSpectator" @click="toggleModal('fabled')">
-            Přidat Proslulého
+            Přidat Proslulého nebo Lorika
             <em><font-awesome-icon icon="dragon"/></em>
           </li>
           <li @click="clearRoles" v-if="players.length">
@@ -367,6 +374,7 @@ export default {
       "toggleNightOrder",
       "toggleCallPlayers",
       "toggleStatic",
+      "toggleHideSittingWarning",
       "setZoom",
       "toggleModal"
     ])

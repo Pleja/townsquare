@@ -203,7 +203,7 @@
     "setup": false,
     "name": "Hinduista",
     "team": "loric",
-    "ability": "První 4 hráči, kteří zemřou, jsou ihned oživeni jako Poutníci stejné příslušnosti."
+    "ability": "První 4 hráči, kteří zemřou, jsou okamžitě oživeni jako Poutníci stejné příslušnosti."
   },
   {
     "id": "pope",

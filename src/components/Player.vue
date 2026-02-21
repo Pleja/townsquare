@@ -147,7 +147,7 @@
               v-if="player.id && session.sessionId"
             >
               <font-awesome-icon icon="chair" />
-              Volné místo
+              Uvolnit místo
             </li>
             <template v-if="!session.nomination">
               <li @click="nominatePlayer()">
