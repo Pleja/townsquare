@@ -1,5 +1,27 @@
 # Release Notes
 
+### Verze 2.17.0
+- **Tato verze se skládá ze všech commitů udělaných od poslední verze (2.16.2). Jedná se o nádstavbu [původního projektu](https://github.com/bra1n/townsquare). Tato a všechny následující verze budou umístěné na [mojí Github stránce](https://pleja.github.io/townsquare/)**
+
+- Přidán text a tlačítko pro přivolání hráčů do Menu v sekci Grimoár
+  - Přidán zvukový efekt pro tuto akci
+- Přidána časomíra, kterou může Vypravěč nastavovat a spouštět. Ostatní hráči ji pouze vidí (na Náměstí)
+  - Časomíra má bílý text, když je spuštěná, tak modrý. Na posledních 15 sekund je červený
+- Přidán upozorňující text, když hráč nemá zabrané žádné místo
+  - Přidáno tlačítko pro vypnutí tohoto textu do Menu v sekci Grimoár
+- Přidání odkazu na tento zdrojový kód do Menu v sekci Nápověda
+- Přidání 37 nových postav, které v původním projektu chyběly
+  - Tyto postavy zatím mají pouze náhradní obrázky, ty budou přidané v dalších verzích
+- Přeložení celé aplikace do českého jazyka
+  - Přidaná poznámka do úvodního textu, že se jedná o upravenou verzi půvoního projektu
+- Vylepšení nočního pořadí přidáním konce a začátku noci
+- Aktualizování nočního pořadí kvůli novým postavám
+- Odebrání odkazu na Discord server z Menu v sekci Nápověda
+
+---
+---
+---
+
 ### Version 2.16.2
 - fixed custom script format to support new script tool JSON
 - updated packages to be compatible with Node >= 18 again
