@@ -1,5 +1,12 @@
 # Release Notes
 
+### Verze 2.17.1
+- Přidáné tlačítko pro vypravěče u každé postavy pro zaslání této postavy všem připojeným uživatelům
+- Přidány 2 nové postavy kategorie Lorik: Bůh Ug a Lumpové
+  - Tyto postavy zatím mají pouze náhradní obrázky, ty budou přidané v dalších verzích
+
+---
+
 ### Verze 2.17.0
 - **Tato verze se skládá ze všech commitů udělaných od poslední verze (2.16.2). Jedná se o nádstavbu [původního projektu](https://github.com/bra1n/townsquare). Tato a všechny následující verze budou umístěné na [mojí Github stránce](https://pleja.github.io/townsquare/)**
 

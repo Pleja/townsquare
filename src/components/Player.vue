@@ -127,6 +127,10 @@
             <font-awesome-icon icon="venus-mars" />Změnit zájmeno
           </li>
           <template v-if="!session.isSpectator">
+            <li @click="sendToAll(true)" :class="{ disabled: session.lockedVote }">
+              <font-awesome-icon icon="theater-masks" />
+              Poslat postavu VŠEM
+            </li>
             <li @click="changeName">
               <font-awesome-icon icon="user-edit" />Přejmenovat
             </li>
@@ -253,6 +257,21 @@ export default {
     };
   },
   methods: {
+    sendToAll(closeMenu = false) {
+      const popup =
+        "Chceš poslat postavu hráče " + this.player.name + "VŠEM hráčům?";
+      if (confirm(popup)) {
+        this.$store.commit("players/update", {
+          player: this.player,
+          property: "role",
+          value: this.player.role,
+          toAll: true
+        });
+        if (closeMenu) {
+          this.isMenuOpen = false;
+        }
+      }
+    },
     changePronouns() {
       if (this.session.isSpectator && this.player.id !== this.session.playerId)
         return;

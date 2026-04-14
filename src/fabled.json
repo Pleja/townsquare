@@ -245,5 +245,25 @@
     "name": "Zenomancer",
     "team": "loric",
     "ability": "Jeden nebo více hráčů má svůj úkol. Když ho hráč splní, tak se dozví pravdivou informaci."
+  },
+  {
+    "id": "godofug",
+    "firstNightReminder": "",
+    "otherNightReminder": "",
+    "reminders": ["Má Ug vrch"],
+    "setup": false,
+    "name": "Bůh Ug",
+    "team": "loric",
+    "ability": "Sám Ug vrch. Kdo má Ug vrch, smí říct jen sám zvuk v čas, ale má dva hlas. Když ne, Ug vrch dál."
+  },
+  {
+    "id": "knaves",
+    "firstNightReminder": "",
+    "otherNightReminder": "",
+    "reminders": [],
+    "setup": false,
+    "name": "Lumpové",
+    "team": "loric",
+    "ability": "Ve hře jsou 2 Vypravěči: jeden lže a druhý říká pravdu. Jednou za hru, při soumraku, se můžou prohodit."
   }
 ]

@@ -474,11 +474,18 @@ class LiveSession {
    * @param property
    * @param value
    */
-  sendPlayer({ player, property, value }) {
+  sendPlayer({ player, property, value, toAll = false }) {
     if (this._isSpectator || property === "reminders") return;
     const index = this._store.state.players.players.indexOf(player);
     if (property === "role") {
-      if (value.team && value.team === "traveler") {
+      if (toAll) {
+        this._send("player", {
+          index,
+          property,
+          value: value.id
+        });
+      }
+      if ((value.team && value.team === "traveler")) {
         // update local gamestate to remember this player as a traveler
         this._gamestate[index].roleId = value.id;
         this._send("player", {
