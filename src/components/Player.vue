@@ -259,7 +259,7 @@ export default {
   methods: {
     sendToAll(closeMenu = false) {
       const popup =
-        "Chceš poslat postavu hráče " + this.player.name + "VŠEM hráčům?";
+        "Chceš poslat postavu hráče " + this.player.name + " VŠEM hráčům?";
       if (confirm(popup)) {
         this.$store.commit("players/update", {
           player: this.player,
