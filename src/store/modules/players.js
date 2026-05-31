@@ -5,6 +5,8 @@ const NEWPLAYER = {
   reminders: [],
   isVoteless: false,
   isDead: false,
+  isTalking: false,
+  isSent: false,
   pronouns: ""
 };
 
@@ -111,6 +113,15 @@ const mutations = {
   in socket.js.
    */
   update(state, { player, property, value }) {
+    const index = state.players.indexOf(player);
+    if (index >= 0) {
+      state.players[index][property] = value;
+    }
+  },
+  /**
+  Works with reminders (probably mostly useless)
+   */
+  sendToAll(state, { player, property, value }) {
     const index = state.players.indexOf(player);
     if (index >= 0) {
       state.players[index][property] = value;

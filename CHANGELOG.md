@@ -1,5 +1,21 @@
 # Release Notes
 
+### Verze 2.18.0
+- Přidání možnosti řízeného shrnutí hry pro vypravěče
+  - Vypravěč může postupně zasílat jednotlivé postavy všem hráčům
+  - Zakazuje hráčům měnit postavy
+  - Při změně postavy vypravěčem je tuto postavu potřeba znovu zaslat
+  - Před začátkem shrnutí hry se uloží grimoár všech hráčů a po ukončení shrnutí hry se opět načte
+- Přidání možnosti pro hráče, aby mohli dát vědět, že chtějí mluvit
+- Opravení varování, že hráč nesedí
+- Odebrání tlačítka pro vypravěče u každé postavy pro zaslání této postavy všem připojeným uživatelům
+  - Tato funkce byla zařazena jako součást řízeného ukončení hry
+- Přidání značky, že se jedná o komunitní projekt
+- Změnění základního zobrazení stránky na grimoár (dříve bylo náměstí)
+- Zamezení možnosti nastavení hodnot přiblížení na záporné
+
+---
+
 ### Verze 2.17.1
 - Přidáné tlačítko pro vypravěče u každé postavy pro zaslání této postavy všem připojeným uživatelům
 - Přidány 2 nové postavy kategorie Lorik: Bůh Ug a Lumpové

@@ -134,6 +134,12 @@
       </ul>
     </div>
 
+    <div class="talkButtonsGroup" v-if="hasSeat && session.isSpectator">
+      <div class="button townsfolk" @click="talk(false)" :class="{ disabled: !isTalking }">Už nechci mluvit</div>
+      <div class="button demon" @click="talk(true)" :class="{ disabled: isTalking }">Chci něco říct</div>
+      <div class="hint">(mezerník)</div>
+    </div>
+
     <ReminderModal :player-index="selectedPlayer"></ReminderModal>
     <RoleModal :player-index="selectedPlayer"></RoleModal>
   </div>
@@ -178,6 +184,14 @@ export default {
       return this.players.some(
         player => player.id === this.session.playerId
       );
+    },
+
+    isTalking() {
+      const player = this.players.find(
+        player => player.id === this.session.playerId
+      );
+
+      return !!player?.isTalking;
     }
 
   },
@@ -383,10 +397,23 @@ export default {
         this.now = Date.now();
       }, 1000);
     },
-
     stopLocalTick() {
       clearInterval(this.timer);
       this.timer = null;
+    },
+    talk(choice) {
+      if (this.isTalking === choice) return;
+
+      const player = this.players.find(
+        player => player.id === this.session.playerId
+      );
+      if (!player) return;
+
+      this.$store.commit("players/update", {
+        player,
+        property: "isTalking",
+        value: choice
+      });
     }
   }
 };
@@ -877,6 +904,27 @@ export default {
   align-items: center;
   font-size: 3vh;
   cursor: pointer;
+}
+
+.talkButtonsGroup {
+  position: absolute;
+  bottom: 9%;
+  right: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5vh;
+  cursor: pointer;
+
+  .hint {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-25%);
+    font-size: 1.5vh;
+    color: gray;
+    opacity: 50%;
+  }
 }
 
 #townsquare:not(.spectator) .fabled ul li:hover .token:before {

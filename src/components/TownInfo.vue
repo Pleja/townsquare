@@ -63,9 +63,13 @@
           :icon="teams.traveler > 1 ? 'user-friends' : 'user'"
         />
       </span>
-      <span v-if="grimoire.isNight">
+      <span v-if="grimoire.isNight && !grimoire.isEndgame">
         Noční fáze
         <font-awesome-icon :icon="['fas', 'cloud-moon']" />
+      </span>
+      <span v-if="grimoire.isEndgame">
+        Shrnutí hry
+        <font-awesome-icon icon="sync-alt" />
       </span>
     </li>
   </ul>

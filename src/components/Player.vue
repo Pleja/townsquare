@@ -10,7 +10,8 @@
           'no-vote': player.isVoteless,
           you: session.sessionId && player.id && player.id === session.playerId,
           'vote-yes': session.votes[index],
-          'vote-lock': voteLocked
+          'vote-lock': voteLocked,
+          revealToken: player.isSent
         },
         player.role.team
       ]"
@@ -82,6 +83,14 @@
         />
       </div>
 
+      <!-- Talking icon -->
+      <font-awesome-icon
+        v-if="player.isTalking"
+        icon="comment-dots"
+        class="talk"
+        :title="player.name + ' chce mluvit.'"
+      />
+
       <!-- Claimed seat icon -->
       <font-awesome-icon
         icon="chair"
@@ -97,6 +106,24 @@
         v-if="player.isDead && !player.isVoteless"
         @click="updatePlayer('isVoteless', true)"
         title="Duchův hlas"
+      />
+
+      <!-- Character not sent icon -->
+      <font-awesome-icon
+        icon="envelope"
+        class="envelope"
+        v-if="grimoire.isEndgame && !session.isSpectator && !player.isSent && player.role.team !== 'traveler'"
+        @click="sendToAll(true)"
+        title="Poslat postavu všem hráčům"
+      />
+
+      <!-- Character sent icon -->
+      <font-awesome-icon
+        icon="envelope-open"
+        class="envelope-open"
+        v-if="grimoire.isEndgame && !session.isSpectator && player.isSent && player.role.team !== 'traveler'"
+        @click="sendToAll(true)"
+        title="Znovu poslat postavu všem hráčům"
       />
 
       <!-- On block icon -->
@@ -120,18 +147,17 @@
           <li
             @click="changePronouns"
             v-if="
-              !session.isSpectator ||
-                (session.isSpectator && player.id === session.playerId)
+              (!session.isSpectator ||
+                (session.isSpectator && player.id === session.playerId))
+              && !grimoire.isEndgame
             "
           >
             <font-awesome-icon icon="venus-mars" />Změnit zájmeno
           </li>
           <template v-if="!session.isSpectator">
-            <li @click="sendToAll(true)" :class="{ disabled: session.lockedVote }">
-              <font-awesome-icon icon="theater-masks" />
-              Poslat postavu VŠEM
-            </li>
-            <li @click="changeName">
+            <li @click="changeName"
+              v-if="!grimoire.isEndgame"
+            >
               <font-awesome-icon icon="user-edit" />Přejmenovat
             </li>
             <li @click="movePlayer()" :class="{ disabled: session.lockedVote }">
@@ -142,18 +168,21 @@
               <font-awesome-icon icon="exchange-alt" />
               Prohodit místa
             </li>
-            <li @click="removePlayer" :class="{ disabled: session.lockedVote }">
+            <li @click="removePlayer"
+              :class="{ disabled: session.lockedVote }"
+              v-if="!grimoire.isEndgame"
+            >
               <font-awesome-icon icon="times-circle" />
               Odebrat
             </li>
             <li
               @click="updatePlayer('id', '', true)"
-              v-if="player.id && session.sessionId"
+              v-if="player.id && session.sessionId && !grimoire.isEndgame"
             >
               <font-awesome-icon icon="chair" />
               Uvolnit místo
             </li>
-            <template v-if="!session.nomination">
+            <template v-if="!session.nomination && !grimoire.isEndgame">
               <li @click="nominatePlayer()">
                 <font-awesome-icon icon="hand-point-right" />
                 Nominovat
@@ -258,18 +287,19 @@ export default {
   },
   methods: {
     sendToAll(closeMenu = false) {
-      const popup =
-        "Chceš poslat postavu hráče " + this.player.name + " VŠEM hráčům?";
-      if (confirm(popup)) {
-        this.$store.commit("players/update", {
-          player: this.player,
-          property: "role",
-          value: this.player.role,
-          toAll: true
-        });
-        if (closeMenu) {
-          this.isMenuOpen = false;
-        }
+      this.$store.commit("players/sendToAll", {
+        player: this.player,
+        property: "role",
+        value: this.player.role
+      });
+      this.$store.commit("players/sendToAll", {
+        player: this.player,
+        property: "reminders",
+        value: [...this.player.reminders]
+      });
+      this.updatePlayer("isSent", true);
+      if (closeMenu) {
+        this.isMenuOpen = false;
       }
     },
     changePronouns() {
@@ -517,6 +547,27 @@ export default {
   }
 }
 
+#townsquare.public .player.revealToken {
+  .shroud {
+    transform: perspective(400px) rotateX(0deg);
+    pointer-events: none;
+  }
+
+  .life {
+    transform: perspective(400px) rotateY(90deg);
+  }
+
+  &.traveler:not(.dead) .token {
+    transform: perspective(400px) scale(0.8);
+    pointer-events: none;
+    transition-delay: 0s;
+  }
+
+  &.traveler.dead .token {
+    transition-delay: 0s;
+  }
+}
+
 /***** Role token ******/
 .player .token {
   position: absolute;
@@ -530,6 +581,11 @@ export default {
 
 #townsquare.public .circle .token {
   transform: perspective(400px) rotateY(-180deg);
+}
+
+/* For endgame */
+#townsquare.public .player.revealToken .token {
+  transform: perspective(400px) rotateY(0deg);
 }
 
 /****** Player choice icons *******/
@@ -609,6 +665,53 @@ li.move:not(.from) .player .overlay svg.move {
   opacity: 1;
   transform: scale(1);
   pointer-events: all;
+}
+
+/****** Wants to talk icon ********/
+.player .talk {
+  position: absolute;
+  animation: talkPop 200ms ease-out;
+  top: -40px;
+  left: 130px;
+  width: 50%;
+  height: 60%;
+  filter: drop-shadow(0 0 3px black);
+  * {
+    stroke-width: 10px;
+    stroke: white;
+    fill: url(#white);
+  }
+}
+
+.player.townsfolk .talk * {
+  fill: url(#townsfolk);
+}
+
+.player.outsider .talk * {
+  fill: url(#outsider);
+}
+
+.player.minion .talk * {
+  fill: url(#minion);
+}
+
+.player.demon .talk * {
+  fill: url(#demon);
+}
+
+.player.traveler .talk * {
+  fill: url(#traveler);
+}
+
+@keyframes talkPop {
+  from {
+    opacity: 0;
+    transform: translateX(-50px) translateY(50px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /****** Vote icon ********/
@@ -721,6 +824,27 @@ li.move:not(.from) .player .overlay svg.move {
 
 .player.you .seat {
   color: $townsfolk;
+}
+
+/****** Character sent icon ******/
+.player .envelope {
+  position: absolute;
+  transform: scale(1.4);
+  right: -5px;
+  margin-top: 8%;
+  color: #fff;
+  filter: drop-shadow(0 0 3px black);
+  z-index: 2;
+}
+
+.player .envelope-open {
+  position: absolute;
+  transform: scale(1.4);
+  right: -5px;
+  margin-top: 8%;
+  color: #00f700;
+  filter: drop-shadow(0 0 3px black);
+  z-index: 2;
 }
 
 /***** Player name *****/
@@ -971,6 +1095,12 @@ li.move:not(.from) .player .overlay svg.move {
 
 #townsquare.public .reminder {
   opacity: 0;
+  pointer-events: none;
+}
+
+/* For endgame */
+#townsquare.public li:has(.player.revealToken) .reminder:not(.add) {
+  opacity: 1;
   pointer-events: none;
 }
 </style>

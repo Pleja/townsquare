@@ -20,6 +20,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:pleja/pleja.github.io.git main
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:Pleja/townsquare.git HEAD:gh-pages
+git push -f git@github.com:Pleja/CZ_townsquare.git HEAD:gh-pages
 
 cd -

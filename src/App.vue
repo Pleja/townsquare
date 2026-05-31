@@ -5,7 +5,8 @@
     tabindex="-1"
     :class="{
       night: grimoire.isNight,
-      static: grimoire.isStatic
+      static: grimoire.isStatic,
+      endgame: grimoire.isEndgame
     }"
     :style="{
       backgroundImage: grimoire.background
@@ -26,7 +27,7 @@
       <TownInfo v-if="players.length && !session.nomination"></TownInfo>
       <Vote v-if="session.nomination"></Vote>
     </transition>
-    <TownSquare></TownSquare>
+    <TownSquare ref="townsquare"></TownSquare>
     <Menu ref="menu"></Menu>
     <EditionModal />
     <FabledModal />
@@ -87,6 +88,7 @@ export default {
       if (ctrlKey || metaKey) return;
       switch (key.toLocaleLowerCase()) {
         case "g":
+          if (this.grimoire.isEndgame) return;
           this.$store.commit("toggleGrimoire");
           break;
         case "a":
@@ -118,11 +120,23 @@ export default {
           }
           break;
         case "s":
-          if (this.session.isSpectator) return;
+          if (this.session.isSpectator || this.grimoire.isEndgame) return;
           this.$refs.menu.toggleNight();
+          break;
+        case "u":
+          if (this.session.isSpectator) return;
+          this.$store.commit("toggleEndgame");
           break;
         case "escape":
           this.$store.commit("toggleModal");
+          break;
+        case " ":
+          if (!this.session.isSpectator) {
+            this.$store.commit("toggleCallPlayers");
+          }
+          else {
+            this.$refs.townsquare.talk(!this.$refs.townsquare.isTalking);
+          }
       }
     }
   }
@@ -366,5 +380,15 @@ video#background {
 
 #app.night > .backdrop {
   opacity: 0.5;
+}
+
+#app.endgame > .backdrop {
+  opacity: 0.5;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 120, 1) 0%,
+    rgba(1, 22, 46, 1) 50%,
+    rgba(120, 39, 70, 1) 100%
+  );
 }
 </style>

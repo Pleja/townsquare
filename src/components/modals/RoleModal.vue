@@ -91,14 +91,24 @@ export default {
           role
         });
       } else {
-        if (this.session.isSpectator && role.team === "traveler") return;
+        if ((this.session.isSpectator && role.team === "traveler") ||
+          (this.$store.state.grimoire.isEndgame && this.session.isSpectator)) return;
         // assign to player
         const player = this.$store.state.players.players[this.playerIndex];
-        this.$store.commit("players/update", {
-          player,
-          property: "role",
-          value: role
-        });
+        if (player.role.id !== role.id) {
+          this.$store.commit("players/update", {
+            player,
+            property: "role",
+            value: role
+          });
+          if (this.$store.state.grimoire.isEndgame) {
+            this.$store.commit("players/update", {
+              player,
+              property: "isSent",
+              value: false
+            });
+          }
+        }
       }
       this.tab = "editionRoles";
       this.$store.commit("toggleModal", "role");

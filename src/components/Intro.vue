@@ -25,6 +25,7 @@
       <img src="../assets/gstone.png" class="gstone" alt="" />
       你想使用中文版魔典吗？
     </a>
+    <img src="static/ccc-sleeve.png" alt="" class="ccc" />
   </div>
 </template>
 
@@ -89,6 +90,12 @@ export default {
     border-radius: 50%;
     box-shadow: 0 0 10px black;
     border: 3px solid black;
+  }
+  img.ccc {
+    position: absolute;
+    top: 120%;
+    width: 30vh;
+    max-width: 250px;
   }
   .footer {
     font-size: 60%;

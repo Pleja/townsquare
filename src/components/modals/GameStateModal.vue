@@ -25,29 +25,18 @@
 <script>
 import Modal from "./Modal";
 import { mapMutations, mapState } from "vuex";
+import { gamestateToJson, jsonToGamestate } from "../../store/gamestate";
 
 export default {
   components: {
     Modal
   },
   computed: {
-    gamestate: function() {
-      return JSON.stringify({
-        bluffs: this.players.bluffs.map(({ id }) => id),
-        edition: this.edition.isOfficial
-          ? { id: this.edition.id }
-          : this.edition,
-        roles: this.edition.isOfficial
-          ? ""
-          : this.$store.getters.customRolesStripped,
-        fabled: this.players.fabled.map(fabled =>
-          fabled.isCustom ? fabled : { id: fabled.id }
-        ),
-        players: this.players.players.map(player => ({
-          ...player,
-          role: player.role.id || {}
-        }))
-      });
+    gamestate() {
+      return gamestateToJson({
+        players: this.players,
+        edition: this.edition,
+        getters: this.$store.getters})
     },
     ...mapState(["modals", "players", "edition", "roles", "session"])
   },
@@ -64,43 +53,7 @@ export default {
       if (this.session.isSpectator) return;
       try {
         const data = JSON.parse(this.input || this.gamestate);
-        const { bluffs, edition, roles, fabled, players } = data;
-        if (roles) {
-          this.$store.commit("setCustomRoles", roles);
-        }
-        if (edition) {
-          this.$store.commit("setEdition", edition);
-        }
-        if (bluffs.length) {
-          bluffs.forEach((role, index) => {
-            this.$store.commit("players/setBluff", {
-              index,
-              role: this.$store.state.roles.get(role) || {}
-            });
-          });
-        }
-        if (fabled) {
-          this.$store.commit("players/setFabled", {
-            fabled: fabled.map(
-              f =>
-                this.$store.state.fabled.get(f) ||
-                this.$store.state.fabled.get(f.id) ||
-                f
-            )
-          });
-        }
-        if (players) {
-          this.$store.commit(
-            "players/set",
-            players.map(player => ({
-              ...player,
-              role:
-                this.$store.state.roles.get(player.role) ||
-                this.$store.getters.rolesJSONbyId.get(player.role) ||
-                {}
-            }))
-          );
-        }
+        jsonToGamestate(data, this.$store);
         this.toggleModal("gameState");
       } catch (e) {
         alert("Unable to parse JSON: " + e);

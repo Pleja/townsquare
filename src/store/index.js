@@ -35,6 +35,10 @@ const getTravelersNotInEdition = (edition = editionJSON[0]) => {
 };
 
 const set = key => ({ grimoire }, val) => {
+  // blocks zooming below 0%
+  if (key === "zoom") {
+    if (val <= -10) return;
+  }
   grimoire[key] = val;
 };
 
@@ -101,10 +105,11 @@ export default new Vuex.Store({
       isNight: false,
       isNightOrder: true,
       isCallingPlayers: false,
-      isPublic: true,
+      isPublic: false,
       isMenuOpen: false,
       isStatic: false,
       isHideSittingWarning: false,
+      isEndgame: false,
       isMuted: false,
       isImageOptIn: false,
       zoom: 0,
@@ -172,6 +177,7 @@ export default new Vuex.Store({
     toggleCallPlayers: toggle("isCallingPlayers"),
     toggleStatic: toggle("isStatic"),
     toggleHideSittingWarning: toggle ("isHideSittingWarning"),
+    toggleEndgame: toggle("isEndgame"),
     toggleNight: toggle("isNight"),
     toggleGrimoire: toggle("isPublic"),
     toggleImageOptIn: toggle("isImageOptIn"),

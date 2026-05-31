@@ -51,6 +51,7 @@
           <li @click="toggleCallPlayers" v-if="!session.isSpectator && players.length">
             Přivolat hráče
             <em>
+              [mez.]
               <font-awesome-icon
                 :icon="[
                   'fas',
@@ -59,7 +60,7 @@
               />
             </em>
           </li>
-          <li @click="toggleGrimoire" v-if="players.length">
+          <li @click="toggleGrimoire" v-if="players.length && !grimoire.isEndgame">
             <template v-if="!grimoire.isPublic">Skrýt</template>
             <template v-if="grimoire.isPublic">Zobrazit</template>
             <em>[G]</em>
@@ -129,6 +130,14 @@
                 :icon="['fas', grimoire.isHideSittingWarning ? 'check-square' : 'square']"
             /></em>
           </li>
+          <li @click="toggleEndgame" v-if="!session.isSpectator && players.length">
+            Ukončení hry
+            <em>
+              [U]
+              <font-awesome-icon
+                :icon="['fas', grimoire.isEndgame ? 'check-square' : 'square']"
+            /></em>
+          </li>
         </template>
 
         <template v-if="tab === 'session'">
@@ -169,7 +178,7 @@
           </template>
         </template>
 
-        <template v-if="tab === 'players' && !session.isSpectator">
+        <template v-if="tab === 'players' && !session.isSpectator && !grimoire.isEndgame">
           <!-- Users -->
           <li class="headline">Hráči</li>
           <li @click="addPlayer" v-if="players.length < 20">Přidat<em>[A]</em></li>
@@ -335,7 +344,7 @@ export default {
       }
     },
     addPlayer() {
-      if (this.session.isSpectator) return;
+      if (this.session.isSpectator || this.grimoire.isEndgame) return;
       if (this.players.length >= 20) return;
       const name = prompt("Jméno hráče");
       if (name) {
@@ -381,6 +390,7 @@ export default {
       "toggleCallPlayers",
       "toggleStatic",
       "toggleHideSittingWarning",
+      "toggleEndgame",
       "setZoom",
       "toggleModal"
     ])

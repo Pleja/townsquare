@@ -1,3 +1,5 @@
+import { gamestateToJson, jsonToGamestate } from "./gamestate";
+
 class LiveSession {
   constructor(store) {
     this._wss = "wss://live.clocktower.online:8080/";
@@ -5,6 +7,7 @@ class LiveSession {
     this._socket = null;
     this._isSpectator = true;
     this._gamestate = [];
+    this._savedGamestate = null;
     this._store = store;
     this._pingInterval = 30 * 1000; // 30 seconds between pings
     this._pingTimer = null;
@@ -234,6 +237,12 @@ class LiveSession {
           this._store.commit("session/setTimerHostOffset",offset);
         }
         break;
+      case "isTalking":
+        this._updatePlayerTalking(params);
+        break;
+      case "isEndgame":
+        if (!this._isSpectator) return;
+        this._store.commit("toggleEndgame", params);
     }
   }
 
@@ -288,6 +297,7 @@ class LiveSession {
       name: player.name,
       id: player.id,
       isDead: player.isDead,
+      isTalking: player.isTalking,
       isVoteless: player.isVoteless,
       pronouns: player.pronouns,
       ...(player.role && player.role.team === "traveler"
@@ -307,6 +317,7 @@ class LiveSession {
         gamestate: this._gamestate,
         isNight: grimoire.isNight,
         isCallingPlayers: grimoire.isCallingPlayers,
+        isEndgame: grimoire.isEndgame,
         isVoteHistoryAllowed: session.isVoteHistoryAllowed,
         nomination: session.nomination,
         votingSpeed: session.votingSpeed,
@@ -330,6 +341,8 @@ class LiveSession {
       gamestate,
       isLightweight,
       isNight,
+      isCallingPlayers,
+      isEndgame,
       isVoteHistoryAllowed,
       nomination,
       votingSpeed,
@@ -355,7 +368,7 @@ class LiveSession {
       const player = players[x];
       const { roleId } = state;
       // update relevant properties
-      ["name", "id", "isDead", "isVoteless", "pronouns"].forEach(property => {
+      ["name", "id", "isDead", "isTalking", "isVoteless", "pronouns"].forEach(property => {
         const value = state[property];
         if (player[property] !== value) {
           this._store.commit("players/update", { player, property, value });
@@ -383,6 +396,8 @@ class LiveSession {
     });
     if (!isLightweight) {
       this._store.commit("toggleNight", !!isNight);
+      this._store.commit("toggleCallPlayers", !!isCallingPlayers);
+      this._store.commit("toggleEndgame", !!isEndgame);
       this._store.commit("session/setVoteHistoryAllowed", isVoteHistoryAllowed);
       this._store.commit("session/nomination", {
         nomination,
@@ -474,17 +489,10 @@ class LiveSession {
    * @param property
    * @param value
    */
-  sendPlayer({ player, property, value, toAll = false }) {
+  sendPlayer({ player, property, value}) {
     if (this._isSpectator || property === "reminders") return;
     const index = this._store.state.players.players.indexOf(player);
     if (property === "role") {
-      if (toAll) {
-        this._send("player", {
-          index,
-          property,
-          value: value.id
-        });
-      }
       if ((value.team && value.team === "traveler")) {
         // update local gamestate to remember this player as a traveler
         this._gamestate[index].roleId = value.id;
@@ -500,6 +508,31 @@ class LiveSession {
       }
     } else {
       this._send("player", { index, property, value });
+    }
+  }
+
+  /**
+   * Publish a player update to all players.
+   * @param player
+   * @param property
+   * @param value
+   */
+  sendPlayerToAll({ player, property, value }) {
+    if (this._isSpectator) return;
+    const index = this._store.state.players.players.indexOf(player);
+    if (property === "role") {
+      this._send("player", {
+        index,
+        property,
+        value: value.id
+        });
+    }
+    if (property === "reminders") {
+      this._send("player", {
+        index,
+        property,
+        value
+      });
     }
   }
 
@@ -575,6 +608,40 @@ class LiveSession {
       isFromSockets: true
     });
   }
+
+  /**
+   * Publish a player talking update
+   * @param player
+   * @param value
+   * @param isFromSockets
+   */
+  sendPlayerTalking({ player, value, isFromSockets }) {
+    // Maybe try removing this "if" if the f5 problem persists
+    if (
+      isFromSockets ||
+      (this._isSpectator && this._store.state.session.playerId !== player.id)
+    )
+      return;
+    const index = this._store.state.players.players.indexOf(player);
+    this._send("isTalking", [index, value]);
+  }
+
+  /**
+   * Update a player talking based on incoming data.
+   * @param index
+   * @param value
+   * @private
+   */
+  _updatePlayerTalking([index, value]) {
+  const player = this._store.state.players.players[index];
+
+  this._store.commit("players/update", {
+    player,
+    property: "isTalking",
+    value,
+    isFromSockets: true
+  });
+}
 
   /**
    * Handle a ping message by another player / storyteller
@@ -746,6 +813,40 @@ class LiveSession {
   setIsCallingPlayers() {
     if (this._isSpectator) return;
     this._send("isCallingPlayers", this._store.state.grimoire.isCallingPlayers);
+  }
+
+  /**
+   * Send the isEndgame status. ST only
+   */
+  setIsEndgame() {
+    // Hide grimoire when endgame is active (and save the current gamestate)
+    if (this._store.state.grimoire.isEndgame) {
+      this._store.commit("toggleGrimoire", true);
+      this._savedGamestate = gamestateToJson({
+        players: this._store.state.players,
+        edition: this._store.state.edition,
+        getters: this._store.getters
+      });
+    }
+    // Show grimoire when endgame is inactive (and restore the saved gamestate)
+    else {
+      this._store.commit("toggleGrimoire", false);
+      if (this._savedGamestate) {
+        const parsed_gamestate = JSON.parse(this._savedGamestate);
+        jsonToGamestate(parsed_gamestate, this._store);
+      }
+    }
+    if (this._isSpectator) return;
+    // Shows grimoire to the Storyteller
+    this._store.commit("toggleGrimoire", false);
+    this._store.state.players.players.forEach(player => {
+      this._store.commit("players/update", {
+        player,
+        property: "isSent",
+        value: false
+      })
+    });
+    this._send("isEndgame", this._store.state.grimoire.isEndgame);
   }
 
   /**
@@ -973,6 +1074,9 @@ export default store => {
       case "toggleCallPlayers":
         session.setIsCallingPlayers();
         break;
+      case "toggleEndgame":
+        session.setIsEndgame();
+        break;
       case "setEdition":
         session.sendEdition();
         break;
@@ -999,9 +1103,14 @@ export default store => {
       case "players/update":
         if (payload.property === "pronouns") {
           session.sendPlayerPronouns(payload);
+        } else if (payload.property === "isTalking") {
+          session.sendPlayerTalking(payload);
         } else {
           session.sendPlayer(payload);
         }
+        break;
+      case "players/sendToAll":
+        session.sendPlayerToAll(payload);
         break;
     }
   });

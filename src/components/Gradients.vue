@@ -27,8 +27,12 @@ export default {
     return {
       gradients: [
         ["demon", "#ce0100", "#000"],
+        ["minion", "#ff6900", "#000"],
+        ["outsider", "#46d5ff", "#000"],
         ["townsfolk", "#1f65ff", "#000"],
-        ["default", "#4E4E4E", "#000"]
+        ["traveler", "#cc04ff", "#000"],
+        ["default", "#4E4E4E", "#000"],
+        ["white", "#ffffff", "#000"],
       ]
     };
   }
